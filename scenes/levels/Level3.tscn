@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://tilesets/world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/characters/Kiyu_player.tscn" type="PackedScene" id=2]
@@ -8,7 +8,9 @@
 [ext_resource path="res://scenes/props/coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/props/Flag.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ASSETS/sounds/mus_underground.wav" type="AudioStream" id=8]
+[ext_resource path="res://scenes/props/block.tscn" type="PackedScene" id=9]
 [ext_resource path="res://ASSETS/WorldTiles/pipe5.png" type="Texture" id=10]
+[ext_resource path="res://scenes/props/enemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://ASSETS/WorldTiles/pipe7.png" type="Texture" id=16]
 [ext_resource path="res://ASSETS/WorldTiles/pipe4.png" type="Texture" id=18]
 [ext_resource path="res://ASSETS/WorldTiles/pipe1.png" type="Texture" id=19]
@@ -265,29 +267,30 @@ position = Vector2( 160, 256 )
 [node name="coin5" parent="coins" instance=ExtResource( 6 )]
 position = Vector2( 256, 256 )
 
-[node name="coin6" parent="coins" instance=ExtResource( 6 )]
-position = Vector2( -128, 160 )
+[node name="blocks" type="Node2D" parent="."]
 
-[node name="coin7" parent="coins" instance=ExtResource( 6 )]
-position = Vector2( -32, 160 )
+[node name="block1" parent="blocks" instance=ExtResource( 9 )]
+position = Vector2( -128, 352 )
 
-[node name="coin8" parent="coins" instance=ExtResource( 6 )]
-position = Vector2( 64, 160 )
+[node name="block2" parent="blocks" instance=ExtResource( 9 )]
+position = Vector2( -64, 352 )
 
-[node name="coin9" parent="coins" instance=ExtResource( 6 )]
-position = Vector2( 160, 160 )
+[node name="block3" parent="blocks" instance=ExtResource( 9 )]
+position = Vector2( 0, 352 )
 
-[node name="coin10" parent="coins" instance=ExtResource( 6 )]
-position = Vector2( 256, 160 )
+[node name="block4" parent="blocks" instance=ExtResource( 9 )]
+position = Vector2( 64, 352 )
 
-[node name="coin11" parent="coins" instance=ExtResource( 6 )]
-position = Vector2( -32, 64 )
+[node name="block5" parent="blocks" instance=ExtResource( 9 )]
+position = Vector2( 128, 352 )
 
-[node name="coin12" parent="coins" instance=ExtResource( 6 )]
-position = Vector2( 64, 64 )
+[node name="enemies" type="Node2D" parent="."]
 
-[node name="coin13" parent="coins" instance=ExtResource( 6 )]
-position = Vector2( 160, 64 )
+[node name="enemy1" parent="enemies" instance=ExtResource( 11 )]
+position = Vector2( -64, 480 )
+
+[node name="enemy2" parent="enemies" instance=ExtResource( 11 )]
+position = Vector2( 0, 480 )
 
 [node name="Flag" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1357, 468 )
@@ -328,11 +331,8 @@ autoplay = true
 [connection signal="coin_collected" from="coins/coin3" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="coins/coin4" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="coins/coin5" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="coins/coin6" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="coins/coin7" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="coins/coin8" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="coins/coin9" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="coins/coin10" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="coins/coin11" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="coins/coin12" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="coins/coin13" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="blocks/block1" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="blocks/block2" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="blocks/block3" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="blocks/block4" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="blocks/block5" to="HUD" method="_on_coin_collected"]
