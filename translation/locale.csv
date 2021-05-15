@@ -1,0 +1,40 @@
+,fr,en
+TITLE_MOVE,Deplacer,Move
+TITLE_RUN,Courir,Run
+TITLE_JUMP,Sauter,Jump
+TITLE_SETTINGS,Paramètres,Settings
+TITLE_AUTHOR,par djalexkidd,by djalexkidd
+SETTINGS_RETURN,Retour,Back
+SETTINGS_BIGTITLE,PARAMETRES,SETTINGS
+SETTINGS_DIFFICULTY,Difficulté,Difficulty
+SETTINGS_MULTIPLAYER,Multijoueur,Multiplayer
+SETTINGS_FULLSCREEN,Plein écran,Full screen
+SETTINGS_SHOWFPS,Afficher FPS,Show FPS
+SETTINGS_RUMBLE,Vibrations,Rumble
+SETTINGS_VALUE_ON,Activé,ON
+SETTINGS_VALUE_OFF,Désactivé,OFF
+SETTINGS_VALUE_NORMAL,Normal,Normal
+SETTINGS_VALUE_HARD,Difficile,Hard
+SETTINGS_INFO_DIFFICULTY,"Normal = Pièges activés, Difficile = Pièges désactivés","Normal = Traps enabled, Hard = Traps disabled"
+SETTINGS_INFO_MULTIPLAYER,Ajoute un second joueur dans la partie,Adds a second player in the game
+SETTINGS_INFO_FULLSCREEN,Passe le jeu en plein écran,Switches the game to full screen
+SETTINGS_INFO_SHOWFPS,Affiche le nombre d'images par secondes,Shows the framerate
+SETTINGS_INFO_RUMBLE,Faire vibrer la manette à la mort du joueur,Rumble the controller when the player dies
+WORLDMAP_BIGTITLE,MONDE 1,WORLD 1
+WORLDMAP_LEVEL1,Niveau 1,Level 1
+WORLDMAP_LEVEL2,Niveau 2,Level 2
+WORLDMAP_LEVEL3,Niveau 3,Level 3
+WORLDMAP_LEVEL4,Niveau 4,Level 4
+WORLDMAP_DEATHCOUNT,Nombre de morts :,Death count :
+WORLDMAP_INFO_LEVEL1,Introduction,Introduction
+WORLDMAP_INFO_LEVEL2,Le level design c'est dur,Level design is hard
+WORLDMAP_INFO_LEVEL3,ca marche pas j’ai pas fini,not working didn’t finish
+WORLDMAP_INFO_LEVEL4,Super Mario Maker en sueur,Super Mario Maker sweats
+PAUSE_CONTINUE,CONTINUER,CONTINUE
+PAUSE_RESTART,RECOMMENCER,RESTART
+PAUSE_QUIT,QUITTER,QUIT
+GAMEOVER_NEXTLEVEL,Niveau suivant,Next level
+GAMEOVER_RESTART,Recommencer,Restart
+GAMEOVER_RETURN_TO_MAP,Retour à la carte,Return to map
+GAMEOVER_MAINMENU,Menu principal,Main menu
+KEY_SPACE,ESPACE,SPACE

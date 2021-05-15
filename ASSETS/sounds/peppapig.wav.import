@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/peppapig.wav-3e7ac42d28dcf1b9ca77a1c972b1c19e.sample"
+
+[deps]
+
+source_file="res://ASSETS/sounds/peppapig.wav"
+dest_files=[ "res://.import/peppapig.wav-3e7ac42d28dcf1b9ca77a1c972b1c19e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

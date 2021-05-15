@@ -1,0 +1,52 @@
+extends Label
+
+#C'est un texte affichant le nom du niveau
+#Mais aussi la description d'un paramètre
+
+func _ready():
+	hide()
+
+func _on_LevelButton_mouse_exited():
+	hide()
+
+#NOMS DES NIVEAUX
+func _on_LevelButton1_mouse_entered():
+	show()
+	text = "WORLDMAP_INFO_LEVEL1"
+
+func _on_LevelButton2_mouse_entered():
+	show()
+	text = "WORLDMAP_INFO_LEVEL2"
+
+func _on_LevelButton3_mouse_entered():
+	show()
+	text = "WORLDMAP_INFO_LEVEL3"
+
+func _on_LevelButton4_mouse_entered():
+	show()
+	text = "WORLDMAP_INFO_LEVEL4"
+
+#DESCRIPTIONS PARAMÈTRES
+func _on_DifficultyButton_mouse_entered():
+	show()
+	text = "SETTINGS_INFO_DIFFICULTY"
+
+func _on_FullscreenButton_mouse_entered():
+	show()
+	text = "SETTINGS_INFO_FULLSCREEN"
+
+func _on_ShowFPSButton_mouse_entered():
+	show()
+	text = "SETTINGS_INFO_SHOWFPS"
+
+func _on_MultiplayerLabel_mouse_entered():
+	show()
+	text = "SETTINGS_INFO_MULTIPLAYER"
+
+func _on_RumbleLabel_mouse_entered():
+	show()
+	text = "SETTINGS_INFO_RUMBLE"
+
+func _on_VolumeLabel_mouse_entered():
+	show()
+	text = "Règle le volume du son"

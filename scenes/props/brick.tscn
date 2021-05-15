@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ASSETS/blocks/brick.png" type="Texture" id=1]
+[ext_resource path="res://scripts/props/brick.gd" type="Script" id=2]
+[ext_resource path="res://ASSETS/sounds/bump.wav" type="AudioStream" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 0.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 27.9971 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 28, 2 )
+
+[sub_resource type="Animation" id=4]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -40 ), Vector2( 0, 0 ) ]
+}
+
+[node name="brick" type="StaticBody2D"]
+position = Vector2( 0, 500 )
+collision_layer = 2
+collision_mask = 49
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="solid" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -4 )
+shape = SubResource( 2 )
+
+[node name="bottom_checker" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="hitbox" type="CollisionShape2D" parent="bottom_checker"]
+position = Vector2( 0, 30 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/block_punch = SubResource( 4 )
+
+[node name="BreakSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 5.0
+
+[connection signal="body_entered" from="bottom_checker" to="." method="_on_bottom_checker_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mus_castle.wav-29f1c88ab89a4915d0ec77984292991d.sample"
+
+[deps]
+
+source_file="res://ASSETS/sounds/mus_castle.wav"
+dest_files=[ "res://.import/mus_castle.wav-29f1c88ab89a4915d0ec77984292991d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

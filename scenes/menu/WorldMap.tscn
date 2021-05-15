@@ -1,0 +1,269 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://ASSETS/fonts/amstrad_cpc464.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ASSETS/fonts/PressStart.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://ASSETS/sounds/mus_worldmap.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/fonts/Minecraft.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scripts/menu/DeathCount.gd" type="Script" id=5]
+[ext_resource path="res://scripts/menu/LevelName.gd" type="Script" id=6]
+[ext_resource path="res://scripts/menu/ReturnMenu.gd" type="Script" id=7]
+[ext_resource path="res://scripts/menu/WorldMap.gd" type="Script" id=8]
+[ext_resource path="res://ASSETS/background/set2_tiles.png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/background/set2_background.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="WorldMap" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Purple Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1280, 960 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Purple Sky"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1820, 960 )
+
+[node name="Back Blocks" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.658824, 0.6, 0.721569, 1 )
+position = Vector2( 0, -500 )
+motion_scale = Vector2( 0.25, 0.25 )
+motion_mirroring = Vector2( 2560, 1920 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Back Blocks"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( 0, -100 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2560, 1920 )
+
+[node name="Middle Blocks" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.870588, 0.831373, 0.913725, 1 )
+motion_scale = Vector2( 0.4, 0.4 )
+motion_mirroring = Vector2( 1600, 1200 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Middle Blocks"]
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( 0, -200 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1600, 1200 )
+
+[node name="Nearby Blocks" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 1120, 840 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Nearby Blocks"]
+scale = Vector2( 1.75, 1.75 )
+texture = ExtResource( 9 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1120, 840 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 2368.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0470588, 0.772549, 0.0470588, 1 )
+text = "WORLDMAP_BIGTITLE"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -486.0
+margin_top = -146.0
+margin_right = 486.0
+margin_bottom = 146.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LevelButton1" type="Button" parent="CanvasLayer/GridContainer"]
+margin_right = 972.0
+margin_bottom = 70.0
+custom_styles/focus = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "WORLDMAP_LEVEL1"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton2" type="Button" parent="CanvasLayer/GridContainer"]
+margin_top = 74.0
+margin_right = 972.0
+margin_bottom = 144.0
+custom_styles/focus = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "WORLDMAP_LEVEL2"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton3" type="Button" parent="CanvasLayer/GridContainer"]
+margin_top = 148.0
+margin_right = 972.0
+margin_bottom = 218.0
+custom_styles/focus = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "WORLDMAP_LEVEL3"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButton4" type="Button" parent="CanvasLayer/GridContainer"]
+margin_top = 222.0
+margin_right = 972.0
+margin_bottom = 292.0
+custom_styles/focus = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "WORLDMAP_LEVEL4"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReturnToMenu" type="Button" parent="CanvasLayer"]
+margin_right = 252.0
+margin_bottom = 22.0
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "SETTINGS_RETURN"
+flat = true
+align = 0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -352.0
+margin_top = -80.0
+margin_right = 496.0
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 6 )
+text = "WORLDMAP_DEATHCOUNT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeathCount" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 288.0
+margin_top = -80.0
+margin_right = 332.0
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 6 )
+text = "#"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelName" type="Label" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -180.0
+margin_bottom = -148.0
+custom_fonts/font = SubResource( 7 )
+text = "##########"
+align = 1
+script = ExtResource( 6 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Musique" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="mouse_entered" from="CanvasLayer/GridContainer/LevelButton1" to="CanvasLayer/LevelName" method="_on_LevelButton1_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/GridContainer/LevelButton1" to="CanvasLayer/LevelName" method="_on_LevelButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton1" to="CanvasLayer/DeathCount" method="_on_LevelButton1_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/GridContainer/LevelButton2" to="CanvasLayer/LevelName" method="_on_LevelButton2_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/GridContainer/LevelButton2" to="CanvasLayer/LevelName" method="_on_LevelButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton2" to="CanvasLayer/DeathCount" method="_on_LevelButton2_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/GridContainer/LevelButton3" to="CanvasLayer/LevelName" method="_on_LevelButton3_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/GridContainer/LevelButton3" to="CanvasLayer/LevelName" method="_on_LevelButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton3" to="CanvasLayer/DeathCount" method="_on_LevelButton3_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/GridContainer/LevelButton4" to="CanvasLayer/LevelName" method="_on_LevelButton4_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/GridContainer/LevelButton4" to="CanvasLayer/LevelName" method="_on_LevelButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton4" to="CanvasLayer/DeathCount" method="_on_LevelButton4_pressed"]
+[connection signal="pressed" from="CanvasLayer/ReturnToMenu" to="CanvasLayer/ReturnToMenu" method="_on_ReturnToMenu_pressed"]
