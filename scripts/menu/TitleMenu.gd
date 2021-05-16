@@ -19,5 +19,5 @@ func _on_joy_connection_changed(device_id, connected):
 		$ControllerDetection.hide()
 		$Panel.show()
 
-func _on_SettingsButton_pressed():
+func _on_SettingsButton_pressed(): #Bouton des paramètres
 	get_tree().change_scene("res://scenes/menu/Settings.tscn")

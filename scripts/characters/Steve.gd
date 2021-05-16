@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+#Steve était le personnage jouable dans la version Alpha du jeu.
+#Il a depuis été remplacé par Kiyu, le chat de PAULOK !
+
 var velocity = Vector2(0,0)
 var SPEED = 180 #Vitesse du joueur
 const GRAVITY = 35 #Gravité
@@ -8,22 +11,22 @@ var on_pipe #Vérifie si le joueur est proche d'un tuyau
 var on_pipe_right
 
 func _physics_process(delta):
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right"): #Touche droite
 		velocity.x = SPEED
-		$Sprite.play("walk")
-		$Sprite.flip_h = false
-	elif Input.is_action_pressed("left"):
+		$Sprite.play("walk") #Joue l'animation de marche
+		$Sprite.flip_h = false #N'inverse pas le sprite horizontalement
+	elif Input.is_action_pressed("left"): #Touche gauche
 		velocity.x = -SPEED
-		$Sprite.play("walk")
-		$Sprite.flip_h = true
-	else:
-		$Sprite.play("idle")
+		$Sprite.play("walk") #Joue l'animation de marche
+		$Sprite.flip_h = true #Inverse pas le sprite horizontalement
+	else: #Joueur immobile
+		$Sprite.play("idle") #Animation par défaut
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor(): #Touche de saut
 		velocity.y = JUMPFORCE
-		$JumpSound.play()
+		$JumpSound.play() #Son de saut
 	
-	if Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor(): #Touche de saut sur un mur
 		walljump()
 	
 	if not is_on_floor():
@@ -42,36 +45,37 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity,Vector2.UP)
 	
 	velocity.x = lerp(velocity.x,0,0.2)
-	if Input.is_action_just_pressed("down") and on_pipe and is_on_floor():
-		$AnimationPlayer.play("pipe_enter")
-		if Global.pipe_number == 1:
-			$CollisionShape2D.disabled = true
-			$Camera2D.limit_bottom = 100000
-		$EnterPipeSound.play()
+	
+	if Input.is_action_just_pressed("down") and on_pipe and is_on_floor(): #Touche bas sur un tuyau
+		$AnimationPlayer.play("pipe_enter") #Animation d'entrée dans le tuyau
+		if Global.pipe_number == 1: #Pour le tuyau piégé du niveau 1-2
+			$CollisionShape2D.disabled = true #Désactive les collisions
+			$Camera2D.limit_bottom = 100000 #Change les limites de la caméra pour montrer le dessous de la map
+		$EnterPipeSound.play() #Joue le son du tuyau
 
-func _on_fallzone_body_entered(body):
-	Global.death_counter += 1
-	get_tree().change_scene("res://scenes/menu/GameOver.tscn")
+func _on_fallzone_body_entered(body): #Le joueur tombe dans un trou
+	Global.death_counter += 1 #Incrémente le compteur de morts
+	get_tree().change_scene("res://scenes/menu/GameOver.tscn") #Affiche l'écran de Game Over
 
 func bounce():
 	velocity.y = JUMPFORCE * 0.7
 
-func walljump():
-	Input.action_release("left")
-	Input.action_release("right")
-	if $Sprite.flip_h:
-		velocity.x = 1600
-	else:
-		velocity.x = -1600
-	velocity.y = JUMPFORCE
-	$JumpSound.play()
+func walljump(): #Fonction pour le walljump
+	Input.action_release("left") #Lâche la touche gauche
+	Input.action_release("right") #Lâche la touche droite
+	if $Sprite.flip_h: #Si le sprite est tourné vers la gauche
+		velocity.x = 1600 #Propulse le joueur vers la droite
+	else: #Si le sprite est tourné vers la droite
+		velocity.x = -1600 #Propulse le joueur vers la gauche
+	velocity.y = JUMPFORCE #Fait sauter le joueur
+	$JumpSound.play() #Joue le son de saut
 
-func ouch(var enemyposx):
-	set_collision_layer_bit(0,false)
+func ouch(var enemyposx): #Si le joueur prend un dégat
+	set_collision_layer_bit(0,false) #Désactive les collisions
 	set_collision_mask_bit(0,false)
-	set_modulate(Color(1,0.3,0.3,0.4))
-	velocity.y = JUMPFORCE * 0.5
-	get_node("DeathSound").play()
+	set_modulate(Color(1,0.3,0.3,0.4)) #Change la couleur du joueur en rouge
+	velocity.y = JUMPFORCE * 0.5 #Fait un petit saut
+	get_node("DeathSound").play() #Joue le son de mort (oof)
 	
 	if position.x < enemyposx:
 		velocity.x = -800
@@ -79,18 +83,18 @@ func ouch(var enemyposx):
 		velocity.x = 800
 		
 	
-	if Global.rumble:
+	if Global.rumble: #Fait vibrer la manette si l'option est activée
 		Input.start_joy_vibration(0,1,1,1)
 		Input.vibrate_handheld()
 	
-	Input.action_release("left")
-	Input.action_release("right")
+	Input.action_release("left") #Lâche la touche gauche
+	Input.action_release("right") #Lâche la touche droite
 	
-	$Timer.start()
+	$Timer.start() #Démarre un timer avant d'afficher l'écran de Game Over
 
-func _on_Timer_timeout():
-	Global.death_counter += 1
-	get_tree().change_scene("res://scenes/menu/GameOver.tscn")
+func _on_Timer_timeout(): #Le timer de mort se termine
+	Global.death_counter += 1 #Incrémente le compteur de morts
+	get_tree().change_scene("res://scenes/menu/GameOver.tscn") #Affiche l'écran de Game Over
 
 func _on_PipeEnter1_body_entered(body): #Endroit secret niveau 1-2
 	on_pipe = true
@@ -112,11 +116,11 @@ func _on_PipeEnter_body_exited(body):
 	on_pipe = false
 	on_pipe_right = false
 
-func _on_AnimationPlayer_animation_finished(anim_name):
-	$CollisionShape2D.disabled = false
-	if Global.pipe_number == 1:
-		set_position(get_position() + Vector2(0, 50))
-		$EnterPipeSound.play()
-	else:
-		Global.current_level = Global.pipe_number
-		Global.replay()
+func _on_AnimationPlayer_animation_finished(anim_name): #Animation de tuyau terminé
+	$CollisionShape2D.disabled = false #Active les collisions
+	if Global.pipe_number == 1: #Pour le tuyau piégé du niveau 1-2
+		set_position(get_position() + Vector2(0, 50)) #Déplace le joueur 50 pixels en dessous
+		$EnterPipeSound.play() #Joue le son du tuyau
+	else: #Pour tout les autres tuyaux
+		Global.current_level = Global.pipe_number #Change la scène actuelle
+		Global.replay() #Charge la scène
