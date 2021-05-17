@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 #Kiyu, le fameux chat de PAULOK, est présent dans le jeu. SKOUIZI!!1!
-#C'est un projectile lancé par PAULOK, le boss à la fin de chaque château
+#C'est un projectile lancé par PAULOK, le boss à la fin de chaque château.
 
 const speed = 700 #Vitesse aérienne
 var velocity = Vector2()

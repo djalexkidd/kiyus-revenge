@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-var speed = 50
+var speed = 50 #Vitesse
 var velocity = Vector2()
-export var direction = -1
-export var detects_cliffs = true
+export var direction = -1 #-1 = Direction vers la gauche, 1 = Direction vers la droite
+export var detects_cliffs = true #Si activé, les ennemis ne tombent pas
 
 func _ready():
 	if direction == 1:

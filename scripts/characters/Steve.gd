@@ -7,8 +7,8 @@ var velocity = Vector2(0,0)
 var SPEED = 180 #Vitesse du joueur
 const GRAVITY = 35 #Gravité
 const JUMPFORCE = -1100 #Hauteur du saut
-var on_pipe #Vérifie si le joueur est proche d'un tuyau
-var on_pipe_right
+var on_pipe #Vérifie si le joueur est proche d'un tuyau en bas
+var on_pipe_right #Vérifie si le joueur est proche d'un tuyau à droite
 
 func _physics_process(delta):
 	if Input.is_action_pressed("right"): #Touche droite

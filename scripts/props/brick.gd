@@ -7,6 +7,8 @@ extends StaticBody2D
 func _on_bottom_checker_body_entered(body):
 	set_collision_layer_bit(1,false)
 	set_collision_mask_bit(0,false)
+	set_collision_mask_bit(4,false)
+	set_collision_mask_bit(5,false)
 	$bottom_checker.set_collision_mask_bit(0,false)
 	hide()
 	$BreakSound.play()
