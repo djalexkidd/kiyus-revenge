@@ -56,3 +56,9 @@ func _on_RumbleButton_toggled(button_pressed): #Vibrations
 	else:
 		Global.rumble = false
 		$RumbleLabel/RumbleButton.text = "SETTINGS_VALUE_OFF"
+
+func _on_YoutubeButton_pressed():
+	OS.shell_open("https://www.youtube.com/channel/UCDsgfEoSz8qpv9jne85T8tg")
+
+func _on_GithubButton_pressed():
+	OS.shell_open("https://github.com/djalexkidd")
