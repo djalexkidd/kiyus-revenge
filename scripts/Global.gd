@@ -5,7 +5,6 @@ onready var hard_mode = false #Niveau de difficulté
 onready var death_counter = 0 #Nombre de morts
 onready var pipe_number = 0 #Identifiant de tuyau
 onready var fps_counter = false #Compteur de FPS
-onready var multiplayer_enabled = false #Mode multijoueur
 onready var rumble = true #Vibrations qui font BBBrrrRRRrrrRRRrrr!
 onready var coins = 0 #Nombre de pièces du joueur
 
@@ -25,5 +24,5 @@ func replay(): #Fonction pour faire changer/redémarrer le niveau
 #1: Niveau 1-1 - Introduction
 #2: Niveau 1-2 - Le level design c'est dur
 #52: Niveau 1-2 - [Endroit secret]
-#3: Niveau 1-3 - Le caca c'est bon
+#3: Niveau 1-3 - Nintendo va me détester
 #4: Niveau 1-4 - Super Mario Maker en sueur

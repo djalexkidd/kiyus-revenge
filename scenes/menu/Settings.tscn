@@ -97,43 +97,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MultiplayerLabel" type="Button" parent="."]
-margin_left = 64.0
-margin_top = 256.0
-margin_right = 716.0
-margin_bottom = 294.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
-text = "SETTINGS_MULTIPLAYER"
-flat = true
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MultiplayerButton" type="Button" parent="MultiplayerLabel"]
-margin_left = 480.0
-margin_right = 1068.0
-margin_bottom = 38.0
-custom_styles/focus = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
-toggle_mode = true
-text = "SETTINGS_VALUE_OFF"
-flat = true
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="FullscreenLabel" type="Button" parent="."]
 margin_left = 64.0
-margin_top = 320.0
+margin_top = 256.0
 margin_right = 684.0
-margin_bottom = 358.0
+margin_bottom = 294.0
 custom_styles/focus = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
@@ -163,9 +131,9 @@ __meta__ = {
 
 [node name="ShowFPSLabel" type="Button" parent="."]
 margin_left = 64.0
-margin_top = 384.0
+margin_top = 320.0
 margin_right = 588.0
-margin_bottom = 422.0
+margin_bottom = 358.0
 custom_styles/focus = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
@@ -195,9 +163,9 @@ __meta__ = {
 
 [node name="RumbleLabel" type="Button" parent="."]
 margin_left = 64.0
-margin_top = 448.0
+margin_top = 384.0
 margin_right = 556.0
-margin_bottom = 486.0
+margin_bottom = 422.0
 custom_styles/focus = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
@@ -228,9 +196,9 @@ __meta__ = {
 
 [node name="VolumeLabel" type="Button" parent="."]
 margin_left = 64.0
-margin_top = 512.0
-margin_right = 268.0
-margin_bottom = 550.0
+margin_top = 448.0
+margin_right = 556.0
+margin_bottom = 486.0
 custom_styles/focus = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
@@ -311,9 +279,6 @@ autoplay = true
 [connection signal="mouse_entered" from="DifficultyLabel" to="SettingInfo" method="_on_DifficultyButton_mouse_entered"]
 [connection signal="mouse_exited" from="DifficultyLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
 [connection signal="toggled" from="DifficultyLabel/DifficultyButton" to="DifficultyLabel/DifficultyButton" method="_on_Difficulty_toggled"]
-[connection signal="mouse_entered" from="MultiplayerLabel" to="SettingInfo" method="_on_MultiplayerLabel_mouse_entered"]
-[connection signal="mouse_exited" from="MultiplayerLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
-[connection signal="toggled" from="MultiplayerLabel/MultiplayerButton" to="." method="_on_MultiplayerButton_toggled"]
 [connection signal="mouse_entered" from="FullscreenLabel" to="SettingInfo" method="_on_FullscreenButton_mouse_entered"]
 [connection signal="mouse_exited" from="FullscreenLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
 [connection signal="toggled" from="FullscreenLabel/FullscreenButton" to="." method="_on_FullscreenButton2_toggled"]

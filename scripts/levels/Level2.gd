@@ -1,10 +1,6 @@
 extends Node2D
 
 func _ready():
-	if Global.multiplayer_enabled: #Fonction Multijoueur
-		var player2_ressource = preload("res://scenes/characters/Steve_player2.tscn")
-		var player2 = player2_ressource.instance()
-		add_child(player2)
 	if Global.pipe_number == 2: #Ah? Quelqu'un est tombé dans le piège ?
 		Global.pipe_number = 0 #Réinitialiser l'ID tuyau
 		$Kiyu/EnterPipeSound.play() #Jouer le son du tuyau

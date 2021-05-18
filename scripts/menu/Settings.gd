@@ -11,11 +11,6 @@ func _ready(): #Actualise la configuration à l'accès
 		$ShowFPSLabel/ShowFPSButton.pressed = true
 	else:
 		$ShowFPSLabel/ShowFPSButton.text = "SETTINGS_VALUE_OFF"
-	if Global.multiplayer_enabled:
-		$MultiplayerLabel/MultiplayerButton.text = "SETTINGS_VALUE_ON"
-		$MultiplayerLabel/MultiplayerButton.pressed = true
-	else:
-		$MultiplayerLabel/MultiplayerButton.text = "SETTINGS_VALUE_OFF"
 	if Global.rumble:
 		$RumbleLabel/RumbleButton.text = "SETTINGS_VALUE_ON"
 	else:
@@ -37,15 +32,6 @@ func _on_ShowFPSButton_toggled(button_pressed): #Afficher FPS
 	else:
 		Global.fps_counter = false
 		$ShowFPSLabel/ShowFPSButton.text = "SETTINGS_VALUE_OFF"
-
-
-func _on_MultiplayerButton_toggled(button_pressed): #Multijoueur
-	if button_pressed:
-		Global.multiplayer_enabled = true
-		$MultiplayerLabel/MultiplayerButton.text = "SETTINGS_VALUE_ON"
-	else:
-		Global.multiplayer_enabled = false
-		$MultiplayerLabel/MultiplayerButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_RumbleButton_toggled(button_pressed): #Vibrations
 	if button_pressed:
