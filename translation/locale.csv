@@ -7,7 +7,6 @@ TITLE_AUTHOR,par djalexkidd,by djalexkidd
 SETTINGS_RETURN,Retour,Back
 SETTINGS_BIGTITLE,PARAMETRES,SETTINGS
 SETTINGS_DIFFICULTY,Difficulté,Difficulty
-SETTINGS_MULTIPLAYER,Multijoueur,Multiplayer
 SETTINGS_FULLSCREEN,Plein écran,Full screen
 SETTINGS_SHOWFPS,Afficher FPS,Show FPS
 SETTINGS_RUMBLE,Vibrations,Rumble
@@ -17,7 +16,6 @@ SETTINGS_VALUE_OFF,Désactivé,OFF
 SETTINGS_VALUE_NORMAL,Normal,Normal
 SETTINGS_VALUE_HARD,Difficile,Hard
 SETTINGS_INFO_DIFFICULTY,"Normal = Pièges activés, Difficile = Pièges désactivés","Normal = Traps enabled, Hard = Traps disabled"
-SETTINGS_INFO_MULTIPLAYER,Ajoute un second joueur dans la partie,Adds a second player in the game
 SETTINGS_INFO_FULLSCREEN,Passe le jeu en plein écran,Switches the game to full screen
 SETTINGS_INFO_SHOWFPS,Affiche le nombre d'images par secondes,Shows the framerate
 SETTINGS_INFO_RUMBLE,Faire vibrer la manette à la mort du joueur,Rumble the controller when the player dies
