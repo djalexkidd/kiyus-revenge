@@ -293,7 +293,6 @@ position = Vector2( 256, 256 )
 
 [node name="block1" parent="blocks" instance=ExtResource( 9 )]
 position = Vector2( 96, 352 )
-trap = true
 
 [node name="block2" parent="blocks" instance=ExtResource( 9 )]
 position = Vector2( 160, 352 )
@@ -317,7 +316,6 @@ trap_tilemap = true
 
 [node name="block7" parent="blocks" instance=ExtResource( 9 )]
 position = Vector2( 2912, 352 )
-trap = true
 
 [node name="spikes" type="Node2D" parent="."]
 
