@@ -15,7 +15,7 @@ SETTINGS_VALUE_ON,Activé,ON
 SETTINGS_VALUE_OFF,Désactivé,OFF
 SETTINGS_VALUE_NORMAL,Normal,Normal
 SETTINGS_VALUE_HARD,Difficile,Hard
-SETTINGS_INFO_DIFFICULTY,"Normal = Pièges activés, Difficile = Pièges désactivés","Normal = Traps enabled, Hard = Traps disabled"
+SETTINGS_INFO_DIFFICULTY,"Normal = Pièges désactivés, Difficile = Pièges activés","Normal = Traps disabled, Hard = Traps enabled"
 SETTINGS_INFO_FULLSCREEN,Passe le jeu en plein écran,Switches the game to full screen
 SETTINGS_INFO_SHOWFPS,Affiche le nombre d'images par secondes,Shows the framerate
 SETTINGS_INFO_RUMBLE,Faire vibrer la manette à la mort du joueur,Rumble the controller when the player dies
