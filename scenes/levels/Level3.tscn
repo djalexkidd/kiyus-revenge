@@ -29,7 +29,7 @@ size = 32
 font_data = ExtResource( 12 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4448, 32 )
+extents = Vector2( 6176, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -264,7 +264,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 1820, 960 )
 
 [node name="fallzone" type="Area2D" parent="."]
-position = Vector2( 3680, 928 )
+position = Vector2( 5376, 928 )
 __meta__ = {
 "_edit_group_": true
 }
