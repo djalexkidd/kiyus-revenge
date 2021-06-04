@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pipes.png-77323f65e4cd1518b12d88ccb1ef31bf.stex"
+path="res://.import/board_normal.png-10c4088a6ea3f3de3d49a473b3d2f738.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/WorldTiles/pipes.png"
-dest_files=[ "res://.import/pipes.png-77323f65e4cd1518b12d88ccb1ef31bf.stex" ]
+source_file="res://ASSETS/board/board_normal.png"
+dest_files=[ "res://.import/board_normal.png-10c4088a6ea3f3de3d49a473b3d2f738.stex" ]
 
 [params]
 
