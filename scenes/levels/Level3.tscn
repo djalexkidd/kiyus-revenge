@@ -349,8 +349,20 @@ rotation = 3.14159
 position = Vector2( 352, 408 )
 rotation = 3.14159
 
+[node name="Spike9" parent="spikes" instance=ExtResource( 13 )]
+position = Vector2( 5440, 40 )
+
 [node name="Spike10" parent="spikes" instance=ExtResource( 13 )]
 position = Vector2( -96, 488 )
+
+[node name="Spike11" parent="spikes" instance=ExtResource( 13 )]
+position = Vector2( 5504, 40 )
+
+[node name="Spike12" parent="spikes" instance=ExtResource( 13 )]
+position = Vector2( 5568, 40 )
+
+[node name="Spike13" parent="spikes" instance=ExtResource( 13 )]
+position = Vector2( 5632, 40 )
 
 [node name="bricks" type="Node2D" parent="."]
 
@@ -404,6 +416,20 @@ detects_cliffs = false
 
 [node name="enemy7" parent="enemies" instance=ExtResource( 11 )]
 position = Vector2( 7040, -416 )
+
+[node name="enemy8" parent="enemies" instance=ExtResource( 11 )]
+position = Vector2( 3424, 480 )
+
+[node name="enemy9" parent="enemies" instance=ExtResource( 11 )]
+position = Vector2( 3488, 480 )
+
+[node name="enemy10" parent="enemies" instance=ExtResource( 11 )]
+position = Vector2( 5760, -160 )
+direction = 1
+
+[node name="enemy11" parent="enemies" instance=ExtResource( 11 )]
+position = Vector2( 7296, -288 )
+direction = 1
 
 [node name="Flag" parent="." instance=ExtResource( 7 )]
 position = Vector2( 10528, 212 )
