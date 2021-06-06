@@ -1,6 +1,7 @@
 extends Button
 
 func _ready():
+	grab_focus()
 	Global.coins = 0
 	if Global.current_level == 4:
 		disabled = true

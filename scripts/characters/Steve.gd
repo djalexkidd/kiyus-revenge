@@ -47,6 +47,7 @@ func _physics_process(delta):
 	velocity.x = lerp(velocity.x,0,0.2)
 	
 	if Input.is_action_just_pressed("down") and on_pipe and is_on_floor(): #Touche bas sur un tuyau
+		on_pipe = false
 		$AnimationPlayer.play("pipe_enter") #Animation d'entrée dans le tuyau
 		if Global.pipe_number == 1: #Pour le tuyau piégé du niveau 1-2
 			$CollisionShape2D.disabled = true #Désactive les collisions
