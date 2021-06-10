@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/other/HUD.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/touchcontrol/arrowRight.png" type="Texture" id=2]
@@ -29,6 +29,10 @@ size = 48
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 32
 font_data = ExtResource( 11 )
 
@@ -41,6 +45,16 @@ margin_left = 6.0
 margin_top = 6.0
 margin_right = 233.0
 margin_bottom = 113.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 6.0
+margin_top = 120.0
+margin_right = 233.0
+margin_bottom = 227.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -78,6 +92,18 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0.8, 0.113725, 1 )
 text = "##"
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 152.0
+margin_right = 168.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0.764706, 1, 1 )
+text = "###"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -139,8 +165,16 @@ visible = false
 margin_top = 687.0
 margin_right = 64.0
 margin_bottom = 719.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "##"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+pause_mode = 1
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
