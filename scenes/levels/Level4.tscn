@@ -89,6 +89,9 @@ collision_mask = 49
 format = 1
 tile_data = PoolIntArray( 393353, 1610612736, 0, 393354, 1610612736, 0, 393355, 1610612736, 0, 393356, 1610612736, 0, 393357, 1610612736, 0, 393358, 1610612736, 0, 393359, 1610612736, 0, 393360, 1610612736, 0, 393361, 1610612736, 0, 393362, 1610612736, 0, 393363, 1610612736, 0, 393364, 1610612736, 0, 393365, 1610612736, 0, 393366, 1610612736, 0, 393367, 1610612736, 0 )
 
+[node name="Timer" type="Timer" parent="Bridge"]
+wait_time = 0.1
+
 [node name="KillSwitch" parent="." instance=ExtResource( 5 )]
 position = Vector2( 9776, 288 )
 
@@ -252,8 +255,9 @@ editor_draw_limits = true
 stream = ExtResource( 9 )
 autoplay = true
 
-[connection signal="pressed" from="KillSwitch" to="enemies/Paulok" method="_on_KillSwitch_pressed"]
+[connection signal="timeout" from="Bridge/Timer" to="." method="_on_aaaaa_timeout"]
 [connection signal="pressed" from="KillSwitch" to="." method="_on_KillSwitch_pressed"]
+[connection signal="pressed" from="KillSwitch" to="enemies/Paulok" method="_on_KillSwitch_pressed"]
 [connection signal="body_entered" from="fallzone" to="Kiyu" method="_on_fallzone_body_entered"]
 [connection signal="body_entered" from="fallzone2" to="enemies/Paulok" method="_on_fallzone2_body_entered"]
 [connection signal="body_entered" from="boss_trigger" to="." method="_on_boss_trigger_body_entered"]
