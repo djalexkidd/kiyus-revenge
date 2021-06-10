@@ -9,7 +9,6 @@ func _ready():
 
 func _on_KillSwitch_pressed(): #Le niveau reçoit le signal de l'interrupteur
 	$Bridge/Timer.start()
-	#$Bridge.queue_free() #Le pont se détruit de la RAM
 
 func _on_boss_trigger_body_entered(body):
 	$enemies/Paulok/LanceKiyu.start()
@@ -22,4 +21,10 @@ func _on_aaaaa_timeout():
 	for i in range(x,152):
 		x = x + 1
 		$Bridge.set_cell(x,6,-1)
+		var explosion_id = get_node("Bridge/explosion" + str(x))
+		explosion_id.show()
+		explosion_id.play()
+		$Bridge/explosion.play()
+		Input.start_joy_vibration(0,1,1,1)
+		Input.vibrate_handheld()
 		break

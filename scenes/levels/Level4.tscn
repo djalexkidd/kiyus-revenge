@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://tilesets/world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/characters/Kiyu_player.tscn" type="PackedScene" id=2]
@@ -11,9 +11,19 @@
 [ext_resource path="res://ASSETS/sounds/mus_castle.wav" type="AudioStream" id=9]
 [ext_resource path="res://scenes/props/enemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://ASSETS/sounds/peppapig.wav" type="AudioStream" id=11]
+[ext_resource path="res://ASSETS/explosion/explosion05.png" type="Texture" id=12]
+[ext_resource path="res://ASSETS/explosion/explosion06.png" type="Texture" id=13]
+[ext_resource path="res://ASSETS/explosion/explosion04.png" type="Texture" id=14]
 [ext_resource path="res://scenes/props/block.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/props/Spike.tscn" type="PackedScene" id=16]
+[ext_resource path="res://ASSETS/explosion/explosion03.png" type="Texture" id=17]
 [ext_resource path="res://scripts/levels/Level4.gd" type="Script" id=18]
+[ext_resource path="res://ASSETS/explosion/explosion02.png" type="Texture" id=19]
+[ext_resource path="res://ASSETS/explosion/explosion01.png" type="Texture" id=20]
+[ext_resource path="res://ASSETS/explosion/explosion00.png" type="Texture" id=21]
+[ext_resource path="res://ASSETS/explosion/explosion07.png" type="Texture" id=22]
+[ext_resource path="res://ASSETS/explosion/explosion08.png" type="Texture" id=23]
+[ext_resource path="res://ASSETS/sounds/Explosion.wav" type="AudioStream" id=24]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -45,16 +55,24 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 2944, 90.787 )
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "default",
+"speed": 10.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 832, 90.787 )
+extents = Vector2( 2944, 90.787 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 8.95508, 153.511 )
+extents = Vector2( 832, 90.787 )
 
 [sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 8.95508, 153.511 )
+
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 32, 32 )
 
 [node name="Level4" type="Node2D"]
@@ -92,6 +110,106 @@ tile_data = PoolIntArray( 393353, 1610612736, 0, 393354, 1610612736, 0, 393355, 
 [node name="Timer" type="Timer" parent="Bridge"]
 wait_time = 0.1
 
+[node name="explosion137" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 8800, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion138" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 8864, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion139" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 8928, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion140" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 8992, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion141" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 8992, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion142" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9056, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion143" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9120, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion144" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9184, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion145" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9248, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion146" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9304, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion147" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9368, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion148" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9440, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion149" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9504, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion150" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9568, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion151" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9632, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion152" type="AnimatedSprite" parent="Bridge"]
+visible = false
+position = Vector2( 9696, 416 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 4 )
+
+[node name="explosion" type="AudioStreamPlayer" parent="Bridge"]
+stream = ExtResource( 24 )
+volume_db = -10.0
+
 [node name="KillSwitch" parent="." instance=ExtResource( 5 )]
 position = Vector2( 9776, 288 )
 
@@ -103,7 +221,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fallzone"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="fallzone2" type="Area2D" parent="."]
 position = Vector2( 9216, 1088 )
@@ -114,13 +232,13 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fallzone2"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="boss_trigger" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss_trigger"]
 position = Vector2( 6902, 228 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="PeppaPig" type="AudioStreamPlayer" parent="boss_trigger"]
 stream = ExtResource( 11 )
@@ -234,7 +352,7 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="firebars/FireTrap"]
 position = Vector2( 0, -66.5 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Kiyu" parent="." instance=ExtResource( 2 )]
 position = Vector2( -100, 156 )
