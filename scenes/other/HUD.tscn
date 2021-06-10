@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/other/HUD.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/touchcontrol/arrowRight.png" type="Texture" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://ASSETS/touchcontrol/arrowDown.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/touchcontrol/pause.png" type="Texture" id=5]
 [ext_resource path="res://ASSETS/touchcontrol/spr_A_button_0.png" type="Texture" id=6]
-[ext_resource path="res://ASSETS/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://ASSETS/fonts/Minecraft.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://ASSETS/fonts/PressStart.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://ASSETS/fonts/amstrad_cpc464.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://ASSETS/HUD/coin_gold.png" type="Texture" id=12]
 [ext_resource path="res://ASSETS/touchcontrol/spr_B_button_0.png" type="Texture" id=13]
@@ -20,12 +21,12 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="DynamicFont" id=2]
-size = 62
-font_data = ExtResource( 10 )
+size = 48
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 68
-font_data = ExtResource( 10 )
+size = 48
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 32
@@ -57,10 +58,10 @@ __meta__ = {
 }
 
 [node name="x" type="Label" parent="."]
-margin_left = 96.6124
-margin_top = 20.3754
-margin_right = 136.612
-margin_bottom = 119.375
+margin_left = 96.0
+margin_top = 40.0
+margin_right = 129.0
+margin_bottom = 88.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.8, 0.113725, 1 )
 text = "x"
@@ -69,10 +70,10 @@ __meta__ = {
 }
 
 [node name="Coins" type="Label" parent="."]
-margin_left = 136.419
-margin_top = 21.2442
-margin_right = 224.419
-margin_bottom = 104.244
+margin_left = 136.0
+margin_top = 40.0
+margin_right = 232.0
+margin_bottom = 88.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0.8, 0.113725, 1 )
 text = "##"
