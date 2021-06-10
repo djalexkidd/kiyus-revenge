@@ -37,8 +37,10 @@ func _physics_process(delta):
 		$EnterPipeSound.play()
 	if Input.is_action_pressed("run"):
 		SPEED = 360
+		$Sprite.speed_scale = 2
 	elif Input.is_action_just_released("run"):
 		SPEED = 180
+		$Sprite.speed_scale = 1
 	
 	velocity.y = velocity.y + GRAVITY
 	
