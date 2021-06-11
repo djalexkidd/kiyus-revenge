@@ -50,7 +50,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -32, -32 ), Vector2( -280.204, -262.566 ) ]
+"values": [ Vector2( -32, -32 ), Vector2( -1176.51, -764.751 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -66,7 +66,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, -33 ), Vector2( 298.503, -268.544 ) ]
+"values": [ Vector2( 1, -33 ), Vector2( 881.214, -684.766 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -82,7 +82,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -33, 0 ), Vector2( -565.91, -49.7948 ) ]
+"values": [ Vector2( -33, 0 ), Vector2( -1436.41, -111.634 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -98,7 +98,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.19055, 0.396851 ), Vector2( 369.468, -51.9874 ) ]
+"values": [ Vector2( 1.19055, 0.396851 ), Vector2( 1211.43, -106.691 ) ]
 }
 
 [node name="brick" type="StaticBody2D"]
