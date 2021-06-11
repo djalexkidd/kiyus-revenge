@@ -23,7 +23,19 @@ func _on_LevelButton4_pressed(): #Niveau 4
 	Global.replay() #Charge le niveau
 
 func _on_WorldButton1_pressed():
-	pass # Replace with function body.
+	$Musique.play()
+	$Musique2.stop()
+	$"ParallaxBackground/Nearby Blocks/Sprite".set_modulate(Color(1,1,1))
+	$"ParallaxBackground/Back Blocks/Sprite".set_modulate(Color(1,1,1))
+	$"ParallaxBackground/Middle Blocks/Sprite".set_modulate(Color(1,1,1))
+	$"ParallaxBackground/Purple Sky/Sprite".set_modulate(Color(1,1,1))
+	$CanvasLayer/Label.text = "WORLDMAP_BIGTITLE"
 
 func _on_WorldButton2_pressed():
-	pass # Replace with function body.
+	$Musique.stop()
+	$Musique2.play()
+	$"ParallaxBackground/Nearby Blocks/Sprite".set_modulate(Color(1,1,0))
+	$"ParallaxBackground/Back Blocks/Sprite".set_modulate(Color(1,1,0))
+	$"ParallaxBackground/Middle Blocks/Sprite".set_modulate(Color(1,1,0))
+	$"ParallaxBackground/Purple Sky/Sprite".set_modulate(Color(1,1,0))
+	$CanvasLayer/Label.text = "WORLDMAP_BIGTITLE2"

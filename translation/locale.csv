@@ -21,6 +21,7 @@ SETTINGS_INFO_SHOWFPS,Affiche le nombre d'images par secondes,Shows the framerat
 SETTINGS_INFO_RUMBLE,Faire vibrer la manette à la mort du joueur,Rumble the controller when the player dies
 SETTINGS_INFO_VOLUME,Règle le volume du son,Sets the sound volume
 WORLDMAP_BIGTITLE,MONDE 1,WORLD 1
+WORLDMAP_BIGTITLE2,MONDE 2,WORLD 2
 WORLDMAP_LEVEL1,Niveau 1,Level 1
 WORLDMAP_LEVEL2,Niveau 2,Level 2
 WORLDMAP_LEVEL3,Niveau 3,Level 3
