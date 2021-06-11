@@ -38,3 +38,5 @@ GAMEOVER_RESTART,Recommencer,Restart
 GAMEOVER_RETURN_TO_MAP,Retour à la carte,Return to map
 GAMEOVER_MAINMENU,Menu principal,Main menu
 KEY_SPACE,ESPACE,SPACE
+WORLDMAP_WORLD1,Aller au monde 1,Go to world 1
+WORLDMAP_WORLD2,Aller au monde 2,Go to world 2

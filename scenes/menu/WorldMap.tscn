@@ -233,16 +233,34 @@ text = "##########"
 align = 1
 script = ExtResource( 6 )
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="WorldButton1" type="Button" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -48.0
+margin_right = 76.0
+margin_bottom = 22.0
+custom_styles/focus = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "1"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="WorldButton2" type="Button" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = 24.0
+margin_right = 76.0
+margin_bottom = 94.0
+custom_styles/focus = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "2"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -256,14 +274,20 @@ autoplay = true
 
 [connection signal="mouse_entered" from="CanvasLayer/GridContainer/LevelButton1" to="CanvasLayer/LevelName" method="_on_LevelButton1_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/GridContainer/LevelButton1" to="CanvasLayer/LevelName" method="_on_LevelButton_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton1" to="CanvasLayer/DeathCount" method="_on_LevelButton1_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton1" to="." method="_on_LevelButton1_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/GridContainer/LevelButton2" to="CanvasLayer/LevelName" method="_on_LevelButton2_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/GridContainer/LevelButton2" to="CanvasLayer/LevelName" method="_on_LevelButton_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton2" to="CanvasLayer/DeathCount" method="_on_LevelButton2_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton2" to="." method="_on_LevelButton2_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/GridContainer/LevelButton3" to="CanvasLayer/LevelName" method="_on_LevelButton3_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/GridContainer/LevelButton3" to="CanvasLayer/LevelName" method="_on_LevelButton_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton3" to="CanvasLayer/DeathCount" method="_on_LevelButton3_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton3" to="." method="_on_LevelButton3_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/GridContainer/LevelButton4" to="CanvasLayer/LevelName" method="_on_LevelButton4_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/GridContainer/LevelButton4" to="CanvasLayer/LevelName" method="_on_LevelButton_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton4" to="CanvasLayer/DeathCount" method="_on_LevelButton4_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/LevelButton4" to="." method="_on_LevelButton4_pressed"]
 [connection signal="pressed" from="CanvasLayer/ReturnToMenu" to="CanvasLayer/ReturnToMenu" method="_on_ReturnToMenu_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/WorldButton1" to="CanvasLayer/LevelName" method="_on_WorldButton1_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/WorldButton1" to="CanvasLayer/LevelName" method="_on_LevelButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/WorldButton1" to="." method="_on_WorldButton1_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/WorldButton2" to="CanvasLayer/LevelName" method="_on_WorldButton2_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/WorldButton2" to="CanvasLayer/LevelName" method="_on_LevelButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/WorldButton2" to="." method="_on_WorldButton2_pressed"]
