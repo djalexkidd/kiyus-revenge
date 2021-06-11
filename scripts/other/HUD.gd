@@ -15,4 +15,5 @@ func _physics_process(delta):
 		$FPScounter.text = String(Engine.get_frames_per_second()) #Actualise le compteur de FPS
 
 func _on_Timer_timeout(): #Si le Timer est écoulé
+	Global.death_counter += 1
 	get_tree().change_scene("res://scenes/menu/GameOver.tscn") #Le joueur pert

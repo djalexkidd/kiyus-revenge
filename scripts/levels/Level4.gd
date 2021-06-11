@@ -19,7 +19,7 @@ func _on_PeppaPig_finished():
 
 func _on_aaaaa_timeout():
 	for i in range(x,152):
-		x+1
+		x += 1
 		var explosion_id = get_node("Bridge/explosion" + str(x))
 		explosion_id.show()
 		explosion_id.play()

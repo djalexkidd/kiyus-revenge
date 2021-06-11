@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spring.wav-0947f4fa299f8b242071a8c9c7be60ad.sample"
+
+[deps]
+
+source_file="res://ASSETS/sounds/spring.wav"
+dest_files=[ "res://.import/spring.wav-0947f4fa299f8b242071a8c9c7be60ad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
