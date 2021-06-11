@@ -8,4 +8,5 @@ signal pressed
 func _on_hitbox_body_entered(body): #Le joueur appuie sur l'interrupteur
 	$AnimatedSprite.play("pressed") #Le sprite change
 	emit_signal("pressed") #Emet un signal au niveau
+	$putain.play()
 	$hitbox.queue_free()
