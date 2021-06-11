@@ -79,13 +79,38 @@ extents = Vector2( 32, 32 )
 script = ExtResource( 18 )
 
 [node name="Niveau" type="Label" parent="."]
-margin_left = -576.0
-margin_top = 92.0
-margin_right = -156.0
-margin_bottom = 173.0
+margin_left = -512.0
+margin_top = 88.0
+margin_right = -220.0
+margin_bottom = 127.0
 custom_fonts/font = SubResource( 1 )
-text = "Niveau 4
-Super Mario Maker en sueur"
+text = "LEVELSIGN_LEVEL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Niveau2" type="Label" parent="."]
+margin_left = -560.0
+margin_top = 128.0
+margin_right = -147.0
+margin_bottom = 167.0
+custom_fonts/font = SubResource( 1 )
+text = "WORLDMAP_INFO_LEVEL4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Niveau3" type="Label" parent="."]
+margin_left = -304.0
+margin_top = 88.0
+margin_right = -259.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 1 )
+text = "1-4"
 align = 1
 valign = 1
 __meta__ = {
@@ -374,8 +399,8 @@ stream = ExtResource( 9 )
 autoplay = true
 
 [connection signal="timeout" from="Bridge/Timer" to="." method="_on_aaaaa_timeout"]
-[connection signal="pressed" from="KillSwitch" to="." method="_on_KillSwitch_pressed"]
 [connection signal="pressed" from="KillSwitch" to="enemies/Paulok" method="_on_KillSwitch_pressed"]
+[connection signal="pressed" from="KillSwitch" to="." method="_on_KillSwitch_pressed"]
 [connection signal="body_entered" from="fallzone" to="Kiyu" method="_on_fallzone_body_entered"]
 [connection signal="body_entered" from="fallzone2" to="enemies/Paulok" method="_on_fallzone2_body_entered"]
 [connection signal="body_entered" from="boss_trigger" to="." method="_on_boss_trigger_body_entered"]
