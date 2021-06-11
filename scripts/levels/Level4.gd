@@ -20,10 +20,10 @@ func _on_PeppaPig_finished():
 func _on_aaaaa_timeout():
 	for i in range(x,152):
 		x = x + 1
-		$Bridge.set_cell(x,6,-1)
 		var explosion_id = get_node("Bridge/explosion" + str(x))
 		explosion_id.show()
 		explosion_id.play()
+		$Bridge.set_cell(x,6,-1)
 		$Bridge/explosion.play()
 		Input.start_joy_vibration(0,1,1,1)
 		Input.vibrate_handheld()
