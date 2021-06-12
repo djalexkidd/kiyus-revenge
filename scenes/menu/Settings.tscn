@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://ASSETS/fonts/amstrad_cpc464.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ASSETS/fonts/PressStart.ttf" type="DynamicFontData" id=2]
@@ -10,28 +10,33 @@
 [ext_resource path="res://scripts/menu/VolumeBar.gd" type="Script" id=8]
 [ext_resource path="res://ASSETS/credits/youtube.png" type="Texture" id=9]
 [ext_resource path="res://ASSETS/credits/github.png" type="Texture" id=10]
+[ext_resource path="res://ASSETS/fonts/Minecraft.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=4]
 size = 32
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxEmpty" id=4]
-
-[sub_resource type="DynamicFont" id=5]
-size = 32
-font_data = ExtResource( 2 )
+[sub_resource type="StyleBoxEmpty" id=5]
 
 [sub_resource type="DynamicFont" id=6]
-size = 24
+size = 32
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=7]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
 size = 24
 font_data = ExtResource( 2 )
 
@@ -64,13 +69,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Version" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -32.0
+margin_right = 110.0
+custom_fonts/font = SubResource( 2 )
+text = "BETA 1"
+
 [node name="DifficultyLabel" type="Button" parent="."]
 margin_left = 64.0
 margin_top = 192.0
 margin_right = 684.0
 margin_bottom = 230.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 text = "SETTINGS_DIFFICULTY"
@@ -84,8 +97,8 @@ __meta__ = {
 margin_left = 480.0
 margin_right = 1164.0
 margin_bottom = 38.0
-custom_styles/focus = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
 toggle_mode = true
@@ -102,8 +115,8 @@ margin_left = 64.0
 margin_top = 256.0
 margin_right = 684.0
 margin_bottom = 294.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 text = "SETTINGS_FULLSCREEN"
@@ -117,8 +130,8 @@ __meta__ = {
 margin_left = 480.0
 margin_right = 1068.0
 margin_bottom = 38.0
-custom_styles/focus = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 toggle_mode = true
@@ -134,8 +147,8 @@ margin_left = 64.0
 margin_top = 320.0
 margin_right = 588.0
 margin_bottom = 358.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 text = "SETTINGS_SHOWFPS"
@@ -149,8 +162,8 @@ __meta__ = {
 margin_left = 480.0
 margin_right = 1068.0
 margin_bottom = 38.0
-custom_styles/focus = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 toggle_mode = true
@@ -166,8 +179,8 @@ margin_left = 64.0
 margin_top = 384.0
 margin_right = 556.0
 margin_bottom = 422.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 text = "SETTINGS_RUMBLE"
@@ -181,8 +194,8 @@ __meta__ = {
 margin_left = 480.0
 margin_right = 1036.0
 margin_bottom = 38.0
-custom_styles/focus = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 toggle_mode = true
@@ -199,8 +212,8 @@ margin_left = 64.0
 margin_top = 448.0
 margin_right = 556.0
 margin_bottom = 486.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 text = "SETTINGS_VOLUME"
@@ -228,7 +241,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -48.0
 margin_bottom = -24.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "##########"
 align = 1
 script = ExtResource( 6 )
@@ -239,8 +252,8 @@ __meta__ = {
 [node name="ReturnToMenu" type="Button" parent="."]
 margin_right = 108.0
 margin_bottom = 30.0
-custom_styles/focus = SubResource( 4 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/focus = SubResource( 5 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 shortcut_in_tooltip = false
