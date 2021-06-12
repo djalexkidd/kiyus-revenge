@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mus_overworld.ogg-184f2bcaedc630b3b2510900ab72653c.oggstr"
+
+[deps]
+
+source_file="res://ASSETS/sounds/mus_overworld.ogg"
+dest_files=[ "res://.import/mus_overworld.ogg-184f2bcaedc630b3b2510900ab72653c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

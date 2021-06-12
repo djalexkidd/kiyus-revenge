@@ -27,8 +27,8 @@ func _on_LevelButton4_pressed(): #Niveau 4
 	Global.replay() #Charge le niveau
 
 func _on_WorldButton1_pressed():
-	$Musique.play()
-	$Musique2.stop()
+	#$Musique.play()
+	#$Musique2.stop()
 	$"ParallaxBackground/Nearby Blocks/Sprite".set_modulate(Color(1,1,1))
 	$"ParallaxBackground/Back Blocks/Sprite".set_modulate(Color(1,1,1))
 	$"ParallaxBackground/Middle Blocks/Sprite".set_modulate(Color(1,1,1))
@@ -40,8 +40,8 @@ func _on_WorldButton1_pressed():
 	$CanvasLayer/GridContainer/LevelButton4.disabled = false
 
 func _on_WorldButton2_pressed():
-	$Musique.stop()
-	$Musique2.play()
+	#$Musique.stop()
+	#$Musique2.play()
 	$"ParallaxBackground/Nearby Blocks/Sprite".set_modulate(Color(1,1,0))
 	$"ParallaxBackground/Back Blocks/Sprite".set_modulate(Color(1,1,0))
 	$"ParallaxBackground/Middle Blocks/Sprite".set_modulate(Color(1,1,0))
