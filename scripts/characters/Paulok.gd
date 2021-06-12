@@ -6,6 +6,8 @@ extends KinematicBody2D
 const speed = 50 #Gravité
 var velocity = Vector2()
 
+signal death
+
 var kiyu_ressource = preload("res://scenes/characters/Kiyu.tscn")
 
 func _physics_process(delta): #Déplace Paulok vers le bas pour qu'il tombe dans le vide
@@ -30,4 +32,11 @@ func _on_KillSwitch_pressed(): #Le joueur appuie sur l'interupteur
 	$LanceKiyu.stop() #Paulok arrête de lancer Kiyu
 
 func _on_hitbox_body_entered(body): #Le joueur touche Paulok
-	body.ouch(position.x) #Le joueur meurt
+	body.ouch() #Le joueur meurt
+
+func _on_SpikeBoss12_boss_death():
+	emit_signal("death")
+	queue_free()
+
+func ouch():
+	pass
