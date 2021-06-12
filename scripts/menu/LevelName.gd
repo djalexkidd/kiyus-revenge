@@ -12,19 +12,35 @@ func _on_LevelButton_mouse_exited():
 #NOMS DES NIVEAUX
 func _on_LevelButton1_mouse_entered(): #Niveau 1-1
 	show()
-	text = "WORLDMAP_INFO_LEVEL1"
+	match Global.current_world:
+		1:
+			text = "WORLDMAP_INFO_LEVEL1"
+		2:
+			text = "PLACEHOLDER"
 
 func _on_LevelButton2_mouse_entered(): #Niveau 1-2
 	show()
-	text = "WORLDMAP_INFO_LEVEL2"
+	match Global.current_world:
+		1:
+			text = "WORLDMAP_INFO_LEVEL2"
+		2:
+			text = "J'ai pas fini !"
 
 func _on_LevelButton3_mouse_entered(): #Niveau 1-3
 	show()
-	text = "WORLDMAP_INFO_LEVEL3"
+	match Global.current_world:
+		1:
+			text = "WORLDMAP_INFO_LEVEL3"
+		2:
+			text = "J'ai pas fini !"
 
 func _on_LevelButton4_mouse_entered(): #Niveau 1-4
 	show()
-	text = "WORLDMAP_INFO_LEVEL4"
+	match Global.current_world:
+		1:
+			text = "WORLDMAP_INFO_LEVEL4"
+		2:
+			text = "J'ai pas fini !"
 
 #DESCRIPTIONS PARAMÈTRES
 func _on_DifficultyButton_mouse_entered(): #Niveau de difficulté

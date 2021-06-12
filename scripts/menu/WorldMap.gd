@@ -35,6 +35,9 @@ func _on_WorldButton1_pressed():
 	$"ParallaxBackground/Purple Sky/Sprite".set_modulate(Color(1,1,1))
 	$CanvasLayer/Label.text = "WORLDMAP_BIGTITLE"
 	Global.current_world = 1
+	$CanvasLayer/GridContainer/LevelButton2.disabled = false
+	$CanvasLayer/GridContainer/LevelButton3.disabled = false
+	$CanvasLayer/GridContainer/LevelButton4.disabled = false
 
 func _on_WorldButton2_pressed():
 	$Musique.stop()
@@ -45,3 +48,6 @@ func _on_WorldButton2_pressed():
 	$"ParallaxBackground/Purple Sky/Sprite".set_modulate(Color(1,1,0))
 	$CanvasLayer/Label.text = "WORLDMAP_BIGTITLE2"
 	Global.current_world = 2
+	$CanvasLayer/GridContainer/LevelButton2.disabled = true
+	$CanvasLayer/GridContainer/LevelButton3.disabled = true
+	$CanvasLayer/GridContainer/LevelButton4.disabled = true
