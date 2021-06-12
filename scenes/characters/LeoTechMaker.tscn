@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ASSETS/enemies/leo_techmaker.png" type="Texture" id=1]
+[ext_resource path="res://scripts/characters/Paulok.gd" type="Script" id=2]
+[ext_resource path="res://ASSETS/sounds/paulok_cry.wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 70.5882 )
+
+[node name="LeoTechMaker" type="KinematicBody2D"]
+scale = Vector2( 1.7, 1.7 )
+collision_layer = 16
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4.70588, 0 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
+polygon = PoolVector2Array( -11.3013, 11.4128, -20.4723, 59.1021, -27.5471, 69.5832, -30.1674, 71.1554, -35.408, 65.6528, -34.3599, 61.4603, -28.0712, 56.4818, -22.3065, 32.3751, -14.7077, 13.509, 0.490005, -32.6081, 0.490005, -41.5171, -11.3013, -38.3727, -34.8839, -45.9716, -40.1245, -49.64, -40.3865, -54.0945, -23.3546, -49.902, -9.46711, -48.5919, 4.42044, -54.6185, 9.13696, -54.6185, 10.4471, -60.6452, 14.6396, -62.7414, 14.3776, -65.0997, 17.5219, -66.6719, 18.0459, -69.0301, 26.4309, -71.1264, 31.9335, -64.3136, 31.4094, -55.4046, 29.8373, -51.9982, 32.9816, -49.1159, 32.7196, -45.9716, 37.6981, -37.8487, 40.8425, -7.71533, 23.2865, 1.97975, 23.2865, 25.5624, 25.6448, 34.7334, 25.6448, 58.054, 20.4042, 68.2731, 10.1851, 65.3908, 15.1636, 43.9044, 7.30275, 14.2951 )
+
+[node name="PaulokCrySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 5.0
+
+[node name="LanceKiyu" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="finished" from="PaulokCrySound" to="." method="_on_PaulokCrySound_finished"]
+[connection signal="timeout" from="LanceKiyu" to="." method="_on_LanceKiyu_timeout"]
