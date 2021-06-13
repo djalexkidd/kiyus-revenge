@@ -2,6 +2,11 @@ extends Control
 
 func _ready():
 	$CanvasLayer/GridContainer/LevelButton1.grab_focus()
+	match Global.current_world:
+		1:
+			_on_WorldButton1_pressed()
+		2:
+			_on_WorldButton2_pressed()
 
 func _physics_process(delta): #Fait bouger la caméra vers la droite pour faire un joli effet paralax
 	$Camera2D.offset.x += 20
@@ -9,9 +14,9 @@ func _physics_process(delta): #Fait bouger la caméra vers la droite pour faire 
 func _on_LevelButton1_pressed(): #Niveau 1
 	match Global.current_world:
 		1:
-			Global.current_level = 1 #Change le niveau actuel vers le niveau 1
+			Global.current_level = 1 #Change le niveau actuel vers le niveau 1-1
 		2:
-			Global.current_level = 5 #Change le niveau actuel vers le niveau 1
+			Global.current_level = 5 #Change le niveau actuel vers le niveau 2-1
 	Global.replay() #Charge le niveau
 
 func _on_LevelButton2_pressed(): #Niveau 2
@@ -23,7 +28,11 @@ func _on_LevelButton3_pressed(): #Niveau 3
 	Global.replay() #Charge le niveau
 
 func _on_LevelButton4_pressed(): #Niveau 4
-	Global.current_level = 4 #Change le niveau actuel vers le niveau 4
+	match Global.current_world:
+		1:
+			Global.current_level = 4 #Change le niveau actuel vers le niveau 1-4
+		2:
+			Global.current_level = 8 #Change le niveau actuel vers le niveau 2-4
 	Global.replay() #Charge le niveau
 
 func _on_WorldButton1_pressed():
@@ -37,7 +46,6 @@ func _on_WorldButton1_pressed():
 	Global.current_world = 1
 	$CanvasLayer/GridContainer/LevelButton2.disabled = false
 	$CanvasLayer/GridContainer/LevelButton3.disabled = false
-	$CanvasLayer/GridContainer/LevelButton4.disabled = false
 
 func _on_WorldButton2_pressed():
 	#$Musique.stop()
@@ -50,4 +58,3 @@ func _on_WorldButton2_pressed():
 	Global.current_world = 2
 	$CanvasLayer/GridContainer/LevelButton2.disabled = true
 	$CanvasLayer/GridContainer/LevelButton3.disabled = true
-	$CanvasLayer/GridContainer/LevelButton4.disabled = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://tilesets/world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/characters/Kiyu_player.tscn" type="PackedScene" id=2]
@@ -21,19 +21,16 @@
 size = 32
 font_data = ExtResource( 8 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 2944, 90.787 )
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 832, 90.787 )
-
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 8.95508, 153.511 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 472, 8 )
 
 [node name="Level8" type="Node2D"]
@@ -58,7 +55,7 @@ margin_top = 128.0
 margin_right = -147.0
 margin_bottom = 167.0
 custom_fonts/font = SubResource( 1 )
-text = "WORLDMAP_INFO_LEVEL4"
+text = "WORLDMAP_INFO_LEVEL8"
 align = 1
 valign = 1
 __meta__ = {
@@ -71,7 +68,7 @@ margin_top = 88.0
 margin_right = -259.0
 margin_bottom = 127.0
 custom_fonts/font = SubResource( 1 )
-text = "1-4"
+text = "2-4"
 align = 1
 valign = 1
 __meta__ = {
@@ -97,28 +94,13 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fallzone"]
-shape = SubResource( 5 )
-
-[node name="fallzone2" type="Area2D" parent="."]
-position = Vector2( 9216, 1088 )
-collision_layer = 4
-collision_mask = 16
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fallzone2"]
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="boss_trigger" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss_trigger"]
-position = Vector2( 6902, 228 )
-shape = SubResource( 7 )
-
-[node name="SalutCestLeoDeLaChaineTechMaker" type="AudioStreamPlayer" parent="boss_trigger"]
-stream = ExtResource( 11 )
-volume_db = 24.0
+position = Vector2( 8752, 224 )
+shape = SubResource( 4 )
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
@@ -131,6 +113,10 @@ texture = ExtResource( 12 )
 
 [node name="Fatality" type="AudioStreamPlayer" parent="Sang"]
 stream = ExtResource( 13 )
+
+[node name="Timer" type="Timer" parent="Sang"]
+wait_time = 2.0
+one_shot = true
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -286,7 +272,7 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="firebars/FireTrap"]
 position = Vector2( 0, -66.5 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="TrucQuiTombe" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -294,7 +280,7 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrucQuiTombe"]
 position = Vector2( 9248, -8 )
-shape = SubResource( 9 )
+shape = SubResource( 6 )
 
 [node name="Kiyu" parent="." instance=ExtResource( 2 )]
 position = Vector2( 9862.25, 272.873 )
@@ -315,11 +301,14 @@ editor_draw_limits = true
 stream = ExtResource( 9 )
 autoplay = true
 
+[node name="SalutCestLeoDeLaChaineTechMaker" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = 2.0
+
 [connection signal="pressed" from="KillSwitch" to="." method="_on_KillSwitch_pressed"]
 [connection signal="body_entered" from="fallzone" to="Kiyu" method="_on_fallzone_body_entered"]
-[connection signal="body_entered" from="fallzone2" to="enemies/LeoTechMaker" method="_on_fallzone2_body_entered"]
 [connection signal="body_entered" from="boss_trigger" to="." method="_on_boss_trigger_body_entered"]
-[connection signal="finished" from="boss_trigger/SalutCestLeoDeLaChaineTechMaker" to="." method="_on_PeppaPig_finished"]
+[connection signal="timeout" from="Sang/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="death" from="enemies/LeoTechMaker" to="." method="_on_LeoTechMaker_death"]
 [connection signal="coin_collected" from="blocks/block2" to="HUD" method="_on_coin_collected"]
 [connection signal="boss_death" from="spikesBoss/SpikeBoss12" to="enemies/LeoTechMaker" method="_on_SpikeBoss12_boss_death"]

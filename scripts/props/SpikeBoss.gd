@@ -17,5 +17,5 @@ func _physics_process(delta):
 func _on_hitbox_body_entered(body):
 	body.ouch(position.x) #Et le joueur meurt
 
-func ouch():
+func ouch(var enemyposx):
 	emit_signal("boss_death")
