@@ -11,11 +11,9 @@ func _on_KillSwitch_pressed(): #Le niveau reçoit le signal de l'interrupteur
 	$Bridge/Timer.start()
 
 func _on_boss_trigger_body_entered(body):
-	$enemies/Paulok/LanceKiyu.start()
-	$boss_trigger/PeppaPig.play()
-
-func _on_PeppaPig_finished():
 	$boss_trigger.queue_free()
+	$enemies/Paulok/LanceKiyu.start()
+	$PeppaPig.play()
 
 func _on_aaaaa_timeout():
 	for i in range(x,152):

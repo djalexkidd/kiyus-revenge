@@ -265,9 +265,6 @@ shape = SubResource( 6 )
 position = Vector2( 6902, 228 )
 shape = SubResource( 7 )
 
-[node name="PeppaPig" type="AudioStreamPlayer" parent="boss_trigger"]
-stream = ExtResource( 11 )
-
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
 [node name="enemies" type="Node2D" parent="."]
@@ -398,12 +395,14 @@ editor_draw_limits = true
 stream = ExtResource( 9 )
 autoplay = true
 
+[node name="PeppaPig" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
 [connection signal="timeout" from="Bridge/Timer" to="." method="_on_aaaaa_timeout"]
-[connection signal="pressed" from="KillSwitch" to="enemies/Paulok" method="_on_KillSwitch_pressed"]
 [connection signal="pressed" from="KillSwitch" to="." method="_on_KillSwitch_pressed"]
+[connection signal="pressed" from="KillSwitch" to="enemies/Paulok" method="_on_KillSwitch_pressed"]
 [connection signal="body_entered" from="fallzone" to="Kiyu" method="_on_fallzone_body_entered"]
 [connection signal="body_entered" from="fallzone2" to="enemies/Paulok" method="_on_fallzone2_body_entered"]
 [connection signal="body_entered" from="boss_trigger" to="." method="_on_boss_trigger_body_entered"]
-[connection signal="finished" from="boss_trigger/PeppaPig" to="." method="_on_PeppaPig_finished"]
 [connection signal="coin_collected" from="blocks/block2" to="HUD" method="_on_coin_collected"]
 [connection signal="body_entered" from="firebars/FireTrap" to="firebars/FireBar" method="_on_FireTrap_body_entered"]
