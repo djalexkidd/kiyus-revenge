@@ -27,10 +27,14 @@ WORLDMAP_LEVEL2,Niveau 2,Level 2
 WORLDMAP_LEVEL3,Niveau 3,Level 3
 WORLDMAP_LEVEL4,Niveau 4,Level 4
 WORLDMAP_DEATHCOUNT,Nombre de morts :,Death count :
-WORLDMAP_INFO_LEVEL1,Introduction,Introduction
+WORLDMAP_INFO_LEVEL1,Super Mario Maker en sueur,Super Mario Maker sweats
 WORLDMAP_INFO_LEVEL2,Le level design c'est dur,Level design is hard
 WORLDMAP_INFO_LEVEL3,Nintendo va me détester,Nintendo will hate me
-WORLDMAP_INFO_LEVEL4,Super Mario Maker en sueur,Super Mario Maker sweats
+WORLDMAP_INFO_LEVEL4,La revanche de Paulok,Paulok’s revenge
+WORLDMAP_INFO_LEVEL5,Ressort à la c,Crappy spring
+WORLDMAP_INFO_LEVEL6,TBD,TBD
+WORLDMAP_INFO_LEVEL7,TBD,TBD
+WORLDMAP_INFO_LEVEL8,La bataille contre Léo TechMaker,The battle against Léo TechMaker
 PAUSE_CONTINUE,CONTINUER,CONTINUE
 PAUSE_RESTART,RECOMMENCER,RESTART
 PAUSE_QUIT,QUITTER,QUIT
