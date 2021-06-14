@@ -8,7 +8,7 @@ export var trap = false #Bloc désactivé, mettez des pics en dessous du bloc en
 export var trap_tilemap = false #Bloc piégé, supprime la tilemap
 
 signal coin_collected #Ajoute une pièce au compteur du HUD
-signal die_bitch #Piège pour supprimer la tilemap, faisant tomber le joueur dans le vide
+signal tilemap_trap_trigger #Piège pour supprimer la tilemap, faisant tomber le joueur dans le vide
 
 func _ready():
 	if collected: #Dans le monde 1-4 des blocs sont désactivés
@@ -21,7 +21,7 @@ func _on_bottom_checker_body_entered(body):
 	if !collected and !trap:
 		collected = true
 		if trap_tilemap: #Si le bloc contient le piège de la tilemap
-			emit_signal("die_bitch") #Envoie un signal au niveau pour supprimer la tilemap
+			emit_signal("tilemap_trap_trigger") #Envoie un signal au niveau pour supprimer la tilemap
 		$AnimationPlayer.play("block_punch")
 		$CoinCollect.play() #Joue un son de pièce
 		$coin.show()

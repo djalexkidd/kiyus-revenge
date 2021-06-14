@@ -502,5 +502,5 @@ autoplay = true
 [connection signal="coin_collected" from="blocks/block4" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="blocks/block5" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="blocks/block6" to="HUD" method="_on_coin_collected"]
-[connection signal="die_bitch" from="blocks/block6" to="." method="_on_block_die_bitch"]
+[connection signal="tilemap_trap_trigger" from="blocks/block6" to="." method="_on_block_tilemap_trap_trigger"]
 [connection signal="coin_collected" from="blocks/block7" to="HUD" method="_on_coin_collected"]

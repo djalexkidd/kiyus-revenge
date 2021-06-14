@@ -526,7 +526,7 @@ autoplay = true
 [connection signal="coin_collected" from="coins/coin14" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="blocks/block1" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="blocks/block2" to="HUD" method="_on_coin_collected"]
-[connection signal="die_bitch" from="blocks/block2" to="." method="_on_block_die_bitch"]
+[connection signal="tilemap_trap_trigger" from="blocks/block2" to="." method="_on_block_tilemap_trap_trigger"]
 [connection signal="coin_collected" from="blocks/block3" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="blocks/block9" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="blocks/block11" to="HUD" method="_on_coin_collected"]
