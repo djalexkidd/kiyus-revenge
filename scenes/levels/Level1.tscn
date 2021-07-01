@@ -30,9 +30,9 @@ extents = Vector2( 2738.16, 90.787 )
 [node name="Level1" type="Node2D"]
 
 [node name="Niveau" type="Label" parent="."]
-margin_left = -336.0
+margin_left = -240.0
 margin_top = 232.0
-margin_right = -44.0
+margin_right = 52.0
 margin_bottom = 271.0
 custom_fonts/font = SubResource( 1 )
 text = "LEVELSIGN_LEVEL"
@@ -56,9 +56,9 @@ __meta__ = {
 }
 
 [node name="Niveau3" type="Label" parent="."]
-margin_left = -128.0
+margin_left = -32.0
 margin_top = 232.0
-margin_right = -83.0
+margin_right = 13.0
 margin_bottom = 271.0
 custom_fonts/font = SubResource( 1 )
 text = "1-1"
