@@ -88,6 +88,7 @@ tile_data = PoolIntArray( -458763, 0, 0, -393227, 0, 0, -327691, 0, 0, -262155, 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Purple Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.25, 0.25 )
 motion_mirroring = Vector2( 448, 432 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Purple Sky"]
