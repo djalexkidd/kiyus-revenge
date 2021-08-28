@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://ASSETS/fonts/amstrad_cpc464.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ASSETS/fonts/PressStart.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://ASSETS/UI/arrow-UP.png" type="Texture" id=5]
 [ext_resource path="res://scripts/menu/PlayButton.gd" type="Script" id=6]
 [ext_resource path="res://ASSETS/sounds/mus_title.ogg" type="AudioStream" id=7]
+[ext_resource path="res://scripts/menu/ReturnMenu.gd" type="Script" id=8]
 [ext_resource path="res://ASSETS/UI/43c5a51de1b2eb3.png" type="Texture" id=9]
 [ext_resource path="res://scripts/menu/TitleMenu.gd" type="Script" id=11]
 
@@ -55,11 +56,17 @@ button_index = 3
 [sub_resource type="ShortCut" id=12]
 shortcut = SubResource( 11 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="DynamicFont" id=14]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=15]
 size = 160
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=16]
 size = 100
 font_data = ExtResource( 3 )
 
@@ -288,6 +295,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="QuitButton" type="Button" parent="."]
+margin_right = 276.0
+margin_bottom = 30.0
+custom_styles/focus = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+shortcut_in_tooltip = false
+text = "SYSTEM_QUIT"
+flat = true
+align = 0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ControllerDetection" type="TextureRect" parent="."]
 margin_left = 0.353546
 margin_top = 530.615
@@ -304,14 +327,14 @@ margin_left = 1918.23
 margin_top = 424.996
 margin_right = 2438.23
 margin_bottom = 584.996
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 15 )
 text = "TITLE_JUMP"
 
 [node name="Label2" type="Label" parent="ControllerDetection"]
 margin_left = 1235.72
 margin_right = 1725.72
 margin_bottom = 160.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 15 )
 text = "TITLE_RUN"
 align = 1
 __meta__ = {
@@ -323,7 +346,7 @@ margin_left = 324.682
 margin_top = 204.728
 margin_right = 763.682
 margin_bottom = 304.728
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "TITLE_MOVE"
 align = 1
@@ -335,3 +358,4 @@ autoplay = true
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
