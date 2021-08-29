@@ -2,3 +2,4 @@
 build/
 *.translation
 export_presets.cfg
+default_env.tres

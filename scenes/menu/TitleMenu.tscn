@@ -1,19 +1,19 @@
 [gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://ASSETS/fonts/amstrad_cpc464.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://ASSETS/fonts/PressStart.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://ASSETS/fonts/Minecraft.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://ASSETS/UI/grey_button04.png" type="Texture" id=4]
-[ext_resource path="res://ASSETS/UI/arrow-UP.png" type="Texture" id=5]
-[ext_resource path="res://scripts/menu/PlayButton.gd" type="Script" id=6]
-[ext_resource path="res://ASSETS/sounds/mus_title.ogg" type="AudioStream" id=7]
-[ext_resource path="res://scripts/menu/ReturnMenu.gd" type="Script" id=8]
-[ext_resource path="res://ASSETS/UI/43c5a51de1b2eb3.png" type="Texture" id=9]
-[ext_resource path="res://scripts/menu/TitleMenu.gd" type="Script" id=11]
+[ext_resource path="res://scripts/menu/PlayButton.gd" type="Script" id=1]
+[ext_resource path="res://scripts/menu/ReturnMenu.gd" type="Script" id=2]
+[ext_resource path="res://scripts/menu/TitleMenu.gd" type="Script" id=3]
+[ext_resource path="res://ASSETS/UI/43c5a51de1b2eb3.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/fonts/PressStart.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://ASSETS/fonts/Minecraft.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://ASSETS/fonts/amstrad_cpc464.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://ASSETS/UI/grey_button04.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/UI/arrow-UP.png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/sounds/mus_title.ogg" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
-font_data = ExtResource( 1 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.109804, 0.607843, 0.113725, 1 )
@@ -24,21 +24,21 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
-font_data = ExtResource( 3 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 32
-font_data = ExtResource( 3 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 32
-font_data = ExtResource( 2 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxEmpty" id=6]
 
 [sub_resource type="DynamicFont" id=7]
 size = 64
-font_data = ExtResource( 2 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="InputEventAction" id=8]
 action = "start"
@@ -48,7 +48,7 @@ shortcut = SubResource( 8 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 32
-font_data = ExtResource( 2 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="InputEventJoypadButton" id=11]
 button_index = 3
@@ -60,20 +60,20 @@ shortcut = SubResource( 11 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 24
-font_data = ExtResource( 2 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=15]
 size = 160
-font_data = ExtResource( 3 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=16]
 size = 100
-font_data = ExtResource( 3 )
+font_data = ExtResource( 6 )
 
 [node name="TitleMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 11 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -118,7 +118,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 206.0
 margin_bottom = 54.9999
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -142,7 +142,7 @@ margin_left = 8.0
 margin_top = 67.0
 margin_right = 62.0
 margin_bottom = 114.0
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 expand = true
 __meta__ = {
 "_edit_group_": true,
@@ -155,7 +155,7 @@ margin_top = 39.7435
 margin_right = 43.2028
 margin_bottom = 73.7435
 rect_rotation = -90.0
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -166,7 +166,7 @@ margin_left = 152.0
 margin_top = 67.0
 margin_right = 206.0
 margin_bottom = 114.0
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 expand = true
 __meta__ = {
 "_edit_group_": true,
@@ -179,7 +179,7 @@ margin_top = 5.76416
 margin_right = 79.6898
 margin_bottom = 39.7642
 rect_rotation = 90.0
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -190,7 +190,7 @@ margin_left = 83.0
 margin_top = 128.0
 margin_right = 137.0
 margin_bottom = 175.0
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 expand = true
 __meta__ = {
 "_edit_group_": true,
@@ -272,7 +272,7 @@ shortcut_in_tooltip = false
 shortcut = SubResource( 9 )
 text = "PRESS START"
 flat = true
-script = ExtResource( 6 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -306,7 +306,7 @@ shortcut_in_tooltip = false
 text = "SYSTEM_QUIT"
 flat = true
 align = 0
-script = ExtResource( 8 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -317,7 +317,7 @@ margin_top = 530.615
 margin_right = 1950.35
 margin_bottom = 1480.61
 rect_scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 9 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -352,7 +352,7 @@ text = "TITLE_MOVE"
 align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 10 )
 volume_db = -5.0
 autoplay = true
 

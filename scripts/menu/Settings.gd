@@ -47,4 +47,4 @@ func _on_YoutubeButton_pressed():
 	OS.shell_open("https://www.youtube.com/channel/UCDsgfEoSz8qpv9jne85T8tg")
 
 func _on_GithubButton_pressed():
-	OS.shell_open("https://github.com/djalexkidd")
+	OS.shell_open("https://github.com/djalexkidd/kiyus-revenge")
