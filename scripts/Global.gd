@@ -2,7 +2,7 @@ extends Node2D
 
 onready var current_level = 1 #Niveau actuel
 onready var current_world = 1 #Monde actuel
-onready var hard_mode = false #Niveau de difficulté
+onready var difficulty = 1 #Niveau de difficulté
 onready var death_counter = 0 #Nombre de morts
 onready var pipe_number = 0 #Identifiant de tuyau
 onready var fps_counter = false #Compteur de FPS

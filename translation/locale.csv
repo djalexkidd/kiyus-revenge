@@ -13,6 +13,7 @@ SETTINGS_RUMBLE,Vibrations,Rumble
 SETTINGS_VOLUME,Volume,Volume
 SETTINGS_VALUE_ON,Activé,ON
 SETTINGS_VALUE_OFF,Désactivé,OFF
+SETTINGS_VALUE_EASY,Facile,Easy
 SETTINGS_VALUE_NORMAL,Normal,Normal
 SETTINGS_VALUE_HARD,Difficile,Hard
 SETTINGS_INFO_DIFFICULTY,"Normal = Pièges désactivés, Difficile = Pièges activés","Normal = Traps disabled, Hard = Traps enabled"

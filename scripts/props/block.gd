@@ -13,7 +13,7 @@ signal tilemap_trap_trigger #Piège pour supprimer la tilemap, faisant tomber le
 func _ready():
 	if collected: #Dans le monde 1-4 des blocs sont désactivés
 		$AnimatedSprite.play("empty") #Affiche le sprite du bloc vide
-	if !Global.hard_mode: #Désactive les pièges si la difficulté est réglé sur "Normal"
+	if Global.difficulty == 0: #Désactive les pièges si la difficulté est réglé sur "Facile"
 		trap = false
 		trap_tilemap = false
 

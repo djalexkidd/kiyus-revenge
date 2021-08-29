@@ -101,7 +101,6 @@ custom_styles/focus = SubResource( 5 )
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 1, 0, 0, 1 )
-toggle_mode = true
 text = "SETTINGS_VALUE_NORMAL"
 flat = true
 align = 0
@@ -291,7 +290,7 @@ autoplay = true
 
 [connection signal="mouse_entered" from="DifficultyLabel" to="SettingInfo" method="_on_DifficultyButton_mouse_entered"]
 [connection signal="mouse_exited" from="DifficultyLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
-[connection signal="toggled" from="DifficultyLabel/DifficultyButton" to="DifficultyLabel/DifficultyButton" method="_on_Difficulty_toggled"]
+[connection signal="pressed" from="DifficultyLabel/DifficultyButton" to="DifficultyLabel/DifficultyButton" method="_on_DifficultyButton_pressed"]
 [connection signal="mouse_entered" from="FullscreenLabel" to="SettingInfo" method="_on_FullscreenButton_mouse_entered"]
 [connection signal="mouse_exited" from="FullscreenLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
 [connection signal="toggled" from="FullscreenLabel/FullscreenButton" to="." method="_on_FullscreenButton2_toggled"]
