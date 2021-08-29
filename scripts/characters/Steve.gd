@@ -23,8 +23,10 @@ func _physics_process(delta):
 		$Sprite.play("idle") #Animation par défaut
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor(): #Touche de saut
-		velocity.y = JUMPFORCE
-		$JumpSound.play() #Son de saut
+		jump()
+	
+	if Input.is_action_just_released("jump"):
+		jump_cut()
 	
 	if Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor(): #Touche de saut sur un mur
 		walljump()
@@ -62,6 +64,14 @@ func _on_fallzone_body_entered(body): #Le joueur tombe dans un trou
 
 func bounce():
 	velocity.y = JUMPFORCE * 0.7
+
+func jump():
+	velocity.y = JUMPFORCE
+	$JumpSound.play() #Son de saut
+
+func jump_cut():
+	if velocity.y < -100:
+		velocity.y = -35
 
 func walljump(): #Fonction pour le walljump
 	Input.action_release("left") #Lâche la touche gauche

@@ -284,7 +284,7 @@ shape = SubResource( 7 )
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy1" parent="enemies" instance=ExtResource( 10 )]
-position = Vector2( 730.607, 362 )
+position = Vector2( 731, 362 )
 
 [node name="Paulok" parent="enemies" instance=ExtResource( 7 )]
 position = Vector2( 9504, 272 )
@@ -413,8 +413,8 @@ autoplay = true
 stream = ExtResource( 11 )
 
 [connection signal="timeout" from="Bridge/Timer" to="." method="_on_aaaaa_timeout"]
-[connection signal="pressed" from="KillSwitch" to="enemies/Paulok" method="_on_KillSwitch_pressed"]
 [connection signal="pressed" from="KillSwitch" to="." method="_on_KillSwitch_pressed"]
+[connection signal="pressed" from="KillSwitch" to="enemies/Paulok" method="_on_KillSwitch_pressed"]
 [connection signal="body_entered" from="fallzone" to="Kiyu" method="_on_fallzone_body_entered"]
 [connection signal="body_entered" from="fallzone2" to="enemies/Paulok" method="_on_fallzone2_body_entered"]
 [connection signal="body_entered" from="boss_trigger" to="." method="_on_boss_trigger_body_entered"]
