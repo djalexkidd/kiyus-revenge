@@ -14,3 +14,5 @@ func _on_AnimationPlayer_animation_finished(anim_name): #Désactivation du bloc
 	set_collision_layer_bit(1,true) #Active de nouveau les collisions
 	set_collision_mask_bit(0,true) #Idem
 	$bottom_checker.set_collision_mask_bit(0,true) #Idem mais pour la hitbox en dessous du bloc
+	if OS.get_name() == "Android":
+		get_tree().change_scene("res://scenes/menu/Cheats.tscn")

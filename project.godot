@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Kiyu's Revenge"
-run/main_scene="res://scenes/other/fmv.tscn"
+run/main_scene="res://scenes/menu/TitleMenu.tscn"
 boot_splash/image="res://ASSETS/splash.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"
