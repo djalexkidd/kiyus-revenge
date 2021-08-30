@@ -44,4 +44,5 @@ func _input(event):
 				2:
 					# Quit game
 					get_tree().paused = false
+					Global.coins = 0
 					get_tree().change_scene("res://scenes/menu/WorldMap.tscn")

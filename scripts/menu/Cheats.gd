@@ -12,6 +12,12 @@ func _ready():
 		$HyperspeedLabel/HyperspeedButton.pressed = true
 	else:
 		$HyperspeedLabel/HyperspeedButton.text = "SETTINGS_VALUE_OFF"
+	
+	if Global.infinitetime:
+		$InfiniteTimeLabel/InfiniteTimeButton.text = "SETTINGS_VALUE_ON"
+		$InfiniteTimeLabel/InfiniteTimeButton.pressed = true
+	else:
+		$InfiniteTimeLabel/InfiniteTimeButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_GodModeButton_toggled(button_pressed):
 	if button_pressed:
@@ -28,6 +34,14 @@ func _on_HyperspeedButton_toggled(button_pressed):
 	else:
 		Global.hyperspeed = false
 		$HyperspeedLabel/HyperspeedButton.text = "SETTINGS_VALUE_OFF"
+
+func _on_InfiniteTimeButton_toggled(button_pressed):
+	if button_pressed:
+		Global.infinitetime = true
+		$InfiniteTimeLabel/InfiniteTimeButton.text = "SETTINGS_VALUE_ON"
+	else:
+		Global.infinitetime = false
+		$InfiniteTimeLabel/InfiniteTimeButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_ReturnToMenu_pressed():
 	get_tree().change_scene("res://scenes/menu/WorldMap.tscn")

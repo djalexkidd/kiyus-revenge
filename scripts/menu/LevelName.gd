@@ -84,3 +84,7 @@ func _on_GodModeLabel_mouse_entered():
 func _on_HyperspeedLabel_mouse_entered():
 	show()
 	text = "CHEATS_INFO_HYPERSPEED"
+
+func _on_InfiniteTimeLabel_mouse_entered():
+	show()
+	text = "CHEATS_INFO_INFINITETIME"

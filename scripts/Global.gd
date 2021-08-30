@@ -11,6 +11,7 @@ onready var coins = 0 #Nombre de pièces du joueur
 #Codes de triche
 onready var godmode = false #Invinciblilité
 onready var hyperspeed = false #Hypervitesse
+onready var infinitetime = false #Temps infini
 
 func replay(): #Fonction pour faire changer/redémarrer le niveau
 	match current_level:
