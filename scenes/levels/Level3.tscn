@@ -413,7 +413,7 @@ position = Vector2( 9504, 128 )
 
 [node name="Board2" parent="boards" instance=ExtResource( 17 )]
 position = Vector2( 10016, -32 )
-direction = 1
+directiony = 1
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -467,8 +467,6 @@ current = true
 limit_left = -637
 limit_right = 10880
 limit_bottom = 700
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
 smoothing_enabled = true
 drag_margin_left = 0.3
 drag_margin_right = 0.3
