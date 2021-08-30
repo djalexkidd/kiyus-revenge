@@ -10,6 +10,11 @@ const JUMPFORCE = -1100 #Hauteur du saut
 var on_pipe #Vérifie si le joueur est proche d'un tuyau en bas
 var on_pipe_right #Vérifie si le joueur est proche d'un tuyau à droite
 
+func _ready():
+	if Global.hyperspeed:
+		SPEED = 360
+		$Sprite.speed_scale = 2
+
 func _physics_process(delta):
 	if Input.is_action_pressed("right"): #Touche droite
 		velocity.x = SPEED
@@ -38,11 +43,19 @@ func _physics_process(delta):
 		$AnimationPlayer.play("pipe_enter_right")
 		$EnterPipeSound.play()
 	if Input.is_action_pressed("run"):
-		SPEED = 360
-		$Sprite.speed_scale = 2
+		if !Global.hyperspeed:
+			SPEED = 360
+			$Sprite.speed_scale = 2
+		else:
+			SPEED = 720
+			$Sprite.speed_scale = 4
 	elif Input.is_action_just_released("run"):
-		SPEED = 180
-		$Sprite.speed_scale = 1
+		if !Global.hyperspeed:
+			SPEED = 180
+			$Sprite.speed_scale = 1
+		else:
+			SPEED = 360
+			$Sprite.speed_scale = 2
 	
 	velocity.y = velocity.y + GRAVITY
 	
@@ -84,26 +97,27 @@ func walljump(): #Fonction pour le walljump
 	$JumpSound.play() #Joue le son de saut
 
 func ouch(var enemyposx): #Si le joueur prend un dégat
-	set_collision_layer_bit(0,false) #Désactive les collisions
-	set_collision_mask_bit(0,false)
-	set_modulate(Color(1,0.3,0.3,0.4)) #Change la couleur du joueur en rouge
-	velocity.y = JUMPFORCE * 0.5 #Fait un petit saut
-	get_node("DeathSound").play() #Joue le son de mort (oof)
+	if !Global.godmode:
+		set_collision_layer_bit(0,false) #Désactive les collisions
+		set_collision_mask_bit(0,false)
+		set_modulate(Color(1,0.3,0.3,0.4)) #Change la couleur du joueur en rouge
+		velocity.y = JUMPFORCE * 0.5 #Fait un petit saut
+		get_node("DeathSound").play() #Joue le son de mort (oof)
 	
-	if position.x < enemyposx:
-		velocity.x = -800
-	elif position.x > enemyposx:
-		velocity.x = 800
+		if position.x < enemyposx:
+			velocity.x = -800
+		elif position.x > enemyposx:
+			velocity.x = 800
 		
 	
-	if Global.rumble: #Fait vibrer la manette si l'option est activée
-		Input.start_joy_vibration(0,1,1,1)
-		Input.vibrate_handheld()
+		if Global.rumble: #Fait vibrer la manette si l'option est activée
+			Input.start_joy_vibration(0,1,1,1)
+			Input.vibrate_handheld()
 	
-	Input.action_release("left") #Lâche la touche gauche
-	Input.action_release("right") #Lâche la touche droite
+		Input.action_release("left") #Lâche la touche gauche
+		Input.action_release("right") #Lâche la touche droite
 	
-	$Timer.start() #Démarre un timer avant d'afficher l'écran de Game Over
+		$Timer.start() #Démarre un timer avant d'afficher l'écran de Game Over
 
 func _on_Timer_timeout(): #Le timer de mort se termine
 	Global.death_counter += 1 #Incrémente le compteur de morts

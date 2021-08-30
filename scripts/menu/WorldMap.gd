@@ -10,6 +10,8 @@ func _ready():
 
 func _physics_process(delta): #Fait bouger la caméra vers la droite pour faire un joli effet paralax
 	$Camera2D.offset.x += 20
+	if Input.is_action_just_pressed("jump") and Input.is_action_just_pressed("run") and Input.is_action_just_pressed("start"):
+		get_tree().change_scene("res://scenes/menu/Cheats.tscn")
 
 func _on_LevelButton1_pressed(): #Niveau 1
 	match Global.current_world:

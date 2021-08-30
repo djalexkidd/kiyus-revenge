@@ -75,3 +75,12 @@ func _on_WorldButton1_mouse_entered():
 func _on_WorldButton2_mouse_entered():
 	show()
 	text = "WORLDMAP_WORLD2"
+
+#DESCRIPTIONS DES CODES DE TRICHE
+func _on_GodModeLabel_mouse_entered():
+	show()
+	text = "CHEATS_INFO_GODMODE"
+
+func _on_HyperspeedLabel_mouse_entered():
+	show()
+	text = "CHEATS_INFO_HYPERSPEED"

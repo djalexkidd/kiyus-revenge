@@ -8,6 +8,9 @@ onready var pipe_number = 0 #Identifiant de tuyau
 onready var fps_counter = false #Compteur de FPS
 onready var rumble = true #Vibrations activées
 onready var coins = 0 #Nombre de pièces du joueur
+#Codes de triche
+onready var godmode = false #Invinciblilité
+onready var hyperspeed = false #Hypervitesse
 
 func replay(): #Fonction pour faire changer/redémarrer le niveau
 	match current_level:

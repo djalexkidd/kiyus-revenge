@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cheats.mp3-f9ea5d58d8fb91df1134e4d3a8eea612.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/sounds/cheats.mp3"
+dest_files=[ "res://.import/cheats.mp3-f9ea5d58d8fb91df1134e4d3a8eea612.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
