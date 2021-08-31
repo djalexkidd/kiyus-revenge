@@ -108,7 +108,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="JumpTouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="TouchControls" type="Node2D" parent="."]
+
+[node name="JumpTouchScreenButton" type="TouchScreenButton" parent="TouchControls"]
 modulate = Color( 1, 1, 1, 0.313726 )
 position = Vector2( 1088, 512 )
 scale = Vector2( 1.5, 1.5 )
@@ -116,7 +118,7 @@ normal = ExtResource( 6 )
 action = "jump"
 visibility_mode = 1
 
-[node name="RunTouchScreenButton2" type="TouchScreenButton" parent="."]
+[node name="RunTouchScreenButton2" type="TouchScreenButton" parent="TouchControls"]
 modulate = Color( 1, 1, 1, 0.313726 )
 position = Vector2( 896, 512 )
 scale = Vector2( 1.5, 1.5 )
@@ -124,7 +126,7 @@ normal = ExtResource( 13 )
 action = "run"
 visibility_mode = 1
 
-[node name="LeftTouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="LeftTouchScreenButton" type="TouchScreenButton" parent="TouchControls"]
 modulate = Color( 1, 1, 1, 0.313726 )
 position = Vector2( 0, 576 )
 scale = Vector2( 2.56, 2.56 )
@@ -133,7 +135,7 @@ passby_press = true
 action = "left"
 visibility_mode = 1
 
-[node name="RightTouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="RightTouchScreenButton" type="TouchScreenButton" parent="TouchControls"]
 modulate = Color( 1, 1, 1, 0.313726 )
 position = Vector2( 128, 576 )
 scale = Vector2( 2.56, 2.56 )
@@ -142,7 +144,7 @@ passby_press = true
 action = "right"
 visibility_mode = 1
 
-[node name="DownTouchScreenButton2" type="TouchScreenButton" parent="."]
+[node name="DownTouchScreenButton2" type="TouchScreenButton" parent="TouchControls"]
 modulate = Color( 1, 1, 1, 0.313726 )
 position = Vector2( 384, 576 )
 scale = Vector2( 2.56, 2.56 )
@@ -151,7 +153,7 @@ passby_press = true
 action = "down"
 visibility_mode = 1
 
-[node name="PauseTouchScreenButton2" type="TouchScreenButton" parent="."]
+[node name="PauseTouchScreenButton2" type="TouchScreenButton" parent="TouchControls"]
 modulate = Color( 1, 1, 1, 0.313726 )
 position = Vector2( 1152, 0 )
 normal = ExtResource( 5 )
