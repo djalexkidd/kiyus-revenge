@@ -9,6 +9,6 @@
 Kiyu's Revenge est un jeu de plateforme 2D de type "Die and Retry" crée avec Godot Engine.
 
 ## Jouer au jeu
-Vous pouvez y jouer directement sur mon site : https://djalexkidd.fr.nf/play
+Vous pouvez y jouer directement sur navigateur : https://djalexkidd.github.io/kiyus-revenge/
 
 Ou le télécharger dans les [Releases](https://github.com/djalexkidd/kiyus-revenge/releases)
