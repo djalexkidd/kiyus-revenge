@@ -88,3 +88,7 @@ func _on_HyperspeedLabel_mouse_entered():
 func _on_InfiniteTimeLabel_mouse_entered():
 	show()
 	text = "CHEATS_INFO_INFINITETIME"
+
+func _on_MoonwalkLabel_mouse_entered():
+	show()
+	text = "CHEATS_INFO_MOONWALK"

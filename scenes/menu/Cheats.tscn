@@ -159,6 +159,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MoonwalkLabel" type="Button" parent="."]
+margin_left = 64.0
+margin_top = 384.0
+margin_right = 684.0
+margin_bottom = 422.0
+custom_styles/focus = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "CHEATS_MOONWALK"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoonwalkButton" type="Button" parent="MoonwalkLabel"]
+margin_left = 480.0
+margin_right = 1164.0
+margin_bottom = 38.0
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+toggle_mode = true
+text = "SETTINGS_VALUE_OFF"
+flat = true
+align = 0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="SettingInfo" type="Label" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -202,4 +235,7 @@ autoplay = true
 [connection signal="mouse_entered" from="InfiniteTimeLabel" to="SettingInfo" method="_on_InfiniteTimeLabel_mouse_entered"]
 [connection signal="mouse_exited" from="InfiniteTimeLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
 [connection signal="toggled" from="InfiniteTimeLabel/InfiniteTimeButton" to="." method="_on_InfiniteTimeButton_toggled"]
+[connection signal="mouse_entered" from="MoonwalkLabel" to="SettingInfo" method="_on_MoonwalkLabel_mouse_entered"]
+[connection signal="mouse_exited" from="MoonwalkLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
+[connection signal="toggled" from="MoonwalkLabel/MoonwalkButton" to="." method="_on_MoonwalkButton_toggled"]
 [connection signal="pressed" from="ReturnToMenu" to="." method="_on_ReturnToMenu_pressed"]

@@ -18,6 +18,12 @@ func _ready():
 		$InfiniteTimeLabel/InfiniteTimeButton.pressed = true
 	else:
 		$InfiniteTimeLabel/InfiniteTimeButton.text = "SETTINGS_VALUE_OFF"
+		
+	if Global.moonwalk:
+		$MoonwalkLabel/MoonwalkButton.text = "SETTINGS_VALUE_ON"
+		$MoonwalkLabel/MoonwalkButton.pressed = true
+	else:
+		$MoonwalkLabel/MoonwalkButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_GodModeButton_toggled(button_pressed):
 	if button_pressed:
@@ -42,6 +48,14 @@ func _on_InfiniteTimeButton_toggled(button_pressed):
 	else:
 		Global.infinitetime = false
 		$InfiniteTimeLabel/InfiniteTimeButton.text = "SETTINGS_VALUE_OFF"
+
+func _on_MoonwalkButton_toggled(button_pressed):
+	if button_pressed:
+		Global.moonwalk = true
+		$MoonwalkLabel/MoonwalkButton.text = "SETTINGS_VALUE_ON"
+	else:
+		Global.moonwalk = false
+		$MoonwalkLabel/MoonwalkButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_ReturnToMenu_pressed():
 	get_tree().change_scene("res://scenes/menu/WorldMap.tscn")
