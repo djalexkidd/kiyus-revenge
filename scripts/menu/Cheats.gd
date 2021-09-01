@@ -25,6 +25,12 @@ func _ready():
 	else:
 		$MoonwalkLabel/MoonwalkButton.text = "SETTINGS_VALUE_OFF"
 
+	if Global.moonjump:
+		$MoonjumpLabel/MoonjumpButton.text = "SETTINGS_VALUE_ON"
+		$MoonjumpLabel/MoonjumpButton.pressed = true
+	else:
+		$MoonjumpLabel/MoonjumpButton.text = "SETTINGS_VALUE_OFF"
+
 func _on_GodModeButton_toggled(button_pressed):
 	if button_pressed:
 		Global.godmode = true
@@ -56,6 +62,14 @@ func _on_MoonwalkButton_toggled(button_pressed):
 	else:
 		Global.moonwalk = false
 		$MoonwalkLabel/MoonwalkButton.text = "SETTINGS_VALUE_OFF"
+
+func _on_MoonjumpButton_toggled(button_pressed):
+	if button_pressed:
+		Global.moonjump = true
+		$MoonjumpLabel/MoonjumpButton.text = "SETTINGS_VALUE_ON"
+	else:
+		Global.moonjump = false
+		$MoonjumpLabel/MoonjumpButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_ReturnToMenu_pressed():
 	get_tree().change_scene("res://scenes/menu/WorldMap.tscn")

@@ -92,3 +92,7 @@ func _on_InfiniteTimeLabel_mouse_entered():
 func _on_MoonwalkLabel_mouse_entered():
 	show()
 	text = "CHEATS_INFO_MOONWALK"
+
+func _on_MoonjumpLabel_mouse_entered():
+	show()
+	text = "CHEATS_INFO_MOONJUMP"

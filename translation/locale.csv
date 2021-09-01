@@ -52,7 +52,9 @@ CHEATS_GODMODE,Invinciblilité,God Mode
 CHEATS_HYPERSPEED,Hypervitesse,Hyperspeed
 CHEATS_INFINITETIME,Temps infini,Infinite time
 CHEATS_MOONWALK,Moonwalk,Moonwalk
+CHEATS_MOONJUMP,Saut lunaire,Moon jump
 CHEATS_INFO_GODMODE,Kiyu est invulnérable !,Kiyu is invincible !
 CHEATS_INFO_HYPERSPEED,Double la vitesse de Kiyu,Doubles Kiyu’s speed
 CHEATS_INFO_INFINITETIME,Prenez votre temps !,Take your time !
 CHEATS_INFO_MOONWALK,Inverse le sprite de Kiyu,Reverse Kiyu’s sprite
+CHEATS_INFO_MOONJUMP,Maintenez A pour faire voler Kiyu !,Hold A to fly !

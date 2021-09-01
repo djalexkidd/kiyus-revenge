@@ -42,6 +42,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_wall() and not is_on_floor(): #Touche de saut sur un mur
 		walljump()
 	
+	if Input.is_action_pressed("jump") and Global.moonjump: #Touche de saut
+		jump()
+	
 	if not is_on_floor():
 		$Sprite.play("air")
 	if Input.is_action_pressed("right") and on_pipe_right and is_on_floor():

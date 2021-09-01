@@ -13,6 +13,7 @@ onready var godmode = false #Invinciblilité
 onready var hyperspeed = false #Hypervitesse
 onready var infinitetime = false #Temps infini
 onready var moonwalk = false #Inverse le sprite de Kiyu
+onready var moonjump = false #Saut lunaire comme sur l'Action Replay
 
 func replay(): #Fonction pour faire changer/redémarrer le niveau
 	match current_level:
