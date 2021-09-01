@@ -23,6 +23,7 @@ func _on_aaaaa_timeout():
 		explosion_id.play()
 		$Bridge.set_cell(x,6,-1)
 		$Bridge/explosion.play()
-		Input.start_joy_vibration(0,1,1,1)
-		Input.vibrate_handheld()
+		if Global.rumble: #Fait vibrer la manette si l'option est activée
+			Input.start_joy_vibration(0,1,1,1)
+			Input.vibrate_handheld()
 		break
