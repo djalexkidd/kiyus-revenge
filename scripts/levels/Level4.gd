@@ -17,8 +17,7 @@ func _on_boss_trigger_body_entered(body):
 
 func _on_aaaaa_timeout():
 	for i in range(x,152):
-		x += 1
-		var explosion_id = get_node("Bridge/explosion" + str(x))
+		var explosion_id = get_node("Bridge/explosion" + str(x+1))
 		explosion_id.show()
 		explosion_id.play()
 		$Bridge.set_cell(x,6,-1)
@@ -26,4 +25,5 @@ func _on_aaaaa_timeout():
 		if Global.rumble: #Fait vibrer la manette si l'option est activée
 			Input.start_joy_vibration(0,1,1,1)
 			Input.vibrate_handheld()
+		x += 1
 		break
