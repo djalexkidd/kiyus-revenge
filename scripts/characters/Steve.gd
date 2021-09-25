@@ -88,7 +88,10 @@ func _physics_process(delta):
 
 func _on_fallzone_body_entered(body): #Le joueur tombe dans un trou
 	Global.death_counter += 1 #Incrémente le compteur de morts
-	get_tree().change_scene("res://scenes/menu/GameOver.tscn") #Affiche l'écran de Game Over
+	if !Global.autoretry:
+		get_tree().change_scene("res://scenes/menu/GameOver.tscn") #Affiche l'écran de Game Over
+	else:
+		Global.replay()
 
 func bounce():
 	velocity.y = JUMPFORCE * 0.7
@@ -136,7 +139,10 @@ func ouch(var enemyposx): #Si le joueur prend un dégat
 
 func _on_Timer_timeout(): #Le timer de mort se termine
 	Global.death_counter += 1 #Incrémente le compteur de morts
-	get_tree().change_scene("res://scenes/menu/GameOver.tscn") #Affiche l'écran de Game Over
+	if !Global.autoretry:
+		get_tree().change_scene("res://scenes/menu/GameOver.tscn") #Affiche l'écran de Game Over
+	else:
+		Global.replay()
 
 func _on_PipeEnter1_body_entered(body): #Endroit secret niveau 1-2
 	on_pipe = true

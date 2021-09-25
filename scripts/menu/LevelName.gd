@@ -67,6 +67,10 @@ func _on_VolumeLabel_mouse_entered(): #Volume
 	show()
 	text = "SETTINGS_INFO_VOLUME"
 
+func _on_AutoretryLabel_mouse_entered():
+	show()
+	text = "SETTINGS_INFO_AUTORETRY"
+
 #DESCRIPTIONS DES MONDES
 func _on_WorldButton1_mouse_entered():
 	show()

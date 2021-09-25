@@ -208,9 +208,9 @@ __meta__ = {
 
 [node name="VolumeLabel" type="Button" parent="."]
 margin_left = 64.0
-margin_top = 448.0
+margin_top = 512.0
 margin_right = 556.0
-margin_bottom = 486.0
+margin_bottom = 550.0
 custom_styles/focus = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
@@ -230,6 +230,39 @@ margin_bottom = 28.0
 max_value = 4.0
 step = 0.1
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AutoretryLabel" type="Button" parent="."]
+margin_left = 64.0
+margin_top = 448.0
+margin_right = 556.0
+margin_bottom = 486.0
+custom_styles/focus = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "SETTINGS_AUTORETRY"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AutoretryButton" type="Button" parent="AutoretryLabel"]
+margin_left = 480.0
+margin_right = 1036.0
+margin_bottom = 38.0
+custom_styles/focus = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+toggle_mode = true
+pressed = true
+text = "SETTINGS_VALUE_ON"
+flat = true
+align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -303,6 +336,9 @@ autoplay = true
 [connection signal="mouse_entered" from="VolumeLabel" to="SettingInfo" method="_on_VolumeLabel_mouse_entered"]
 [connection signal="mouse_exited" from="VolumeLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
 [connection signal="value_changed" from="VolumeLabel/VolumeBar" to="VolumeLabel/VolumeBar" method="_on_value_changed"]
+[connection signal="mouse_entered" from="AutoretryLabel" to="SettingInfo" method="_on_AutoretryLabel_mouse_entered"]
+[connection signal="mouse_exited" from="AutoretryLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
+[connection signal="toggled" from="AutoretryLabel/AutoretryButton" to="." method="_on_AutoretryButton_toggled"]
 [connection signal="pressed" from="ReturnToMenu" to="ReturnToMenu" method="_on_ReturnToMenu_pressed"]
 [connection signal="pressed" from="YoutubeButton" to="." method="_on_YoutubeButton_pressed"]
 [connection signal="pressed" from="GithubButton" to="." method="_on_GithubButton_pressed"]
