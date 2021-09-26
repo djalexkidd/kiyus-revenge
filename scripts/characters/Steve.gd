@@ -30,14 +30,8 @@ func _physics_process(delta):
 			$Sprite.flip_h = true #Inverse pas le sprite horizontalement
 		else:
 			$Sprite.flip_h = false
-	elif Input.is_action_pressed("down"): #Touche bas
-		$Sprite.play("crouch")
-		$CollisionShape2D.disabled = true
-		$HitboxCrouch.disabled = false
 	else: #Joueur immobile
 		$Sprite.play("idle") #Animation par défaut
-		$CollisionShape2D.disabled = false
-		$HitboxCrouch.disabled = true
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor(): #Touche de saut
 		jump()
