@@ -71,6 +71,10 @@ func _on_AutoretryLabel_mouse_entered():
 	show()
 	text = "SETTINGS_INFO_AUTORETRY"
 
+func _on_CRTLabel_mouse_entered():
+	show()
+	text = "SETTINGS_INFO_CRT"
+
 #DESCRIPTIONS DES MONDES
 func _on_WorldButton1_mouse_entered():
 	show()

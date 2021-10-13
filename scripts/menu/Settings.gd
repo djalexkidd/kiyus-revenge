@@ -21,6 +21,11 @@ func _ready(): #Actualise la configuration à l'accès
 	else:
 		$AutoretryLabel/AutoretryButton.text = "SETTINGS_VALUE_OFF"
 		$AutoretryLabel/AutoretryButton.pressed = false
+	if get_node("/root/CRT/ColorRect").visible:
+		$CRTLabel/CRTButton.text = "SETTINGS_VALUE_ON"
+	else:
+		$CRTLabel/CRTButton.text = "SETTINGS_VALUE_OFF"
+		$CRTLabel/CRTButton.pressed = false
 
 func _on_FullscreenButton2_toggled(button_pressed): #Plein écran
 	if button_pressed:
@@ -55,6 +60,14 @@ func _on_AutoretryButton_toggled(button_pressed):
 	else:
 		Global.autoretry = false
 		$AutoretryLabel/AutoretryButton.text = "SETTINGS_VALUE_OFF"
+
+func _on_CRTButton_toggled(button_pressed):
+	if button_pressed:
+		get_node("/root/CRT/ColorRect").visible = true
+		$CRTLabel/CRTButton.text = "SETTINGS_VALUE_ON"
+	else:
+		get_node("/root/CRT/ColorRect").visible = false
+		$CRTLabel/CRTButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_YoutubeButton_pressed():
 	OS.shell_open("https://www.youtube.com/channel/UCDsgfEoSz8qpv9jne85T8tg")
