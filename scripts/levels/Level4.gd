@@ -14,6 +14,8 @@ func _on_boss_trigger_body_entered(body):
 	$boss_trigger.queue_free()
 	$enemies/Paulok/LanceKiyu.start()
 	$PeppaPig.play()
+	$Musique.stop()
+	$BossBattle.play()
 
 func _on_aaaaa_timeout():
 	for i in range(x,152):

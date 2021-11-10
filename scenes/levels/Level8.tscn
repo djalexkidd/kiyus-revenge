@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://tilesets/world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/characters/Kiyu_player.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://scenes/props/Spike.tscn" type="PackedScene" id=16]
 [ext_resource path="res://ASSETS/background/castle.png" type="Texture" id=17]
 [ext_resource path="res://scripts/levels/Level8.gd" type="Script" id=18]
+[ext_resource path="res://ASSETS/sounds/boss.mp3" type="AudioStream" id=19]
 [ext_resource path="res://scenes/props/Board.tscn" type="PackedScene" id=20]
 
 [sub_resource type="DynamicFont" id=1]
@@ -319,6 +320,9 @@ autoplay = true
 [node name="SalutCestLeoDeLaChaineTechMaker" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = 2.0
+
+[node name="BossBattle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
 
 [connection signal="pressed" from="KillSwitch" to="." method="_on_KillSwitch_pressed"]
 [connection signal="body_entered" from="fallzone" to="Kiyu" method="_on_fallzone_body_entered"]

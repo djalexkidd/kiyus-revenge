@@ -7,6 +7,8 @@ func _on_boss_trigger_body_entered(body):
 	$boss_trigger.queue_free()
 	$enemies/LeoTechMaker/LanceKiyu.start()
 	$SalutCestLeoDeLaChaineTechMaker.play()
+	$Musique.stop()
+	$BossBattle.play()
 
 func _on_LeoTechMaker_death():
 	$Sang/Sprite.show()

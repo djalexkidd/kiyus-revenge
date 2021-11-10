@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://tilesets/world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/characters/Kiyu_player.tscn" type="PackedScene" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://ASSETS/explosion/explosion08.png" type="Texture" id=23]
 [ext_resource path="res://ASSETS/sounds/Explosion.wav" type="AudioStream" id=24]
 [ext_resource path="res://ASSETS/background/castle.png" type="Texture" id=25]
+[ext_resource path="res://ASSETS/sounds/boss.mp3" type="AudioStream" id=26]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -410,6 +411,9 @@ autoplay = true
 
 [node name="PeppaPig" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+
+[node name="BossBattle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
 
 [connection signal="timeout" from="Bridge/Timer" to="." method="_on_aaaaa_timeout"]
 [connection signal="pressed" from="KillSwitch" to="." method="_on_KillSwitch_pressed"]
