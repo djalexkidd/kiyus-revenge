@@ -26,6 +26,8 @@ script = ExtResource( 5 )
 position = Vector2( 16, 0 )
 scale = Vector2( 3.25, 2.75 )
 frames = SubResource( 1 )
+frame = 1
+playing = true
 flip_h = true
 
 [node name="hitbox" type="Area2D" parent="."]
