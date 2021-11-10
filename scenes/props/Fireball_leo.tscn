@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ASSETS/sounds/leo_fire.wav" type="AudioStream" id=1]
+[ext_resource path="res://ASSETS/enemies/leo_fireball/FB004.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/enemies/leo_fireball/FB001.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/enemies/leo_fireball/FB002.png" type="Texture" id=4]
+[ext_resource path="res://scripts/characters/Fireball_leo.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 48, 20 )
+
+[node name="Fireball_leo" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 16, 0 )
+scale = Vector2( 3.25, 2.75 )
+frames = SubResource( 1 )
+flip_h = true
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( 0, -4 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[node name="KiyuSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_Kiyu_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

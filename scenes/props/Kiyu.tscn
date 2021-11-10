@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://ASSETS/enemies/kiyu.png" type="Texture" id=1]
-[ext_resource path="res://scripts/characters/Kiyu.gd" type="Script" id=2]
-[ext_resource path="res://ASSETS/sounds/kiyu_squeezie.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/sounds/kiyu_squeezie.wav" type="AudioStream" id=1]
+[ext_resource path="res://ASSETS/enemies/kiyu.png" type="Texture" id=2]
+[ext_resource path="res://scripts/characters/Kiyu.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 45.0448
@@ -11,11 +11,11 @@ height = 12.6197
 [node name="Kiyu" type="KinematicBody2D"]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="hitbox" type="Area2D" parent="."]
 collision_layer = 0
@@ -24,6 +24,6 @@ collision_layer = 0
 shape = SubResource( 1 )
 
 [node name="KiyuSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 1 )
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_Kiyu_body_entered"]

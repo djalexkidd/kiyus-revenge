@@ -8,7 +8,7 @@ var velocity = Vector2()
 
 signal death
 
-var kiyu_ressource = preload("res://scenes/props/Kiyu.tscn")
+var kiyu_ressource = preload("res://scenes/props/Fireball_leo.tscn")
 
 func _physics_process(delta): #Déplace Paulok vers le bas pour qu'il tombe dans le vide
 	velocity.y += 20
