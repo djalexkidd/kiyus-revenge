@@ -24,6 +24,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and Global.current_level != 0:
 		Global.replay()
 	
+	if Input.is_action_just_pressed("run"):
+		get_tree().change_scene("res://scenes/menu/TitleMenu.tscn")
+	
+	if Input.is_action_just_pressed("start"):
+		get_tree().change_scene("res://scenes/menu/WorldMap.tscn")
+	
 	velocity = move_and_slide(velocity,Vector2.UP)
 	
 	velocity.x = lerp(velocity.x,0,0.2)

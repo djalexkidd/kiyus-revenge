@@ -13,4 +13,4 @@ func _on_NextLevel_pressed():
 
 func _on_ReturnToMap_pressed():
 	Global.coins = 0
-	get_tree().change_scene("res://scenes/menu/WorldMap.tscn")
+	get_tree().change_scene("res://scenes/menu/NewWorldMap.tscn")
