@@ -15,17 +15,17 @@
 size = 128
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxEmpty" id=2]
-
 [sub_resource type="DynamicFont" id=3]
 size = 64
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxEmpty" id=4]
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="DynamicFont" id=5]
 size = 24
 font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="DynamicFont" id=6]
 size = 64
@@ -100,8 +100,8 @@ margin_left = 192.0
 margin_top = 64.0
 margin_right = 2368.0
 margin_bottom = 192.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0470588, 0.772549, 0.0470588, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "WORLDMAP_BIGTITLE"
 valign = 1
 __meta__ = {
@@ -124,10 +124,10 @@ __meta__ = {
 [node name="LevelButton1" type="Button" parent="CanvasLayer/GridContainer"]
 margin_right = 972.0
 margin_bottom = 70.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
 text = "WORLDMAP_LEVEL1"
 flat = true
 __meta__ = {
@@ -138,10 +138,10 @@ __meta__ = {
 margin_top = 74.0
 margin_right = 972.0
 margin_bottom = 144.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
 text = "WORLDMAP_LEVEL2"
 flat = true
 __meta__ = {
@@ -152,10 +152,10 @@ __meta__ = {
 margin_top = 148.0
 margin_right = 972.0
 margin_bottom = 218.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
 text = "WORLDMAP_LEVEL3"
 flat = true
 __meta__ = {
@@ -166,10 +166,10 @@ __meta__ = {
 margin_top = 222.0
 margin_right = 972.0
 margin_bottom = 292.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
 text = "WORLDMAP_LEVEL4"
 flat = true
 __meta__ = {
@@ -179,10 +179,10 @@ __meta__ = {
 [node name="ReturnToMenu" type="Button" parent="CanvasLayer"]
 margin_right = 252.0
 margin_bottom = 22.0
-custom_styles/focus = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/focus = SubResource( 4 )
 text = "SETTINGS_RETURN"
 flat = true
 align = 0
@@ -223,6 +223,7 @@ __meta__ = {
 }
 
 [node name="LevelName" type="Label" parent="CanvasLayer"]
+visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -239,10 +240,10 @@ anchor_bottom = 0.5
 margin_top = -48.0
 margin_right = 76.0
 margin_bottom = 22.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
 text = "1"
 flat = true
 __meta__ = {
@@ -255,10 +256,10 @@ anchor_bottom = 0.5
 margin_top = 24.0
 margin_right = 76.0
 margin_bottom = 94.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
 text = "2"
 flat = true
 __meta__ = {

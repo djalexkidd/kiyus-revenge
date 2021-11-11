@@ -3,9 +3,6 @@ extends Label
 #C'est un texte affichant le nom du niveau
 #Mais aussi la description d'un paramètre
 
-func _ready():
-	hide()
-
 func _on_LevelButton_mouse_exited():
 	hide()
 
@@ -104,3 +101,15 @@ func _on_MoonwalkLabel_mouse_entered():
 func _on_MoonjumpLabel_mouse_entered():
 	show()
 	text = "CHEATS_INFO_MOONJUMP"
+
+func _on_Level1_body_entered(body):
+	_on_LevelButton1_mouse_entered()
+
+func _on_Level2_body_entered(body):
+	_on_LevelButton2_mouse_entered()
+
+func _on_Level3_body_entered(body):
+	_on_LevelButton3_mouse_entered()
+
+func _on_Level4_body_entered(body):
+	_on_LevelButton4_mouse_entered()
