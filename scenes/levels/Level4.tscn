@@ -25,7 +25,7 @@
 [ext_resource path="res://ASSETS/explosion/explosion08.png" type="Texture" id=23]
 [ext_resource path="res://ASSETS/sounds/Explosion.wav" type="AudioStream" id=24]
 [ext_resource path="res://ASSETS/background/castle.png" type="Texture" id=25]
-[ext_resource path="res://ASSETS/sounds/boss.mp3" type="AudioStream" id=26]
+[ext_resource path="res://ASSETS/sounds/mus_boss.mp3" type="AudioStream" id=26]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
