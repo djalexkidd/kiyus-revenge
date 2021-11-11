@@ -10,11 +10,11 @@
 size = 128
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxEmpty" id=2]
-
 [sub_resource type="DynamicFont" id=3]
 size = 64
 font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
@@ -35,13 +35,35 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 270.0
-margin_top = 64.0
-margin_right = 1038.0
-margin_bottom = 192.0
-custom_fonts/font = SubResource( 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -328.0
+margin_right = 960.0
+margin_bottom = -200.0
 custom_colors/font_color = Color( 0, 1, 0, 1 )
-text = "BRAVO!"
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL_FINISHED1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -184.0
+margin_right = 960.0
+margin_bottom = -56.0
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "LEVEL_FINISHED2"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -52,10 +74,10 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -40.0
 margin_bottom = 30.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
 text = "GAMEOVER_NEXTLEVEL"
 flat = true
 script = ExtResource( 5 )
@@ -71,10 +93,10 @@ margin_left = -64.0
 margin_top = -272.0
 margin_right = 76.0
 margin_bottom = -202.0
-custom_styles/focus = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
 text = "GAMEOVER_RETURN_TO_MAP"
 flat = true
 __meta__ = {
@@ -87,10 +109,10 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = 216.0
 margin_bottom = 286.0
-custom_styles/focus = SubResource( 4 )
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
 text = "GAMEOVER_MAINMENU"
 flat = true
 script = ExtResource( 4 )
