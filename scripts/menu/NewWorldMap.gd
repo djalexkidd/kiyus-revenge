@@ -1,7 +1,7 @@
 extends Node2D
 
 func _on_Level_body_exited(body):
-	$Bar/LevelName.hide()
+	$HUD/Bar/LevelName.hide()
 	$AntiBug.start()
 
 func _on_Level1_body_entered(body):
