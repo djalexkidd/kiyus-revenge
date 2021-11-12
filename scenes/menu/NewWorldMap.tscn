@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://ASSETS/worldmap/mapTile_187.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/worldmap/mapTile_188.png" type="Texture" id=2]
@@ -720,6 +720,62 @@ font_data = ExtResource( 46 )
 [sub_resource type="DynamicFont" id=19]
 font_data = ExtResource( 47 )
 
+[sub_resource type="Animation" id=24]
+resource_name = "scroll_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bar:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -672 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bar/Background:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1280, 736 ), Vector2( 1280, 64 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "scroll_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bar:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -672 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bar/Background:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1280, 64 ), Vector2( 1280, 736 ) ]
+}
+
 [node name="WorldMap" type="Node2D"]
 script = ExtResource( 43 )
 
@@ -885,8 +941,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -640.0
-margin_top = -40.0
+margin_top = -48.0
 margin_right = 640.0
+margin_bottom = 16.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -895,10 +952,14 @@ __meta__ = {
 [node name="CurrentWorld" type="Label" parent="HUD/Bar"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -32.0
+margin_top = -39.0
 margin_right = 544.0
+margin_bottom = -7.0
 custom_fonts/font = SubResource( 16 )
 text = "WORLDMAP_BIGTITLE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DeathLabel" type="Label" parent="HUD/Bar"]
 anchor_left = 1.0
@@ -906,8 +967,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -360.0
-margin_top = -32.0
+margin_top = -39.0
 margin_right = 64.0
+margin_bottom = -7.0
 custom_fonts/font = SubResource( 18 )
 text = "WORLDMAP_DEATHCOUNT"
 __meta__ = {
@@ -920,7 +982,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -22.0
-margin_top = -32.0
+margin_top = -39.0
+margin_bottom = -7.0
 custom_fonts/font = SubResource( 18 )
 text = "#"
 align = 2
@@ -934,7 +997,8 @@ visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -24.0
+margin_top = -33.0
+margin_bottom = -9.0
 custom_fonts/font = SubResource( 19 )
 text = "##########"
 align = 1
@@ -942,6 +1006,10 @@ script = ExtResource( 45 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
+anims/scroll_down = SubResource( 24 )
+anims/scroll_up = SubResource( 22 )
 
 [node name="AntiBug" type="Timer" parent="."]
 wait_time = 0.05
@@ -977,4 +1045,5 @@ autoplay = true
 [connection signal="body_exited" from="Level8" to="." method="_on_Level_body_exited"]
 [connection signal="body_entered" from="World1" to="." method="_on_World1_body_entered"]
 [connection signal="body_entered" from="World2" to="." method="_on_World2_body_entered"]
+[connection signal="open_menu" from="Kiyu" to="." method="open_menu"]
 [connection signal="timeout" from="AntiBug" to="." method="_on_AntiBug_timeout"]
