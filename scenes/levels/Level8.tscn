@@ -1,7 +1,6 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://tilesets/world_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://scenes/characters/Kiyu_player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/other/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/props/FireBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/props/KillSwitch.tscn" type="PackedScene" id=5]
@@ -301,20 +300,6 @@ directionx = 1
 [node name="Board2" parent="." instance=ExtResource( 20 )]
 position = Vector2( 5888, 320 )
 
-[node name="Kiyu" parent="." instance=ExtResource( 2 )]
-position = Vector2( -100, 156 )
-
-[node name="Camera2D" type="Camera2D" parent="Kiyu"]
-position = Vector2( 4, -12 )
-current = true
-limit_left = -637
-limit_right = 9920
-limit_bottom = 700
-smoothing_enabled = true
-drag_margin_left = 0.3
-drag_margin_right = 0.3
-editor_draw_limits = true
-
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
@@ -327,7 +312,6 @@ volume_db = 2.0
 stream = ExtResource( 19 )
 
 [connection signal="pressed" from="KillSwitch" to="." method="_on_KillSwitch_pressed"]
-[connection signal="body_entered" from="fallzone" to="Kiyu" method="_on_fallzone_body_entered"]
 [connection signal="body_entered" from="boss_trigger" to="." method="_on_boss_trigger_body_entered"]
 [connection signal="timeout" from="Sang/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="death" from="enemies/LeoTechMaker" to="." method="_on_LeoTechMaker_death"]

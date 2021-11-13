@@ -1081,7 +1081,6 @@ __meta__ = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "1"
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
