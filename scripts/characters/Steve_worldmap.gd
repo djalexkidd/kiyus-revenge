@@ -5,16 +5,22 @@ var SPEED = 180 #Vitesse du joueur
 var select
 
 signal open_menu
+signal next_char
+signal prev_char
 
 func _physics_process(delta):
 	if Input.is_action_pressed("right") and not select: #Touche droite
 		velocity.x = SPEED
 		$Sprite.play("walk") #Joue l'animation de marche
 		$Sprite.flip_h = false #N'inverse pas le sprite horizontalement
+	elif Input.is_action_just_pressed("right") and select:
+		emit_signal("next_char")
 	elif Input.is_action_pressed("left") and not select: #Touche gauche
 		velocity.x = -SPEED
 		$Sprite.play("walk") #Joue l'animation de marche
 		$Sprite.flip_h = true #Inverse le sprite horizontalement
+	elif Input.is_action_just_pressed("left") and select:
+		emit_signal("prev_char")
 	elif Input.is_action_pressed("down") and not select: #Touche bas
 		velocity.y = SPEED
 		$Sprite.play("walk") #Joue l'animation de marche

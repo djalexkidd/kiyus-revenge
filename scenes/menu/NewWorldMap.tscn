@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://ASSETS/worldmap/mapTile_187.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/worldmap/mapTile_188.png" type="Texture" id=2]
@@ -49,9 +49,14 @@
 [ext_resource path="res://ASSETS/fonts/PressStart.ttf" type="DynamicFontData" id=47]
 [ext_resource path="res://ASSETS/touchcontrol/arrowRight.png" type="Texture" id=48]
 [ext_resource path="res://ASSETS/touchcontrol/spr_A_button_0.png" type="Texture" id=49]
+[ext_resource path="res://ASSETS/player/kiyu/walk.2.png" type="Texture" id=50]
 [ext_resource path="res://ASSETS/touchcontrol/spr_B_button_0.png" type="Texture" id=51]
 [ext_resource path="res://ASSETS/touchcontrol/arrowLeft.png" type="Texture" id=52]
 [ext_resource path="res://ASSETS/touchcontrol/pause.png" type="Texture" id=53]
+[ext_resource path="res://ASSETS/player/kiyu/walk.1.png" type="Texture" id=54]
+[ext_resource path="res://ASSETS/player/kiyu/walk.0.png" type="Texture" id=55]
+[ext_resource path="res://ASSETS/player/steve/platformChar_walk2.png" type="Texture" id=56]
+[ext_resource path="res://ASSETS/player/steve/platformChar_walk1.png" type="Texture" id=57]
 
 [sub_resource type="TileSet" id=1]
 0/name = "mapTile_187.png 0"
@@ -720,6 +725,34 @@ font_data = ExtResource( 46 )
 [sub_resource type="DynamicFont" id=19]
 font_data = ExtResource( 47 )
 
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ ExtResource( 55 ), ExtResource( 54 ), ExtResource( 50 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 57 ), ExtResource( 56 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharSelect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 620, 788 ) ]
+}
+
 [sub_resource type="Animation" id=24]
 resource_name = "scroll_down"
 length = 0.5
@@ -746,6 +779,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1280, 736 ), Vector2( 1280, 64 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharSelect:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 620, 340 ), Vector2( 620, 788 ) ]
 }
 
 [sub_resource type="Animation" id=22]
@@ -774,6 +819,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1280, 64 ), Vector2( 1280, 736 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharSelect:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 620, 788 ), Vector2( 620, 340 ) ]
 }
 
 [node name="WorldMap" type="Node2D"]
@@ -1007,7 +1064,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CharSelect" type="Control" parent="HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = 428.0
+margin_right = 20.0
+margin_bottom = 468.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="HUD/CharSelect"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 25 )
+animation = "1"
+frame = 2
+playing = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
+anims/RESET = SubResource( 26 )
 anims/scroll_down = SubResource( 24 )
 anims/scroll_up = SubResource( 22 )
 
@@ -1045,5 +1123,7 @@ autoplay = true
 [connection signal="body_exited" from="Level8" to="." method="_on_Level_body_exited"]
 [connection signal="body_entered" from="World1" to="." method="_on_World1_body_entered"]
 [connection signal="body_entered" from="World2" to="." method="_on_World2_body_entered"]
+[connection signal="next_char" from="Kiyu" to="." method="_on_Kiyu_next_char"]
 [connection signal="open_menu" from="Kiyu" to="." method="open_menu"]
+[connection signal="prev_char" from="Kiyu" to="." method="_on_Kiyu_prev_char"]
 [connection signal="timeout" from="AntiBug" to="." method="_on_AntiBug_timeout"]

@@ -9,6 +9,7 @@ onready var fps_counter = false #Compteur de FPS
 onready var rumble = true #Vibrations activées
 onready var autoretry = false #Redémarrage automatique du niveau
 onready var coins = 0 #Nombre de pièces du joueur
+onready var character = 1 #Personnage
 #Codes de triche
 onready var godmode = false #Invinciblilité
 onready var hyperspeed = false #Hypervitesse

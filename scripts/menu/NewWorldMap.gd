@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	Global.current_world = 1
+
 func _on_Level_body_exited(body):
 	$HUD/Bar/LevelName.hide()
 	$AntiBug.start()
@@ -50,3 +53,25 @@ func open_menu():
 	else:
 		$HUD/AnimationPlayer.play("scroll_down")
 		$Kiyu.select = false
+
+func _on_Kiyu_next_char():
+	Global.character += 1
+	refresh_char()
+
+func _on_Kiyu_prev_char():
+	Global.character -= 1
+	refresh_char()
+
+func refresh_char():
+	$HUD/CharSelect/AnimatedSprite.play(str(Global.character))
+	if Global.character > 2:
+		Global.character -= 1
+	elif Global.character < 1:
+		Global.character += 1
+	
+	if Global.character == 2:
+		$HUD/CharSelect/AnimatedSprite.scale.x = 1
+		$HUD/CharSelect/AnimatedSprite.scale.y = 1
+	else:
+		$HUD/CharSelect/AnimatedSprite.scale.x = 4
+		$HUD/CharSelect/AnimatedSprite.scale.y = 4
