@@ -1,8 +1,14 @@
 extends Node2D
 
 func _ready():
-	Global.current_world = 1
 	refresh_char()
+	match Global.current_world:
+		1:
+			$Kiyu.position = Vector2(309.543, 346.053)
+			$HUD/Bar/CurrentWorld.text = "WORLDMAP_BIGTITLE"
+		2:
+			$Kiyu.position = Vector2(991.543, 922.053)
+			$HUD/Bar/CurrentWorld.text = "WORLDMAP_BIGTITLE2"
 
 func _on_Level_body_exited(body):
 	$HUD/Bar/LevelName.hide()
