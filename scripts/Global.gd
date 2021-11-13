@@ -43,3 +43,10 @@ func replay(): #Fonction pour faire changer/redémarrer le niveau
 #3: Niveau 1-3 - Nintendo va me détester
 #4: Niveau 1-4 - Super Mario Maker en sueur
 #5: Niveau 2-1 - PLACEHOLDER
+
+func char_select():
+	match character:
+		1:
+			return "res://scenes/characters/Kiyu_player.tscn"
+		2:
+			return "res://scenes/characters/Steve_player.tscn"

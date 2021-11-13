@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	Global.current_world = 1
+	refresh_char()
 
 func _on_Level_body_exited(body):
 	$HUD/Bar/LevelName.hide()

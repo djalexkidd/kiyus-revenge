@@ -1,7 +1,6 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://tilesets/underground_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://scenes/characters/Kiyu_player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/other/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ASSETS/background/bricks.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/sounds/pipe.wav" type="AudioStream" id=5]
@@ -459,19 +458,6 @@ direction = 1
 [node name="Flag" parent="." instance=ExtResource( 7 )]
 position = Vector2( 10528, 212 )
 
-[node name="Kiyu" parent="." instance=ExtResource( 2 )]
-position = Vector2( -448, -288 )
-
-[node name="Camera2D" type="Camera2D" parent="Kiyu"]
-current = true
-limit_left = -637
-limit_right = 10880
-limit_bottom = 700
-smoothing_enabled = true
-drag_margin_left = 0.3
-drag_margin_right = 0.3
-editor_draw_limits = true
-
 [node name="Pipes" type="TileMap" parent="."]
 tile_set = SubResource( 11 )
 collision_layer = 2
@@ -488,7 +474,6 @@ stream = ExtResource( 5 )
 volume_db = 20.0
 autoplay = true
 
-[connection signal="body_entered" from="fallzone" to="Kiyu" method="_on_fallzone_body_entered"]
 [connection signal="coin_collected" from="coins/coin1" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="coins/coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="coins/coin3" to="HUD" method="_on_coin_collected"]

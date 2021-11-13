@@ -1,6 +1,22 @@
 extends Node2D
 
+var player_character_path = Global.char_select()
+var camera_path = "res://scenes/levels/cameras/Camera2.tscn"
+
 func _ready():
+	var player_character = load(player_character_path).instance()
+	var camera = load(camera_path).instance()
+	player_character.position = Vector2(-48, 476)
+	add_child(player_character)
+	$Kiyu.add_child(camera)
+	
+	$fallzone.connect("body_entered", $Kiyu, "_on_fallzone_body_entered")
+	$fallzone2.connect("body_entered", $Kiyu, "_on_fallzone_body_entered")
+	$PipeEnter1.connect("body_entered", $Kiyu, "_on_PipeEnter1_body_entered")
+	$PipeEnter3.connect("body_entered", $Kiyu, "_on_PipeEnter3_body_entered")
+	$PipeEnter1.connect("body_exited", $Kiyu, "_on_PipeEnter1_body_exited")
+	$PipeEnter3.connect("body_exited", $Kiyu, "_on_PipeEnter3_body_exited")
+	
 	if Global.pipe_number == 2: #Ah? Quelqu'un est tombé dans le piège ?
 		Global.pipe_number = 0 #Réinitialiser l'ID tuyau
 		$Kiyu/EnterPipeSound.play() #Jouer le son du tuyau
