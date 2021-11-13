@@ -1,12 +1,12 @@
 [gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://tilesets/world_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://scenes/characters/Kiyu_player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/other/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ASSETS/background/bricks.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/sounds/pipe.wav" type="AudioStream" id=5]
 [ext_resource path="res://scenes/props/coin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ASSETS/sounds/mus_underground.ogg" type="AudioStream" id=7]
+[ext_resource path="res://scripts/levels/Level2a.gd" type="Script" id=8]
 [ext_resource path="res://ASSETS/WorldTiles/pipe5.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/fonts/Minecraft.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://ASSETS/WorldTiles/pipe7.png" type="Texture" id=16]
@@ -222,6 +222,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 7/z_index = 0
 
 [node name="Level2a" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="WarpZone" type="Label" parent="."]
 margin_left = 832.0
@@ -326,20 +327,6 @@ position = Vector2( 64, 64 )
 [node name="coin13" parent="coins" instance=ExtResource( 6 )]
 position = Vector2( 160, 64 )
 
-[node name="Kiyu" parent="." instance=ExtResource( 2 )]
-position = Vector2( -448, -288 )
-
-[node name="Camera2D" type="Camera2D" parent="Kiyu"]
-current = true
-limit_left = -637
-limit_top = -800
-limit_right = 1150
-limit_bottom = 700
-smoothing_enabled = true
-drag_margin_left = 0.3
-drag_margin_right = 0.3
-editor_draw_limits = true
-
 [node name="Pipes" type="TileMap" parent="."]
 tile_set = SubResource( 12 )
 collision_layer = 2
@@ -356,11 +343,6 @@ stream = ExtResource( 5 )
 volume_db = 20.0
 autoplay = true
 
-[connection signal="body_entered" from="fallzone" to="Kiyu" method="_on_fallzone_body_entered"]
-[connection signal="body_entered" from="PipeEnter2" to="Kiyu" method="_on_PipeEnter2_body_entered"]
-[connection signal="body_exited" from="PipeEnter2" to="Kiyu" method="_on_PipeEnter_body_exited"]
-[connection signal="body_entered" from="PipeEnter4" to="Kiyu" method="_on_PipeEnter4_body_entered"]
-[connection signal="body_exited" from="PipeEnter4" to="Kiyu" method="_on_PipeEnter_body_exited"]
 [connection signal="coin_collected" from="coins/coin1" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="coins/coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="coins/coin3" to="HUD" method="_on_coin_collected"]

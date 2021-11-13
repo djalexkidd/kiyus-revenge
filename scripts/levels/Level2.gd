@@ -9,6 +9,7 @@ func _ready():
 	player_character.position = Vector2(-48, 476)
 	add_child(player_character)
 	$Kiyu.add_child(camera)
+	move_child($Kiyu, 4)
 	
 	$fallzone.connect("body_entered", $Kiyu, "_on_fallzone_body_entered")
 	$fallzone2.connect("body_entered", $Kiyu, "_on_fallzone_body_entered")
