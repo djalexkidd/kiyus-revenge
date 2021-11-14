@@ -76,8 +76,8 @@ margin_left = 96.0
 margin_top = 40.0
 margin_right = 129.0
 margin_bottom = 88.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.8, 0.113725, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "x"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -88,8 +88,8 @@ margin_left = 136.0
 margin_top = 40.0
 margin_right = 232.0
 margin_bottom = 88.0
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0.8, 0.113725, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "##"
 valign = 1
 __meta__ = {
@@ -101,8 +101,8 @@ margin_left = 24.0
 margin_top = 152.0
 margin_right = 168.0
 margin_bottom = 200.0
-custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0.764706, 1, 1 )
+custom_fonts/font = SubResource( 4 )
 text = "###"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -128,7 +128,7 @@ visibility_mode = 1
 
 [node name="LeftTouchScreenButton" type="TouchScreenButton" parent="TouchControls"]
 modulate = Color( 1, 1, 1, 0.313726 )
-position = Vector2( 0, 576 )
+position = Vector2( 0, 448 )
 scale = Vector2( 2.56, 2.56 )
 normal = ExtResource( 3 )
 passby_press = true
@@ -137,7 +137,7 @@ visibility_mode = 1
 
 [node name="RightTouchScreenButton" type="TouchScreenButton" parent="TouchControls"]
 modulate = Color( 1, 1, 1, 0.313726 )
-position = Vector2( 128, 576 )
+position = Vector2( 192, 448 )
 scale = Vector2( 2.56, 2.56 )
 normal = ExtResource( 2 )
 passby_press = true
@@ -146,7 +146,7 @@ visibility_mode = 1
 
 [node name="DownTouchScreenButton2" type="TouchScreenButton" parent="TouchControls"]
 modulate = Color( 1, 1, 1, 0.313726 )
-position = Vector2( 384, 576 )
+position = Vector2( 115, 526 )
 scale = Vector2( 2.56, 2.56 )
 normal = ExtResource( 4 )
 passby_press = true
