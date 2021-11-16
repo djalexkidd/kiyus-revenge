@@ -1,6 +1,7 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://tilesets/world_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://ASSETS/sounds/mus_notsweden.ogg" type="AudioStream" id=2]
 [ext_resource path="res://tilesets/pass_through_tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://ASSETS/background/set2_background.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/background/set2_tiles.png" type="Texture" id=5]
@@ -10,7 +11,6 @@
 [ext_resource path="res://scenes/props/Flag.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/props/enemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scripts/levels/Level1.gd" type="Script" id=11]
-[ext_resource path="res://ASSETS/sounds/field.ogg" type="AudioStream" id=14]
 [ext_resource path="res://scenes/props/block.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/props/Spike.tscn" type="PackedScene" id=16]
 
@@ -49,7 +49,7 @@ margin_top = 272.0
 margin_right = -48.0
 margin_bottom = 311.0
 custom_fonts/font = SubResource( 1 )
-text = "WORLDMAP_INFO_LEVEL1"
+text = "WORLDMAP_INFO_LEVEL7"
 align = 1
 valign = 1
 __meta__ = {
@@ -62,7 +62,7 @@ margin_top = 232.0
 margin_right = 13.0
 margin_bottom = 271.0
 custom_fonts/font = SubResource( 1 )
-text = "1-1"
+text = "2-3"
 align = 1
 valign = 1
 __meta__ = {
@@ -249,7 +249,8 @@ position = Vector2( 3752, -208 )
 rotation = -1.5708
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 14 )
+stream = ExtResource( 2 )
+volume_db = -4.0
 autoplay = true
 
 [connection signal="coin_collected" from="coins/coin1" to="HUD" method="_on_coin_collected"]
