@@ -191,62 +191,11 @@ direction = 1
 
 [node name="block1" parent="blocks" instance=ExtResource( 15 )]
 position = Vector2( -448, 320 )
-trap = true
-
-[node name="block2" parent="blocks" instance=ExtResource( 15 )]
-position = Vector2( 2240, 320 )
-
-[node name="block3" parent="blocks" instance=ExtResource( 15 )]
-position = Vector2( 2112, 320 )
-
-[node name="block4" parent="blocks" instance=ExtResource( 15 )]
-position = Vector2( 2368, 320 )
 
 [node name="spikes" type="Node2D" parent="."]
 
 [node name="Spike1" parent="spikes" instance=ExtResource( 16 )]
 position = Vector2( 2492, 488 )
-
-[node name="Spike2" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 2240, 264 )
-
-[node name="Spike3" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 376, 488 )
-
-[node name="Spike4" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 1875, 168 )
-
-[node name="Spike5" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 1811, 168 )
-
-[node name="Spike6" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 1747, 168 )
-
-[node name="Spike7" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( -448, 368 )
-rotation = 3.14159
-
-[node name="Spike8" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 3680, 616 )
-
-[node name="Spike9" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 3872, -488 )
-rotation = 3.14159
-
-[node name="Spike10" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 3872, 424 )
-
-[node name="Spike11" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 4328, 352 )
-rotation = -1.5708
-
-[node name="Spike12" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 4328, 608 )
-rotation = -1.5708
-
-[node name="Spike13" parent="spikes" instance=ExtResource( 16 )]
-position = Vector2( 3752, -208 )
-rotation = -1.5708
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
@@ -257,6 +206,3 @@ autoplay = true
 [connection signal="coin_collected" from="coins/coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="coins/coin3" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="blocks/block1" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="blocks/block2" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="blocks/block3" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="blocks/block4" to="HUD" method="_on_coin_collected"]

@@ -71,7 +71,7 @@ func _on_Kiyu_prev_char():
 
 func refresh_char():
 	$HUD/CharSelect/AnimatedSprite.play(str(Global.character))
-	if Global.character > 2:
+	if Global.character > 3:
 		Global.character -= 1
 	elif Global.character < 1:
 		Global.character += 1
