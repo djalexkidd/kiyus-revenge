@@ -31,7 +31,13 @@ func _on_LevelButton2_pressed(): #Niveau 2
 			Global.replay() #Charge le niveau
 
 func _on_LevelButton3_pressed(): #Niveau 3
-	Global.current_level = 3 #Change le niveau actuel vers le niveau 3
+	match Global.current_world:
+		1:
+			Global.current_level = 3 #Change le niveau actuel vers le niveau 1-3
+			Global.replay() #Charge le niveau
+		2:
+			Global.current_level = 7 #Change le niveau actuel vers le niveau 2-3
+			Global.replay() #Charge le niveau
 	Global.replay() #Charge le niveau
 
 func _on_LevelButton4_pressed(): #Niveau 4
@@ -51,7 +57,6 @@ func _on_WorldButton1_pressed():
 	$"ParallaxBackground/Purple Sky/Sprite".set_modulate(Color(1,1,1))
 	$CanvasLayer/Label.text = "WORLDMAP_BIGTITLE"
 	Global.current_world = 1
-	$CanvasLayer/GridContainer/LevelButton3.disabled = false
 
 func _on_WorldButton2_pressed():
 	#$Musique.stop()
@@ -62,4 +67,3 @@ func _on_WorldButton2_pressed():
 	$"ParallaxBackground/Purple Sky/Sprite".set_modulate(Color(1,1,0))
 	$CanvasLayer/Label.text = "WORLDMAP_BIGTITLE2"
 	Global.current_world = 2
-	$CanvasLayer/GridContainer/LevelButton3.disabled = true

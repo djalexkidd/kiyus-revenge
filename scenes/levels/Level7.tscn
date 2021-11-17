@@ -10,7 +10,7 @@
 [ext_resource path="res://ASSETS/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://scenes/props/Flag.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/props/enemy.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scripts/levels/Level1.gd" type="Script" id=11]
+[ext_resource path="res://scripts/levels/Level7.gd" type="Script" id=11]
 [ext_resource path="res://scenes/props/block.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/props/Spike.tscn" type="PackedScene" id=16]
 
@@ -27,7 +27,7 @@ extents = Vector2( 352, 32 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 2738.16, 90.787 )
 
-[node name="Level1" type="Node2D"]
+[node name="Level7" type="Node2D"]
 script = ExtResource( 11 )
 
 [node name="Niveau" type="Label" parent="."]
@@ -199,7 +199,7 @@ position = Vector2( 2492, 488 )
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -4.0
+volume_db = -6.0
 autoplay = true
 
 [connection signal="coin_collected" from="coins/coin1" to="HUD" method="_on_coin_collected"]
