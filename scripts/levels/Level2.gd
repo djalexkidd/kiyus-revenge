@@ -15,8 +15,8 @@ func _ready():
 	$fallzone2.connect("body_entered", $Kiyu, "_on_fallzone_body_entered")
 	$PipeEnter1.connect("body_entered", $Kiyu, "_on_PipeEnter1_body_entered")
 	$PipeEnter3.connect("body_entered", $Kiyu, "_on_PipeEnter3_body_entered")
-	$PipeEnter1.connect("body_exited", $Kiyu, "_on_PipeEnter1_body_exited")
-	$PipeEnter3.connect("body_exited", $Kiyu, "_on_PipeEnter3_body_exited")
+	$PipeEnter1.connect("body_exited", $Kiyu, "_on_PipeEnter_body_exited")
+	$PipeEnter3.connect("body_exited", $Kiyu, "_on_PipeEnter_body_exited")
 	
 	if Global.pipe_number == 2: #Ah? Quelqu'un est tombé dans le piège ?
 		Global.pipe_number = 0 #Réinitialiser l'ID tuyau
