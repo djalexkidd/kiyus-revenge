@@ -4,7 +4,7 @@
 position = Vector2( 16, -12 )
 current = true
 limit_left = -637
-limit_right = 9400
+limit_right = 645
 limit_bottom = 700
 smoothing_enabled = true
 drag_margin_left = 1.0
