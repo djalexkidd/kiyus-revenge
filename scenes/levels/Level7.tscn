@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://tilesets/world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ASSETS/sounds/mus_overworld.ogg" type="AudioStream" id=2]
@@ -17,6 +17,9 @@
 [sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 8 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32.5952, 1613.72 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 3775.65, 90.787 )
@@ -120,6 +123,13 @@ region_rect = Rect2( 0, 0, 1120, 840 )
 [node name="Flag" parent="." instance=ExtResource( 9 )]
 position = Vector2( 5664, -426 )
 
+[node name="autoscrolldeath" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="autoscrolldeath"]
+position = Vector2( -752, -1034.28 )
+shape = SubResource( 5 )
+
 [node name="fallzone" type="Area2D" parent="."]
 position = Vector2( 1384, 1024 )
 collision_layer = 4
@@ -191,6 +201,7 @@ stream = ExtResource( 2 )
 volume_db = -6.0
 autoplay = true
 
+[connection signal="body_entered" from="autoscrolldeath" to="." method="_on_autoscrolldeath_body_entered"]
 [connection signal="coin_collected" from="coins/coin1" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="coins/coin2" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="coins/coin3" to="HUD" method="_on_coin_collected"]

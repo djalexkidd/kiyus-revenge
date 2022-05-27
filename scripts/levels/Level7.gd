@@ -14,3 +14,7 @@ func _ready():
 func _physics_process(delta):
 	$Kiyu/Camera2D.limit_left += 2
 	$Kiyu/Camera2D.limit_right += 2
+	$autoscrolldeath.position.x += 2
+
+func _on_autoscrolldeath_body_entered(body):
+	body.ouch(position.x)
