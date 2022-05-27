@@ -196,6 +196,12 @@ position = Vector2( 2112, -24 )
 position = Vector2( 5024, -680 )
 rotation = 3.14159
 
+[node name="Spike3" parent="spikes" instance=ExtResource( 16 )]
+position = Vector2( 5024, -856 )
+
+[node name="Spike4" parent="spikes" instance=ExtResource( 16 )]
+position = Vector2( 5408, -856 )
+
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -6.0

@@ -196,6 +196,15 @@ position = Vector2( 1568, -88 )
 [node name="Spike2" parent="spikes" instance=ExtResource( 16 )]
 position = Vector2( 6976, 336 )
 
+[node name="Spike3" parent="spikes" instance=ExtResource( 16 )]
+position = Vector2( 4640, 552 )
+
+[node name="Spike4" parent="spikes" instance=ExtResource( 16 )]
+position = Vector2( 4192, 552 )
+
+[node name="Spike5" parent="spikes" instance=ExtResource( 16 )]
+position = Vector2( 3488, 552 )
+
 [node name="spikesBoss" type="Node2D" parent="."]
 
 [node name="SpikeBoss" parent="spikesBoss" instance=ExtResource( 6 )]
