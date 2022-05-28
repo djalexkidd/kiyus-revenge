@@ -40,9 +40,6 @@ func _physics_process(delta):
 	elif Input.is_action_just_pressed("run") and select:
 		emit_signal("open_menu")
 	
-	if Input.is_action_just_pressed("start"):
-		get_tree().change_scene("res://scenes/menu/WorldMap.tscn")
-	
 	velocity = move_and_slide(velocity,Vector2.UP)
 	
 	velocity.x = lerp(velocity.x,0,0.5)

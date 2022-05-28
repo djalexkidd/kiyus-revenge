@@ -74,3 +74,9 @@ func _on_YoutubeButton_pressed():
 
 func _on_GithubButton_pressed():
 	OS.shell_open("https://github.com/djalexkidd/kiyus-revenge")
+
+var ActivateCheats = 0
+func _on_Version_pressed():
+	ActivateCheats += 1
+	if ActivateCheats == 10:
+		get_tree().change_scene("res://scenes/menu/Cheats.tscn")

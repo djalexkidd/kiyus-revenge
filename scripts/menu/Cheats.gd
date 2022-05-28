@@ -72,4 +72,4 @@ func _on_MoonjumpButton_toggled(button_pressed):
 		$MoonjumpLabel/MoonjumpButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_ReturnToMenu_pressed():
-	get_tree().change_scene("res://scenes/menu/WorldMap.tscn")
+	get_tree().change_scene("res://scenes/menu/Settings.tscn")
