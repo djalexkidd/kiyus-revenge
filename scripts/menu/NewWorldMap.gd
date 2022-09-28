@@ -53,6 +53,10 @@ func _on_World2_body_entered(body):
 	Global.current_world = 2
 	$HUD/Bar/CurrentWorld.text = "WORLDMAP_BIGTITLE2"
 
+func _on_World3_enter_body_entered(body):
+	Global.current_world = 3
+	$HUD/Bar/CurrentWorld.text = "WORLDMAP_BIGTITLE3"
+
 func open_menu():
 	if not $Kiyu.select:
 		$HUD/AnimationPlayer.play("scroll_up")
