@@ -2,7 +2,7 @@ name: "godot-ci export"
 on: push
 
 env:
-  GODOT_VERSION: 3.4.4
+  GODOT_VERSION: 3.5.2
   EXPORT_NAME: kiyus-revenge
 
 jobs:
@@ -58,7 +58,7 @@ jobs:
     name: Web Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci
+      image: barichello/godot-ci:3.5.2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -81,6 +81,9 @@ jobs:
       - name: Install rsync 📚
         run: |
           apt-get update && apt-get install -y rsync
+      - name: Configure git to trust the workspace despite the different owner
+        run:
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
