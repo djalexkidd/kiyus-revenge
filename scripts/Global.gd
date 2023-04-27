@@ -35,6 +35,8 @@ func replay(): #Fonction pour faire changer/redémarrer le niveau
 			get_tree().change_scene("res://scenes/levels/Level7.tscn")
 		8:
 			get_tree().change_scene("res://scenes/levels/Level8.tscn")
+		9:
+			get_tree().change_scene("res://scenes/levels/Level9.tscn")
 			
 		52:
 			get_tree().change_scene("res://scenes/levels/Level2a.tscn")
@@ -54,3 +56,5 @@ func char_select():
 			return "res://scenes/characters/Steve_player.tscn"
 		3:
 			return "res://scenes/characters/Amogus_player.tscn"
+		_:
+			return "res://scenes/characters/Kiyu_player.tscn"

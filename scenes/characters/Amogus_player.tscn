@@ -3,21 +3,11 @@
 [ext_resource path="res://ASSETS/player/amogus/amogus.png" type="Texture" id=1]
 [ext_resource path="res://scripts/characters/Steve.gd" type="Script" id=2]
 [ext_resource path="res://ASSETS/sounds/jump.wav" type="AudioStream" id=3]
-[ext_resource path="res://ASSETS/sounds/kiyu_death.wav" type="AudioStream" id=4]
+[ext_resource path="res://ASSETS/sounds/amogus_dies.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/sounds/pipe.wav" type="AudioStream" id=5]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "air",
@@ -31,6 +21,16 @@ animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "crouch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
