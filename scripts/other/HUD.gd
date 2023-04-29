@@ -8,7 +8,7 @@ func _ready():
 		$Timer.queue_free()
 		$Panel2.queue_free()
 		$Time.queue_free()
-	if Input.get_joy_name(0):
+	if Input.get_joy_name(0) and !Global.miuifix:
 		$TouchControls.queue_free()
 
 func _on_coin_collected(): #Ajoute une piece au compteur

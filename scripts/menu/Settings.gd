@@ -26,6 +26,11 @@ func _ready(): #Actualise la configuration à l'accès
 	else:
 		$CRTLabel/CRTButton.text = "SETTINGS_VALUE_OFF"
 		$CRTLabel/CRTButton.pressed = false
+	if Global.miuifix:
+		$MiuiFixLabel/MiuiFixButton.text = "SETTINGS_VALUE_ON"
+		$MiuiFixLabel/MiuiFixButton.pressed = true
+	else:
+		$MiuiFixLabel/MiuiFixButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_FullscreenButton2_toggled(button_pressed): #Plein écran
 	if button_pressed:
@@ -68,6 +73,14 @@ func _on_CRTButton_toggled(button_pressed):
 	else:
 		get_node("/root/CRT/ColorRect").visible = false
 		$CRTLabel/CRTButton.text = "SETTINGS_VALUE_OFF"
+
+func _on_MiuiFixButton_toggled(button_pressed):
+	if button_pressed:
+		Global.miuifix = true
+		$MiuiFixLabel/MiuiFixButton.text = "SETTINGS_VALUE_ON"
+	else:
+		Global.miuifix = false
+		$MiuiFixLabel/MiuiFixButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_YoutubeButton_pressed():
 	OS.shell_open("https://www.youtube.com/channel/UCDsgfEoSz8qpv9jne85T8tg")

@@ -80,6 +80,10 @@ func _on_CRTLabel_mouse_entered():
 	show()
 	text = "SETTINGS_INFO_CRT"
 
+func _on_MiuiFixLabel_mouse_entered():
+	show()
+	text = "SETTINGS_INFO_MIUI"
+
 #DESCRIPTIONS DES MONDES
 func _on_WorldButton1_mouse_entered():
 	show()

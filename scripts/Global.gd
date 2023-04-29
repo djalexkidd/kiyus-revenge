@@ -8,6 +8,7 @@ onready var pipe_number = 0 #Identifiant de tuyau
 onready var fps_counter = false #Compteur de FPS
 onready var rumble = true #Vibrations activées
 onready var autoretry = false #Redémarrage automatique du niveau
+onready var miuifix = false #Forcer les contrôles tactiles
 onready var coins = 0 #Nombre de pièces du joueur
 onready var character = 1 #Personnage
 #Codes de triche

@@ -14,6 +14,7 @@ config/name="Kiyu's Revenge"
 run/main_scene="res://scenes/menu/TitleMenu.tscn"
 boot_splash/image="res://ASSETS/splash.png"
 boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0.388235, 1 )
 config/icon="res://icon.png"
 
 [autoload]
