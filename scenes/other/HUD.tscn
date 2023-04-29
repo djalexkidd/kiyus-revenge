@@ -123,7 +123,7 @@ modulate = Color( 1, 1, 1, 0.313726 )
 position = Vector2( 896, 512 )
 scale = Vector2( 1.5, 1.5 )
 normal = ExtResource( 13 )
-action = "run"
+action = "toggle_run"
 visibility_mode = 1
 
 [node name="LeftTouchScreenButton" type="TouchScreenButton" parent="TouchControls"]

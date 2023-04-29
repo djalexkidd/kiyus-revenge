@@ -9,6 +9,7 @@ const GRAVITY = 35 #Gravité
 const JUMPFORCE = -1100 #Hauteur du saut
 var on_pipe #Vérifie si le joueur est proche d'un tuyau en bas
 var on_pipe_right #Vérifie si le joueur est proche d'un tuyau à droite
+var toggle_run #Pour faciliter le gameplay sur mobile
 
 func _ready():
 	if Global.hyperspeed:
@@ -65,6 +66,24 @@ func _physics_process(delta):
 		else:
 			SPEED = 720
 			$Sprite.speed_scale = 4
+	
+	if Input.is_action_just_pressed("toggle_run"): #Touche droite
+		if !toggle_run:
+			toggle_run = true
+			if !Global.hyperspeed:
+				SPEED = 360
+				$Sprite.speed_scale = 2
+			else:
+				SPEED = 1440
+				$Sprite.speed_scale = 8
+		else:
+			toggle_run = false
+			if !Global.hyperspeed:
+				SPEED = 180
+				$Sprite.speed_scale = 1
+			else:
+				SPEED = 720
+				$Sprite.speed_scale = 4
 	
 	velocity.y = velocity.y + GRAVITY
 	

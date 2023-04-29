@@ -93,6 +93,10 @@ up={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
  ]
 }
+toggle_run={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [layer_names]
 
