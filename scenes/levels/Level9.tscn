@@ -62,9 +62,9 @@ extents = Vector2( 4729.08, 90.787 )
 script = ExtResource( 2 )
 
 [node name="Niveau" type="Label" parent="."]
-margin_left = 250.0
+margin_left = 306.0
 margin_top = 232.0
-margin_right = 542.0
+margin_right = 598.0
 margin_bottom = 271.0
 custom_fonts/font = SubResource( 1 )
 text = "LEVELSIGN_LEVEL"
@@ -72,22 +72,19 @@ align = 1
 valign = 1
 
 [node name="Niveau2" type="Label" parent="."]
-margin_left = 250.0
+margin_left = 282.0
 margin_top = 272.0
-margin_right = 663.0
+margin_right = 695.0
 margin_bottom = 311.0
 custom_fonts/font = SubResource( 1 )
 text = "WORLDMAP_INFO_LEVEL9"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Niveau3" type="Label" parent="."]
-margin_left = 250.0
+margin_left = 522.0
 margin_top = 232.0
-margin_right = 295.0
+margin_right = 567.0
 margin_bottom = 271.0
 custom_fonts/font = SubResource( 1 )
 text = "3-1"
