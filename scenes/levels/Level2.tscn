@@ -474,7 +474,7 @@ position = Vector2( 1256, 416 )
 rotation = -1.5708
 
 [node name="Flag" parent="." instance=ExtResource( 11 )]
-position = Vector2( 8497, 468 )
+position = Vector2( 8497, 470 )
 
 [node name="Pipes" type="TileMap" parent="."]
 tile_set = SubResource( 10 )

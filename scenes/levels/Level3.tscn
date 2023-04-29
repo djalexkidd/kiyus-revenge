@@ -456,7 +456,7 @@ position = Vector2( 7296, -288 )
 direction = 1
 
 [node name="Flag" parent="." instance=ExtResource( 7 )]
-position = Vector2( 10528, 212 )
+position = Vector2( 10528, 214 )
 
 [node name="Pipes" type="TileMap" parent="."]
 tile_set = SubResource( 11 )
