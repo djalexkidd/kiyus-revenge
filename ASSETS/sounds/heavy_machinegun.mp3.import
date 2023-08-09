@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/heavy_machinegun.mp3-3e847761c57218efb53fe1a2bcd78119.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/sounds/heavy_machinegun.mp3"
+dest_files=[ "res://.import/heavy_machinegun.mp3-3e847761c57218efb53fe1a2bcd78119.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

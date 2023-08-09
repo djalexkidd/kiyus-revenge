@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://ASSETS/player/steve/platformChar_walk2.png" type="Texture" id=1]
 [ext_resource path="res://scripts/characters/Steve.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://ASSETS/player/steve/platformChar_walk1.png" type="Texture" id=9]
 [ext_resource path="res://ASSETS/player/steve/platformChar_idle.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/player/steve/platformChar_duck.png" type="Texture" id=11]
+[ext_resource path="res://ASSETS/sounds/heavy_machinegun.mp3" type="AudioStream" id=12]
+[ext_resource path="res://ASSETS/weapons/e5df4a519cff508.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -103,6 +105,15 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/pipe_enter = SubResource( 2 )
 anims/pipe_enter_right = SubResource( 3 )
+
+[node name="WeaponSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 64, 16 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 13 )
+
+[node name="GunEquip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

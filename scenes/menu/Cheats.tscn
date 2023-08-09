@@ -162,7 +162,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MoonwalkLabel" type="Button" parent="."]
+[node name="GunLabel" type="Button" parent="."]
 margin_left = 64.0
 margin_top = 384.0
 margin_right = 684.0
@@ -173,14 +173,11 @@ custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/focus = SubResource( 2 )
 disabled = true
-text = "CHEATS_MOONWALK"
+text = "CHEATS_GUN"
 flat = true
 align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="MoonwalkButton" type="Button" parent="MoonwalkLabel"]
+[node name="GunButton" type="Button" parent="GunLabel"]
 margin_left = 480.0
 margin_right = 1164.0
 margin_bottom = 38.0
@@ -193,9 +190,6 @@ text = "SETTINGS_VALUE_OFF"
 flat = true
 align = 0
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MoonjumpLabel" type="Button" parent="."]
 margin_left = 64.0
@@ -276,9 +270,9 @@ autoplay = true
 [connection signal="mouse_entered" from="InfiniteTimeLabel" to="SettingInfo" method="_on_InfiniteTimeLabel_mouse_entered"]
 [connection signal="mouse_exited" from="InfiniteTimeLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
 [connection signal="toggled" from="InfiniteTimeLabel/InfiniteTimeButton" to="." method="_on_InfiniteTimeButton_toggled"]
-[connection signal="mouse_entered" from="MoonwalkLabel" to="SettingInfo" method="_on_MoonwalkLabel_mouse_entered"]
-[connection signal="mouse_exited" from="MoonwalkLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
-[connection signal="toggled" from="MoonwalkLabel/MoonwalkButton" to="." method="_on_MoonwalkButton_toggled"]
+[connection signal="mouse_entered" from="GunLabel" to="SettingInfo" method="_on_MoonwalkLabel_mouse_entered"]
+[connection signal="mouse_exited" from="GunLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
+[connection signal="toggled" from="GunLabel/GunButton" to="." method="_on_MoonwalkButton_toggled"]
 [connection signal="mouse_entered" from="MoonjumpLabel" to="SettingInfo" method="_on_MoonjumpLabel_mouse_entered"]
 [connection signal="mouse_exited" from="MoonjumpLabel" to="SettingInfo" method="_on_LevelButton_mouse_exited"]
 [connection signal="toggled" from="MoonjumpLabel/MoonjumpButton" to="." method="_on_MoonjumpButton_toggled"]

@@ -62,12 +62,12 @@ SYSTEM_QUIT,Quitter,Quit
 CHEATS_GODMODE,Invinciblilité,God Mode
 CHEATS_HYPERSPEED,Hypervitesse,Hyperspeed
 CHEATS_INFINITETIME,Temps infini,Infinite time
-CHEATS_MOONWALK,Moonwalk,Moonwalk
-CHEATS_MOONJUMP,Saut lunaire,Moon jump
-CHEATS_INFO_GODMODE,Kiyu est invulnérable !,Kiyu is invincible !
+CHEATS_GUN,Pistolet,Pistolet
+CHEATS_MOONJUMP,Saut infini,Moon jump
+CHEATS_INFO_GODMODE,Kiyu ne peux pas mourir,Kiyu can’t die
 CHEATS_INFO_HYPERSPEED,Double la vitesse de Kiyu,Doubles Kiyu’s speed
-CHEATS_INFO_INFINITETIME,Prenez votre temps !,Take your time !
-CHEATS_INFO_MOONWALK,Inverse le sprite de Kiyu,Reverse Kiyu’s sprite
+CHEATS_INFO_INFINITETIME,Aucune limite de temps,No time limit
+CHEATS_INFO_GUN,Pan pan le Glock-18,Pew pew the Glock-18
 CHEATS_INFO_MOONJUMP,Maintenez A pour faire voler Kiyu !,Hold A to fly !
 LEVEL_FINISHED1,NIVEAU,LEVEL
 LEVEL_FINISHED2,TERMINE,CLEARED

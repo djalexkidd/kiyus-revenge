@@ -19,11 +19,11 @@ func _ready():
 	else:
 		$InfiniteTimeLabel/InfiniteTimeButton.text = "SETTINGS_VALUE_OFF"
 		
-	if Global.moonwalk:
-		$MoonwalkLabel/MoonwalkButton.text = "SETTINGS_VALUE_ON"
-		$MoonwalkLabel/MoonwalkButton.pressed = true
+	if Global.gun:
+		$GunLabel/GunButton.text = "SETTINGS_VALUE_ON"
+		$GunLabel/GunButton.pressed = true
 	else:
-		$MoonwalkLabel/MoonwalkButton.text = "SETTINGS_VALUE_OFF"
+		$GunLabel/GunButton.text = "SETTINGS_VALUE_OFF"
 
 	if Global.moonjump:
 		$MoonjumpLabel/MoonjumpButton.text = "SETTINGS_VALUE_ON"
@@ -57,11 +57,11 @@ func _on_InfiniteTimeButton_toggled(button_pressed):
 
 func _on_MoonwalkButton_toggled(button_pressed):
 	if button_pressed:
-		Global.moonwalk = true
-		$MoonwalkLabel/MoonwalkButton.text = "SETTINGS_VALUE_ON"
+		Global.gun = true
+		$GunLabel/GunButton.text = "SETTINGS_VALUE_ON"
 	else:
-		Global.moonwalk = false
-		$MoonwalkLabel/MoonwalkButton.text = "SETTINGS_VALUE_OFF"
+		Global.gun = false
+		$GunLabel/GunButton.text = "SETTINGS_VALUE_OFF"
 
 func _on_MoonjumpButton_toggled(button_pressed):
 	if button_pressed:

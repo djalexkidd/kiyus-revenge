@@ -15,7 +15,7 @@ onready var character = 1 #Personnage
 onready var godmode = false #Invinciblilité
 onready var hyperspeed = false #Hypervitesse
 onready var infinitetime = false #Temps infini
-onready var moonwalk = false #Inverse le sprite de Kiyu
+onready var gun = false #Spawn avec le pistolet
 onready var moonjump = false #Saut lunaire comme sur l'Action Replay
 
 func replay(): #Fonction pour faire changer/redémarrer le niveau
@@ -38,9 +38,16 @@ func replay(): #Fonction pour faire changer/redémarrer le niveau
 			get_tree().change_scene("res://scenes/levels/Level8.tscn")
 		9:
 			get_tree().change_scene("res://scenes/levels/Level9.tscn")
-			
+		10:
+			get_tree().change_scene("res://scenes/levels/Level10.tscn")
+		11:
+			get_tree().change_scene("res://scenes/levels/Level11.tscn")
+		12:
+			get_tree().change_scene("res://scenes/levels/Level12.tscn")
 		52:
 			get_tree().change_scene("res://scenes/levels/Level2a.tscn")
+		512:
+			get_tree().change_scene("res://scenes/levels/Level12a.tscn")
 
 #1: Niveau 1-1 - Introduction
 #2: Niveau 1-2 - Le level design c'est dur

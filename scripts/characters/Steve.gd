@@ -10,27 +10,31 @@ const JUMPFORCE = -1100 #Hauteur du saut
 var on_pipe #Vérifie si le joueur est proche d'un tuyau en bas
 var on_pipe_right #Vérifie si le joueur est proche d'un tuyau à droite
 var toggle_run #Pour faciliter le gameplay sur mobile
+var gun
+
+var bullet_resource = preload("res://scenes/other/Bullet.tscn")
 
 func _ready():
 	if Global.hyperspeed:
 		SPEED = 720
 		$Sprite.speed_scale = 4
+	if Global.gun:
+		$WeaponSprite.show()
+		gun = true
 
 func _physics_process(delta):
 	if Input.is_action_pressed("right"): #Touche droite
 		velocity.x = SPEED
 		$Sprite.play("walk") #Joue l'animation de marche
-		if !Global.moonwalk:
-			$Sprite.flip_h = false #N'inverse pas le sprite horizontalement
-		else:
-			$Sprite.flip_h = true
+		$Sprite.flip_h = false #N'inverse pas le sprite horizontalement
+		$WeaponSprite.flip_h = false
+		$WeaponSprite.position = Vector2(64,16)
 	elif Input.is_action_pressed("left"): #Touche gauche
 		velocity.x = -SPEED
 		$Sprite.play("walk") #Joue l'animation de marche
-		if !Global.moonwalk:
-			$Sprite.flip_h = true #Inverse pas le sprite horizontalement
-		else:
-			$Sprite.flip_h = false
+		$Sprite.flip_h = true #Inverse pas le sprite horizontalement
+		$WeaponSprite.flip_h = true
+		$WeaponSprite.position = Vector2(-64,16)
 	else: #Joueur immobile
 		$Sprite.play("idle") #Animation par défaut
 	
@@ -59,6 +63,9 @@ func _physics_process(delta):
 		else:
 			SPEED = 1440
 			$Sprite.speed_scale = 8
+	if Input.is_action_just_pressed("run") and gun:
+		var bullet = bullet_resource.instance()
+		get_node("..").add_child(bullet)
 	elif Input.is_action_just_released("run"):
 		if !Global.hyperspeed:
 			SPEED = 180
@@ -173,6 +180,10 @@ func _on_PipeEnter4_body_entered(body): #Niveau 1-2
 	on_pipe_right = true
 	Global.pipe_number = 2
 
+func _on_PipeEnter5_body_entered(body): #Niveau 3-4
+	on_pipe_right = true
+	Global.pipe_number = 512
+
 func _on_PipeEnter_body_exited(body):
 	on_pipe = false
 	on_pipe_right = false
@@ -185,3 +196,8 @@ func _on_AnimationPlayer_animation_finished(anim_name): #Animation de tuyau term
 	else: #Pour tout les autres tuyaux
 		Global.current_level = Global.pipe_number #Change la scène actuelle
 		Global.replay() #Charge la scène
+
+func equip_pistol():
+	$WeaponSprite.show()
+	$GunEquip.play()
+	gun = true
