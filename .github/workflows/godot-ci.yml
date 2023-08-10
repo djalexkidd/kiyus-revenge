@@ -2,7 +2,7 @@ name: "godot-ci export"
 on: push
 
 env:
-  GODOT_VERSION: 3.5.1
+  GODOT_VERSION: 3.5.2
   EXPORT_NAME: kiyus-revenge
 
 jobs:
