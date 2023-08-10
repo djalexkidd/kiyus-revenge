@@ -4,13 +4,14 @@ on: push
 env:
   GODOT_VERSION: 3.5.2
   EXPORT_NAME: kiyus-revenge
+  PROJECT_PATH: kiyus-revenge
 
 jobs:
   export-windows:
     name: Windows Export
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci
+      image: barichello/godot-ci:3.5.2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -23,7 +24,8 @@ jobs:
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
-          godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
+          cd $PROJECT_PATH
+          godot -v --export "Windows Desktop" ../build/windows/$EXPORT_NAME.exe
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -32,9 +34,9 @@ jobs:
 
   export-linux:
     name: Linux Export
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci
+      image: barichello/godot-ci:3.5.2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -47,7 +49,8 @@ jobs:
       - name: Linux Build
         run: |
           mkdir -v -p build/linux
-          godot -v --export "Linux/X11" build/linux/$EXPORT_NAME.x86_64
+          cd $PROJECT_PATH
+          godot -v --export "Linux/X11" ../build/linux/$EXPORT_NAME.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -56,9 +59,9 @@ jobs:
 
   export-web:
     name: Web Export
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci:3.5.1
+      image: barichello/godot-ci:3.5.2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -71,31 +74,28 @@ jobs:
       - name: Web Build
         run: |
           mkdir -v -p build/web
-          godot -v --export "HTML5" build/web/index.html
+          cd $PROJECT_PATH
+          godot -v --export "HTML5" ../build/web/index.html
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
           name: web
           path: build/web
-      # Installing rsync is needed in order to deploy to GitHub Pages. Without it, the build will fail.
       - name: Install rsync 📚
         run: |
           apt-get update && apt-get install -y rsync
-      - name: Configure git to trust the workspace despite the different owner
-        run:
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build/web # The folder the action should deploy.
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build/web # The folder the action should deploy.
 
   export-mac:
     name: Mac Export
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container:
-      image: barichello/godot-ci
+      image: barichello/godot-ci:3.5.2
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -108,7 +108,8 @@ jobs:
       - name: Mac Build
         run: |
           mkdir -v -p build/mac
-          godot -v --export "Mac OSX" build/mac/$EXPORT_NAME.zip
+          cd $PROJECT_PATH
+          godot -v --export "Mac OSX" ../build/mac/$EXPORT_NAME.zip
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
