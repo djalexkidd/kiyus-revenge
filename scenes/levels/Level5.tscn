@@ -235,28 +235,28 @@ trap_tilemap = true
 [node name="springs" type="Node2D" parent="."]
 
 [node name="spring1" parent="springs" instance=ExtResource( 11 )]
-position = Vector2( 640, 468 )
+position = Vector2( 640, 470 )
 
 [node name="spring2" parent="springs" instance=ExtResource( 11 )]
-position = Vector2( 508, -108 )
+position = Vector2( 508, -106 )
 
 [node name="spring3" parent="springs" instance=ExtResource( 11 )]
-position = Vector2( 2464, 468 )
+position = Vector2( 2464, 470 )
 
 [node name="spring4" parent="springs" instance=ExtResource( 11 )]
-position = Vector2( 2848, 468 )
+position = Vector2( 2848, 470 )
 
 [node name="spring5" parent="springs" instance=ExtResource( 11 )]
-position = Vector2( 2944, 468 )
+position = Vector2( 2944, 470 )
 
 [node name="spring6" parent="springs" instance=ExtResource( 11 )]
-position = Vector2( 3040, 468 )
+position = Vector2( 3040, 470 )
 
 [node name="spring7" parent="springs" instance=ExtResource( 11 )]
-position = Vector2( 3136, 468 )
+position = Vector2( 3136, 470 )
 
 [node name="spring8" parent="springs" instance=ExtResource( 11 )]
-position = Vector2( 3232, 468 )
+position = Vector2( 3232, 470 )
 
 [node name="bricks" type="Node2D" parent="."]
 

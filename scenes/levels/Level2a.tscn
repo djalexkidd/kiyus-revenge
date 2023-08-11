@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://tilesets/world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/other/HUD.tscn" type="PackedScene" id=3]
@@ -8,7 +8,6 @@
 [ext_resource path="res://ASSETS/sounds/mus_underground.ogg" type="AudioStream" id=7]
 [ext_resource path="res://scripts/levels/Level2a.gd" type="Script" id=8]
 [ext_resource path="res://ASSETS/WorldTiles/pipe5.png" type="Texture" id=10]
-[ext_resource path="res://ASSETS/fonts/Minecraft.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://ASSETS/WorldTiles/pipe7.png" type="Texture" id=16]
 [ext_resource path="res://ASSETS/WorldTiles/pipe4.png" type="Texture" id=18]
 [ext_resource path="res://ASSETS/WorldTiles/pipe1.png" type="Texture" id=19]
@@ -16,10 +15,6 @@
 [ext_resource path="res://ASSETS/WorldTiles/pipe2.png" type="Texture" id=21]
 [ext_resource path="res://ASSETS/WorldTiles/pipe8.png" type="Texture" id=22]
 [ext_resource path="res://ASSETS/WorldTiles/pipe6.png" type="Texture" id=23]
-
-[sub_resource type="DynamicFont" id=1]
-size = 32
-font_data = ExtResource( 15 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 159.471, 10 )
@@ -223,17 +218,6 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 
 [node name="Level2a" type="Node2D"]
 script = ExtResource( 8 )
-
-[node name="WarpZone" type="Label" parent="."]
-margin_left = 832.0
-margin_top = -640.0
-margin_right = 1126.0
-margin_bottom = -608.0
-custom_fonts/font = SubResource( 1 )
-text = "WARP TO LEVEL 4"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Tiles Solid" type="TileMap" parent="."]
 modulate = Color( 0.00784314, 0, 1, 1 )
