@@ -30,6 +30,14 @@ func _on_boss_trigger_body_entered(body): #Le joueur atteint une zone avant le b
 
 func _on_KillSwitch_pressed(): #Le joueur appuie sur l'interupteur
 	$LanceKiyu.stop() #Paulok arrête de lancer Kiyu
+	
+	if Global.level_unlocks == Global.current_level: #Si le niveau actuel est le niveau à jouer pour débloquer le suivant
+		var config = ConfigFile.new()
+	
+		Global.level_unlocks += 1
+		config.set_value("Unlock", "0", Global.level_unlocks) #Débloque le niveau suivant
+	
+		config.save("user://save.cfg")
 
 func _on_hitbox_body_entered(body): #Le joueur touche Paulok
 		body.ouch(position.x)

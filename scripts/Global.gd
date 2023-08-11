@@ -17,6 +17,8 @@ onready var hyperspeed = false #Hypervitesse
 onready var infinitetime = false #Temps infini
 onready var gun = false #Spawn avec le pistolet
 onready var moonjump = false #Saut lunaire comme sur l'Action Replay
+#Sauvegarde
+var level_unlocks = 1
 
 func replay(): #Fonction pour faire changer/redémarrer le niveau
 	match current_level:

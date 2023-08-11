@@ -69,12 +69,15 @@ func _on_World3_enter_body_entered(body):
 	$HUD/Bar/CurrentWorld.text = "WORLDMAP_BIGTITLE3"
 
 func open_menu():
-	if not $Kiyu.select:
-		$HUD/AnimationPlayer.play("scroll_up")
-		$Kiyu.select = true
+	if Global.level_unlocks >= Global.current_level:
+		if not $Kiyu.select:
+			$HUD/AnimationPlayer.play("scroll_up")
+			$Kiyu.select = true
+		else:
+			$HUD/AnimationPlayer.play("scroll_down")
+			$Kiyu.select = false
 	else:
-		$HUD/AnimationPlayer.play("scroll_down")
-		$Kiyu.select = false
+		$LevelLocked.play()
 
 func _on_Kiyu_next_char():
 	Global.character += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://ASSETS/worldmap/mapTile_187.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/worldmap/mapTile_188.png" type="Texture" id=2]
@@ -52,6 +52,7 @@
 [ext_resource path="res://ASSETS/player/kiyu/walk.2.png" type="Texture" id=50]
 [ext_resource path="res://ASSETS/touchcontrol/spr_B_button_0.png" type="Texture" id=51]
 [ext_resource path="res://ASSETS/touchcontrol/arrowLeft.png" type="Texture" id=52]
+[ext_resource path="res://ASSETS/sounds/NAN.ogg" type="AudioStream" id=53]
 [ext_resource path="res://ASSETS/player/kiyu/walk.1.png" type="Texture" id=54]
 [ext_resource path="res://ASSETS/player/kiyu/walk.0.png" type="Texture" id=55]
 [ext_resource path="res://ASSETS/player/steve/platformChar_walk2.png" type="Texture" id=56]
@@ -1153,6 +1154,10 @@ one_shot = true
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 41 )
 autoplay = true
+
+[node name="LevelLocked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 53 )
+volume_db = -8.0
 
 [connection signal="body_entered" from="Level1" to="." method="_on_Level1_body_entered"]
 [connection signal="body_entered" from="Level1" to="HUD/Bar/LevelName" method="_on_Level1_body_entered"]

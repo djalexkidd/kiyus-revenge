@@ -10,6 +10,8 @@ func _ready():
 	else:
 		$ControllerDetection.hide()
 		$Panel.show()
+	
+	load_data()
 
 func _on_joy_connection_changed(device_id, connected):
 	if connected:
@@ -24,3 +26,16 @@ func _on_SettingsButton_pressed(): #Bouton des paramètres
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
+
+func load_data():
+	var config = ConfigFile.new()
+	var file2Check = File.new()
+	if not file2Check.file_exists("user://save.cfg"):
+		config.set_value("Unlock", "0", 1)
+		config.save("user://save.cfg")
+		return
+	
+	config.load("user://save.cfg")
+	
+	var level_unlocked = config.get_value("Unlock", "0")
+	Global.level_unlocks = level_unlocked
