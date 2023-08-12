@@ -4,19 +4,19 @@
 [ext_resource path="res://ASSETS/enemies/slimeBlue_squashed.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/enemies/slimeBlue.png" type="Texture" id=3]
 [ext_resource path="res://scripts/props/enemy.gd" type="Script" id=4]
-[ext_resource path="res://ASSETS/sounds/stomp.wav" type="AudioStream" id=5]
+[ext_resource path="res://ASSETS/sounds/stomp.ogg" type="AudioStream" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "squashed",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "crawl",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "squashed",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

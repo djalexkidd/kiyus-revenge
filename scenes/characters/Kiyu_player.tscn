@@ -2,7 +2,7 @@
 
 [ext_resource path="res://tilesets/Kiyu_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scripts/characters/Steve.gd" type="Script" id=2]
-[ext_resource path="res://ASSETS/sounds/jump.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/sounds/jump.ogg" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/sounds/kiyu_death.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/sounds/pipe.wav" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/weapons/e5df4a519cff508.png" type="Texture" id=6]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ASSETS/coin/gold_1.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/blocks/red_block/2.png" type="Texture" id=2]
@@ -6,22 +6,20 @@
 [ext_resource path="res://ASSETS/blocks/red_block/3.png" type="Texture" id=4]
 [ext_resource path="res://scripts/props/red_block.gd" type="Script" id=5]
 [ext_resource path="res://ASSETS/blocks/block.png" type="Texture" id=6]
-[ext_resource path="res://ASSETS/sounds/bump.wav" type="AudioStream" id=7]
-[ext_resource path="res://ASSETS/sounds/oof.wav" type="AudioStream" id=8]
 [ext_resource path="res://ASSETS/blocks/red_block/4.png" type="Texture" id=9]
 [ext_resource path="res://ASSETS/blocks/red_block/5.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "empty",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "empty",
+"speed": 0.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -69,7 +67,7 @@ script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="solid" type="CollisionShape2D" parent="."]
@@ -99,14 +97,6 @@ anims/bounce_block = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/block_punch = SubResource( 5 )
-
-[node name="CoinCollect" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-volume_db = 5.0
-
-[node name="BumpSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = 5.0
 
 [connection signal="body_entered" from="bottom_checker" to="." method="_on_bottom_checker_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

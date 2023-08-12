@@ -2,7 +2,7 @@
 
 [ext_resource path="res://ASSETS/player/steve/platformChar_walk2.png" type="Texture" id=1]
 [ext_resource path="res://scripts/characters/Steve.gd" type="Script" id=2]
-[ext_resource path="res://ASSETS/sounds/jump.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/sounds/jump.ogg" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/sounds/oof.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/sounds/pipe.wav" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/player/steve/platformChar_climb1.png" type="Texture" id=6]
