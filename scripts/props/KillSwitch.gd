@@ -10,3 +10,11 @@ func _on_hitbox_body_entered(body): #Le joueur appuie sur l'interrupteur
 	emit_signal("pressed") #Emet un signal au niveau
 	$putain.play()
 	$hitbox.queue_free()
+	
+	if Global.level_unlocks == Global.current_level: #Si le niveau actuel est le niveau à jouer pour débloquer le suivant
+		var config = ConfigFile.new()
+	
+		Global.level_unlocks += 1
+		config.set_value("Unlock", "0", Global.level_unlocks) #Débloque le niveau suivant
+	
+		config.save("user://save.cfg")

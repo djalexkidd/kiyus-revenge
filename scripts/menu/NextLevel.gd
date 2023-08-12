@@ -4,7 +4,9 @@ func _ready():
 	grab_focus()
 	Global.coins = 0
 	if Global.current_level == 4:
-		disabled = true
+		Global.current_world = 2
+	if Global.current_level == 8:
+		Global.current_world = 3
 
 func _on_NextLevel_pressed():
 	Global.coins = 0
