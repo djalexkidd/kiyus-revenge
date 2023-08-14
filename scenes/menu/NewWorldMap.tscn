@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://ASSETS/worldmap/mapTile_187.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/worldmap/mapTile_188.png" type="Texture" id=2]
@@ -711,6 +711,9 @@ points = PoolVector2Array( 64, 64, 0, 64, 32, 32, 64, 0 )
 14/shapes = [  ]
 14/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 96, 4 )
+
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 22.5, 22.5 )
 
@@ -879,6 +882,16 @@ tile_set = SubResource( 15 )
 collision_layer = 256
 format = 1
 tile_data = PoolIntArray( 327684, -1073741816, 0, 327685, 6, 0, 327686, 10, 0, 327687, 6, 0, 327688, 6, 0, 327689, 11, 0, 327690, 6, 0, 327691, 6, 0, 327692, 12, 0, 327693, 6, 0, 327694, 6, 0, 327695, 13, 0, 917510, 13, 0, 917513, 12, 0, 917516, 11, 0, 917519, 10, 0, 1507334, 10, 0, 1507337, 11, 0, 1507340, 12, 0, 1507343, 13, 0 )
+
+[node name="Unlocks" type="StaticBody2D" parent="."]
+
+[node name="Level2Wall" type="CollisionShape2D" parent="Unlocks"]
+position = Vector2( 992, 556 )
+shape = SubResource( 27 )
+
+[node name="Level3Wall" type="CollisionShape2D" parent="Unlocks"]
+position = Vector2( 288, 1144 )
+shape = SubResource( 27 )
 
 [node name="Level1" type="Area2D" parent="."]
 position = Vector2( -1, -1 )

@@ -12,6 +12,12 @@ func _ready():
 		3:
 			$Kiyu.position = Vector2(309.543, 1495.053)
 			$HUD/Bar/CurrentWorld.text = "WORLDMAP_BIGTITLE3"
+	
+	if Global.level_unlocks > 4:
+		$Unlocks/Level2Wall.queue_free()
+	
+	if Global.level_unlocks > 8:
+		$Unlocks/Level3Wall.queue_free()
 
 func _on_Level_body_exited(body):
 	$HUD/Bar/LevelName.hide()
