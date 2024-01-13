@@ -1,7 +1,7 @@
 extends Button
 
 func _ready():
-	if OS.get_name() == "HTML5":
+	if get_tree().current_scene.name == "TitleMenu" && OS.get_name() == "HTML5":
 		queue_free()
 
 func _on_ReturnToMenu_pressed():
