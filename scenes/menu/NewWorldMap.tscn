@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=87 format=2]
 
 [ext_resource path="res://ASSETS/worldmap/mapTile_187.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/worldmap/mapTile_188.png" type="Texture" id=2]
@@ -775,6 +775,34 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1280, 850 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharSelect/CharSelectLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "fade_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CharSelect/CharSelectLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=24]
 resource_name = "scroll_down"
@@ -1100,15 +1128,27 @@ margin_left = -20.0
 margin_top = 428.0
 margin_right = 20.0
 margin_bottom = 468.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="HUD/CharSelect"]
 scale = Vector2( 4, 4 )
 frames = SubResource( 25 )
 animation = "3"
 playing = true
+
+[node name="CharSelectLabel" type="Label" parent="HUD/CharSelect"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -192.0
+margin_right = 640.0
+margin_bottom = -160.0
+custom_fonts/font = SubResource( 16 )
+text = "WORLDMAP_CHARSELECT"
+align = 1
 
 [node name="TouchControls" type="Node2D" parent="HUD"]
 
@@ -1166,6 +1206,7 @@ visibility_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
 anims/RESET = SubResource( 26 )
+anims/fade_up = SubResource( 28 )
 anims/scroll_down = SubResource( 24 )
 anims/scroll_up = SubResource( 22 )
 
@@ -1224,4 +1265,5 @@ volume_db = -8.0
 [connection signal="next_char" from="Kiyu" to="." method="_on_Kiyu_next_char"]
 [connection signal="open_menu" from="Kiyu" to="." method="open_menu"]
 [connection signal="prev_char" from="Kiyu" to="." method="_on_Kiyu_prev_char"]
+[connection signal="animation_finished" from="HUD/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="AntiBug" to="." method="_on_AntiBug_timeout"]
