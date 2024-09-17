@@ -188,7 +188,6 @@ rotation = 1.5708
 
 [node name="Musique" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
-volume_db = 5.0
 autoplay = true
 
 [connection signal="coin_collected" from="coins/coin1" to="HUD" method="_on_coin_collected"]
