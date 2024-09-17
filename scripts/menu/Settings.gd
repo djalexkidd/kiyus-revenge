@@ -31,6 +31,9 @@ func _ready(): #Actualise la configuration à l'accès
 		$MiuiFixLabel/MiuiFixButton.pressed = true
 	else:
 		$MiuiFixLabel/MiuiFixButton.text = "SETTINGS_VALUE_OFF"
+	
+	if OS.get_name() != "Android":
+		$MiuiFixLabel.hide()
 
 func _on_FullscreenButton2_toggled(button_pressed): #Plein écran
 	if button_pressed:
