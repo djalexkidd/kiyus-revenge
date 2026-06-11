@@ -79,9 +79,11 @@ func open_menu():
 		if not $Kiyu.select:
 			$HUD/AnimationPlayer.play("scroll_up")
 			$Kiyu.select = true
+			$HUD/CharSelect/CharSelectLabel.show()
 		else:
 			$HUD/AnimationPlayer.play("scroll_down")
 			$Kiyu.select = false
+			$HUD/CharSelect/CharSelectLabel.hide()
 	else:
 		$LevelLocked.play()
 
@@ -106,3 +108,9 @@ func refresh_char():
 	else:
 		$HUD/CharSelect/AnimatedSprite.scale.x = 4
 		$HUD/CharSelect/AnimatedSprite.scale.y = 4
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "scroll_up":
+		$HUD/AnimationPlayer.play("fade_up")
+	if anim_name == "scroll_down":
+		$HUD/AnimationPlayer.play("RESET")
