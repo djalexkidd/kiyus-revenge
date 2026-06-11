@@ -2,6 +2,7 @@
 
 [node name="Camera2D" type="Camera2D"]
 current = true
+process_mode = 0
 limit_left = -637
 limit_right = 12097
 limit_bottom = 700

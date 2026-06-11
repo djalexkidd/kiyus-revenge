@@ -3,6 +3,7 @@
 [node name="Camera2D" type="Camera2D"]
 position = Vector2( 4, -12 )
 current = true
+process_mode = 0
 limit_left = -637
 limit_right = 9920
 limit_bottom = 700
