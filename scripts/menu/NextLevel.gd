@@ -7,6 +7,7 @@ func _ready():
 		Global.current_world = 2
 	if Global.current_level == 8:
 		Global.current_world = 3
+	Global.music_seek = 0
 
 func _on_NextLevel_pressed():
 	Global.coins = 0

@@ -16,3 +16,6 @@ func _ready():
 	$fallzone.connect("body_entered", $Kiyu, "_on_fallzone_body_entered")
 	$PipeEnter5.connect("body_entered", $Kiyu, "_on_PipeEnter5_body_entered")
 	move_child($Kiyu, 4)
+	
+	if Global.music_seek != 0:
+		$Musique.seek(Global.music_seek)

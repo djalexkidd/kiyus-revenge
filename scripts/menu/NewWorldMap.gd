@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	refresh_char()
+	Global.music_seek = 0
 	match Global.current_world:
 		1:
 			$Kiyu.position = Vector2(309.543, 346.053)

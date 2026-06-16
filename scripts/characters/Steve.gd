@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
-#Steve était le personnage jouable dans la version Alpha du jeu.
-#Il a depuis été remplacé par Kiyu, le chat de PAULOK !
+#C'est le personnage du joueur.
 
 var velocity = Vector2(0,0)
 var SPEED = 180 #Vitesse du joueur
@@ -108,6 +107,7 @@ func _physics_process(delta):
 
 func _on_fallzone_body_entered(body): #Le joueur tombe dans un trou
 	Global.death_counter += 1 #Incrémente le compteur de morts
+	Global.music_seek = get_node("../Musique").get_playback_position()
 	if !Global.autoretry:
 		get_tree().change_scene("res://scenes/menu/GameOver.tscn") #Affiche l'écran de Game Over
 	else:
@@ -159,6 +159,7 @@ func ouch(var enemyposx): #Si le joueur prend un dégat
 
 func _on_Timer_timeout(): #Le timer de mort se termine
 	Global.death_counter += 1 #Incrémente le compteur de morts
+	Global.music_seek = get_node("../Musique").get_playback_position()
 	if !Global.autoretry:
 		get_tree().change_scene("res://scenes/menu/GameOver.tscn") #Affiche l'écran de Game Over
 	else:
@@ -195,6 +196,7 @@ func _on_AnimationPlayer_animation_finished(anim_name): #Animation de tuyau term
 		$EnterPipeSound.play() #Joue le son du tuyau
 	else: #Pour tout les autres tuyaux
 		Global.current_level = Global.pipe_number #Change la scène actuelle
+		Global.music_seek = 0
 		Global.replay() #Charge la scène
 
 func equip_pistol():

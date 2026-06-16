@@ -20,6 +20,8 @@ onready var moonjump = false #Saut lunaire comme sur l'Action Replay
 #Sauvegarde
 var level_unlocks = 1
 
+var music_seek = 0
+
 func replay(): #Fonction pour faire changer/redémarrer le niveau
 	match current_level:
 		1:

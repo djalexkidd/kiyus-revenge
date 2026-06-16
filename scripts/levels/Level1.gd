@@ -10,3 +10,6 @@ func _ready():
 	add_child(player_character)
 	$Kiyu.add_child(camera)
 	$fallzone.connect("body_entered", $Kiyu, "_on_fallzone_body_entered")
+	
+	if Global.music_seek != 0:
+		$Musique.seek(Global.music_seek)

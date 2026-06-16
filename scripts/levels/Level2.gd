@@ -23,6 +23,9 @@ func _ready():
 		$Kiyu/EnterPipeSound.play() #Jouer le son du tuyau
 		$Kiyu.position.x = 5750 #Aïe attention Philippe LE PARAPET !
 		$Kiyu.position.y = -1000 #Tombe dans le vide
+	
+	if Global.music_seek != 0:
+		$Musique.seek(Global.music_seek)
 
 func _on_block_tilemap_trap_trigger(): #Active le piège tilemap
 	$"Tiles Solid".hide() #Cache la tilemap
